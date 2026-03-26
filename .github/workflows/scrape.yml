@@ -45,21 +45,38 @@ jobs:
       # 6️⃣ Commit and push changes safely
       - name: Commit and push changes
         run: |
-          # Configure Git author
           git config user.name "By-Law Scraper Bot"
           git config user.email "bot@chriswjohnston.ca"
-
-          # Ensure target folders exist to prevent git add errors
-          mkdir -p site/bylaws
-
-          # Stage files if they exist; ignore missing files
-          git add site/bylaws-data.json site/bylaws/* 2>/dev/null || true
-
-          # Only commit if there are staged changes
+      
+          # Ensure base folder exists
+          mkdir -p site
+      
+          # Stage JSON if it exists
+          if [ -f site/bylaws-data.json ]; then
+            git add site/bylaws-data.json
+          fi
+      
+          # Stage bylaws folder ONLY if it has files
+          if [ -d site/bylaws ] && [ "$(ls -A site/bylaws 2>/dev/null)" ]; then
+            git add site/bylaws/
+          fi
+      
+          # Only commit if something is staged
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            # Count by-laws for commit message
-            BYLAW_COUNT=$(python -c "import json; d=json.load(open('site/bylaws-data.json')); print(len(d['bylaws']))")
+            # Safe bylaw count (won’t crash if file is empty or malformed)
+            if [ -f site/bylaws-data.json ]; then
+              BYLAW_COUNT=$(python -c "import json; 
+      try:
+       d=json.load(open('site/bylaws-data.json')); 
+       print(len(d.get('bylaws', [])))
+      except:
+       print(0)")
+            else
+              BYLAW_COUNT=0
+            fi
+      
             git commit -m "Update by-law archive — ${BYLAW_COUNT} by-laws [automated]"
             git push
+          fi
