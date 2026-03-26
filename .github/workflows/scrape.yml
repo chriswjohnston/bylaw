@@ -22,24 +22,19 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4 pymupdf anthropic
+        run: pip install requests beautifulsoup4 pymupdf anthropic
 
       - name: Run scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          cd $GITHUB_WORKSPACE
-          python scraper/scrape.py
+        run: python scrape.py
 
       - name: Commit and push changes
         run: |
-          cd $GITHUB_WORKSPACE
           git config user.name "By-Law Scraper Bot"
           git config user.email "bot@chriswjohnston.ca"
           git add site/bylaws-data.json site/bylaws/
           
-          # Only commit if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
