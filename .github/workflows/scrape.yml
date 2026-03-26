@@ -1,55 +1,65 @@
 name: Scrape Nipissing By-Laws
 
+# Trigger: every 2 weeks on the 1st and 15th, or manual trigger
 on:
   schedule:
-    # Run every 2 weeks on the 1st and 15th at 8am UTC (3am EST)
-    - cron: '0 8 1,15 * *'
-  workflow_dispatch: # Allow manual trigger
+    - cron: '0 8 1,15 * *'  # 8am UTC → 3am EST
+  workflow_dispatch:          # allows manual trigger from GitHub
 
 permissions:
-  contents: write
+  contents: write            # required to push changes to the repo
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+      # 1️⃣ Checkout the repo so workflow has access to code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Python
+      # 2️⃣ Set up Python 3.12 environment
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # 3. Install dependencies
+      # 3️⃣ Install required Python dependencies for scraper
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pymupdf anthropic
 
-      # 4. Run scraper
+      # 4️⃣ Run the scraper
       - name: Run scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scrape.py
+        run: |
+          set -e  # stop workflow if scraper fails
+          python scrape.py
 
-      # 5. Commit and push changes safely
+      # 5️⃣ Optional: Debug step to verify what files were generated
+      - name: Debug scraper output
+        run: |
+          echo "Files in site/:"
+          ls -R site/
+
+      # 6️⃣ Commit and push changes safely
       - name: Commit and push changes
         run: |
+          # Configure Git author
           git config user.name "By-Law Scraper Bot"
           git config user.email "bot@chriswjohnston.ca"
 
-          # Ensure folders exist so git add doesn't fail
+          # Ensure target folders exist to prevent git add errors
           mkdir -p site/bylaws
 
-          # Add files if they exist
+          # Stage files if they exist; ignore missing files
           git add site/bylaws-data.json site/bylaws/* 2>/dev/null || true
 
-          # Only commit if there are changes
+          # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
+            # Count by-laws for commit message
             BYLAW_COUNT=$(python -c "import json; d=json.load(open('site/bylaws-data.json')); print(len(d['bylaws']))")
             git commit -m "Update by-law archive — ${BYLAW_COUNT} by-laws [automated]"
             git push
