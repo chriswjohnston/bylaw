@@ -1,489 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>By-Law Archive – Nipissing Township</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --forest:#2C4A3E;--pine:#3D6B5E;--water:#5B9FAF;--sky:#A8D5E2;
+  --sand:#F2EAD3;--warm:#E8C98A;--rust:#C06830;--charcoal:#1E2B2A;
+  --cream:#FAF7F0;--white:#FFFFFF;
+  --green:#3a8c5e;--yellow:#b8860b;--red:#b94a3a;--purple:#7c5cbf;
+  --shadow:0 2px 16px rgba(30,43,42,.10);
+}
+body{font-family:'Lato',Georgia,sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.6;overflow-x:hidden}
+a{color:inherit}
 
-    :root {
-      --bg: #111111;
-      --bg-card: #1a1a1a;
-      --bg-card-hover: #222222;
-      --bg-surface: #161616;
-      --text: #eeeeee;
-      --text-secondary: #999999;
-      --text-dim: #666666;
-      --accent: #4a9eff;
-      --accent-dim: rgba(74, 158, 255, 0.08);
-      --border: #262626;
-      --border-light: #333333;
-      --green: #34d399;
-      --yellow: #fbbf24;
-      --red: #f87171;
-      --purple: #a78bfa;
-    }
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(44,74,62,.97);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--warm);text-decoration:none}
+.nav-logo span{color:var(--sky)}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--warm)}
+.nav-links a.active{color:var(--warm)}
 
-    html { scroll-behavior: smooth; }
+/* ── HERO ── */
+.page-hero{background:var(--forest);padding:7rem 2rem 3.5rem;border-bottom:4px solid var(--warm);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 80px)}
+.page-hero .inner{max-width:1100px;margin:0 auto;position:relative}
+.page-hero .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--warm);margin-bottom:.8rem;opacity:0;animation:fadeUp .6s ease .1s forwards}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:.75rem;opacity:0;animation:fadeUp .6s ease .25s forwards}
+.page-hero h1 em{font-style:italic;color:var(--warm)}
+.page-hero p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.75);max-width:580px;line-height:1.75;opacity:0;animation:fadeUp .6s ease .4s forwards}
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
+/* ── MAIN ── */
+main{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 5rem}
 
-    a { color: inherit; }
+/* ── NOTICE ── */
+.notice{background:var(--sand);border-left:4px solid var(--warm);padding:1rem 1.5rem;border-radius:0 8px 8px 0;margin-bottom:2rem;font-size:.88rem;color:#666;line-height:1.65}
+.notice strong{color:var(--charcoal)}
+.notice a{color:var(--forest);font-weight:700;text-decoration:none}
+.notice a:hover{color:var(--rust)}
+.notice .dimmed{font-size:.78rem;color:#999;margin-top:.35rem}
 
-    /* ── NAV ── */
-    .site-nav {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .site-nav .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .site-nav .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .site-nav .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 400;
-      transition: color 0.15s;
-    }
-    .site-nav .nav-links a:hover { color: var(--text); }
-    .site-nav .nav-links a.active { color: var(--text); }
+/* ── SEARCH ── */
+.search-section{margin-bottom:1rem}
+.search-wrap{position:relative;max-width:520px}
+.search-wrap .s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#999;pointer-events:none;transition:color .2s}
+.search-wrap:focus-within .s-icon{color:var(--forest)}
+.search-wrap input{width:100%;padding:.75rem 2.5rem .75rem 2.6rem;background:var(--white);border:1px solid rgba(44,74,62,.2);border-radius:8px;color:var(--charcoal);font-size:.9rem;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s}
+.search-wrap input::placeholder{color:#aaa}
+.search-wrap input:focus{border-color:var(--forest);box-shadow:0 0 0 3px rgba(44,74,62,.1)}
+.s-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#999;cursor:pointer;padding:4px;display:none}
+.s-clear.show{display:block}
+.s-clear:hover{color:var(--charcoal)}
 
-    /* ── HERO ── */
-    .hero {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 6rem 2rem 2.5rem;
-    }
-    .hero-kicker {
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 400;
-    }
-    .hero-sub {
-      margin-top: 1.25rem;
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: var(--text-secondary);
-      max-width: 540px;
-      line-height: 1.7;
-    }
+/* ── FILTERS ── */
+.filter-row{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem}
+.f-label{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-right:.3rem}
+.f-sep{width:1px;height:20px;background:rgba(44,74,62,.15);margin:0 .5rem}
+.f-btn{padding:.3rem .7rem;background:var(--white);border:1px solid rgba(44,74,62,.18);border-radius:5px;color:#666;font-size:.75rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .15s}
+.f-btn:hover{border-color:var(--forest);color:var(--forest)}
+.f-btn.on{background:var(--forest);color:var(--white);border-color:var(--forest)}
+.f-btn.cat-on{background:var(--rust);color:var(--white);border-color:var(--rust)}
 
-    /* ── STAT LINE ── */
-    .stat-line {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem 0.5rem;
-    }
-    .stat-line p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .stat-line strong { color: var(--text); font-weight: 600; }
-    .stat-line a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .stat-line a:hover { text-decoration: underline; }
-    .stat-line .dimmed {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      margin-top: 0.35rem;
-    }
+/* ── SECTION LABEL ── */
+.section-label{font-size:.68rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--rust);margin-bottom:.5rem}
 
-    /* ── SEARCH ── */
-    .search-section {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 2rem 1rem;
-    }
-    .search-wrap { position: relative; max-width: 480px; }
-    .search-wrap svg.s-icon {
-      position: absolute; left: 12px; top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-dim); pointer-events: none;
-    }
-    .search-wrap input {
-      width: 100%;
-      padding: 0.6rem 2.2rem 0.6rem 2.4rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
-      font-size: 0.875rem;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    .search-wrap input::placeholder { color: var(--text-dim); }
-    .search-wrap input:focus { border-color: var(--accent); }
-    .search-wrap .s-clear {
-      position: absolute; right: 8px; top: 50%;
-      transform: translateY(-50%);
-      background: none; border: none;
-      color: var(--text-dim); cursor: pointer;
-      display: none; padding: 2px;
-    }
-    .search-wrap .s-clear.show { display: block; }
-    .search-wrap .s-clear:hover { color: var(--text-secondary); }
+/* ── YEAR CARDS ── */
+.year-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.2rem;margin-top:.5rem}
+.year-card{background:var(--white);border:1px solid rgba(44,74,62,.15);border-radius:10px;padding:1.75rem 1.5rem;text-decoration:none;color:var(--charcoal);box-shadow:var(--shadow);transition:border-color .2s,transform .15s,box-shadow .2s;display:flex;flex-direction:column;gap:.4rem;border-top:3px solid var(--forest);cursor:pointer}
+.year-card:hover{border-color:var(--warm);border-top-color:var(--rust);transform:translateY(-3px);box-shadow:0 8px 28px rgba(30,43,42,.14)}
+.year-card .yc-year{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--forest);line-height:1}
+.year-card .yc-count{font-size:.8rem;font-weight:700;color:#888}
 
-    /* ── FILTERS ── */
-    .filter-row {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0.5rem 2rem 2rem;
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .f-label {
-      font-size: 0.7rem; font-weight: 500;
-      letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--text-dim); margin-right: 0.3rem;
-    }
-    .f-sep { width: 1px; height: 20px; background: var(--border); margin: 0 0.6rem; }
-    .f-btn {
-      padding: 0.3rem 0.7rem;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .f-btn:hover { border-color: var(--text-secondary); color: var(--text); }
-    .f-btn.on { background: var(--text); color: var(--bg); border-color: var(--text); }
-    .f-btn.cat-on { background: var(--purple); color: #fff; border-color: var(--purple); }
+/* ── LIST VIEW ── */
+.list-section{max-width:1100px}
+.list-back{display:inline-flex;align-items:center;gap:.35rem;color:var(--pine);text-decoration:none;font-size:.82rem;font-weight:700;margin-bottom:.75rem;transition:color .2s}
+.list-back:hover{color:var(--rust)}
+.list-back svg{flex-shrink:0}
+.list-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--forest);margin-bottom:.25rem}
+.list-title em{font-style:italic;color:var(--rust)}
+.list-count{font-size:.82rem;color:#888;margin-bottom:1.25rem}
+.list-count strong{color:var(--charcoal)}
 
-    /* ── YEAR CARDS (homepage) ── */
-    .section-label {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: var(--text-dim);
-    }
-    .year-grid {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem 5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 0.75rem;
-    }
-    .year-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      text-decoration: none;
-      color: var(--text);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    .year-card:hover {
-      border-color: var(--border-light);
-      background: var(--bg-card-hover);
-    }
-    .year-card .yc-year {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .year-card .yc-count {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
+/* ── YEAR NAV ── */
+.yr-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.yr-nav a{font-size:.78rem;font-weight:700;padding:.3rem .8rem;border-radius:4px;background:var(--white);border:1px solid rgba(44,74,62,.2);color:var(--forest);text-decoration:none;transition:all .15s}
+.yr-nav a:hover,.yr-nav a.on{background:var(--forest);color:var(--white);border-color:var(--forest)}
 
-    /* ── BY-LAW LIST VIEW ── */
-    .list-section {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 2rem 5rem;
-    }
-    .list-back {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      color: var(--text-secondary); text-decoration: none;
-      font-size: 0.85rem; margin-bottom: 1.5rem;
-      transition: color 0.15s;
-    }
-    .list-back:hover { color: var(--text); }
-    .list-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem; font-weight: 900;
-      line-height: 1.1; margin-bottom: 0.35rem;
-    }
-    .list-title em { font-style: italic; font-weight: 400; }
-    .list-count {
-      font-size: 0.85rem; color: var(--text-dim);
-      margin-bottom: 2rem;
-    }
-    .list-count strong { color: var(--text-secondary); }
+/* ── BY-LAW ROW ── */
+.bl-row{background:var(--white);border:1px solid rgba(44,74,62,.12);border-radius:10px;margin-bottom:.65rem;overflow:hidden;box-shadow:var(--shadow);border-left:3px solid var(--pine);transition:border-color .2s}
+.bl-row:hover{border-color:rgba(44,74,62,.25)}
+.bl-header{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:.85rem;padding:.9rem 1.15rem;cursor:pointer;user-select:none;transition:background .1s}
+.bl-header:hover{background:rgba(44,74,62,.025)}
+.bl-num{font-family:'Playfair Display',serif;font-weight:800;font-size:.95rem;white-space:nowrap;min-width:75px;color:var(--forest)}
+.bl-mid{min-width:0}
+.bl-title{font-size:.88rem;color:var(--charcoal);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bl-meta{font-size:.75rem;color:#999;margin-top:.12rem;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.bl-tag{display:inline-block;background:rgba(124,92,191,.08);color:var(--purple);padding:.08rem .45rem;border-radius:999px;font-size:.65rem;font-weight:700}
+.bl-actions{display:flex;gap:.4rem;align-items:center}
+.bl-link{color:var(--forest);text-decoration:none;font-size:.75rem;font-weight:700;display:inline-flex;align-items:center;gap:.2rem;padding:.25rem .5rem;border-radius:4px;background:var(--cream);border:1px solid rgba(44,74,62,.15);transition:all .15s}
+.bl-link:hover{background:var(--forest);color:var(--white);border-color:var(--forest)}
+.bl-link svg{width:12px;height:12px}
+.bl-chevron{width:18px;height:18px;color:#bbb;transition:transform .25s,color .2s;flex-shrink:0}
+.bl-row.open .bl-chevron{transform:rotate(180deg);color:var(--rust)}
 
-    /* Year breadcrumb nav */
-    .yr-nav {
-      display: flex; gap: 0.35rem; flex-wrap: wrap;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .yr-nav a {
-      padding: 0.3rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-      text-decoration: none;
-      transition: all 0.15s;
-    }
-    .yr-nav a:hover { border-color: var(--text-secondary); color: var(--text); }
-    .yr-nav a.on { background: var(--text); color: var(--bg); border-color: var(--text); }
+/* ── STATUS ── */
+.st{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;padding:.12rem .5rem;border-radius:999px;white-space:nowrap}
+.st .dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+.st-approved{background:rgba(58,140,94,.1);color:var(--green)}
+.st-pending{background:rgba(184,134,11,.1);color:var(--yellow)}
+.st-defeated{background:rgba(185,74,58,.1);color:var(--red)}
 
-    /* ── BY-LAW ROW ── */
-    .bl-row {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.1s;
-    }
-    .bl-row:last-child { border-bottom: none; }
-    .bl-header {
-      display: grid;
-      grid-template-columns: 90px 1fr auto auto;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      cursor: pointer;
-    }
-    .bl-header:hover { background: var(--bg-surface); margin: 0 -0.75rem; padding-left: 0.75rem; padding-right: 0.75rem; border-radius: 4px; }
-    .bl-num {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700; font-size: 0.9rem;
-    }
-    .bl-mid { min-width: 0; }
-    .bl-mid .bl-title {
-      font-size: 0.875rem; color: var(--text);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .bl-mid .bl-meta {
-      display: flex; gap: 0.6rem; align-items: center;
-      margin-top: 0.15rem; flex-wrap: wrap;
-    }
-    .bl-tag {
-      font-size: 0.65rem; font-weight: 500;
-      padding: 0.1rem 0.4rem; border-radius: 3px;
-      background: rgba(167,139,250,0.1); color: var(--purple);
-    }
-    .bl-actions { display: flex; gap: 0.4rem; align-items: center; }
-    .bl-link {
-      color: var(--accent); text-decoration: none;
-      font-size: 0.8rem; display: inline-flex;
-      align-items: center; gap: 0.2rem;
-      padding: 0.2rem 0.45rem; border-radius: 4px;
-    }
-    .bl-link:hover { background: var(--accent-dim); }
-    .bl-link svg { width: 12px; height: 12px; }
-    .bl-chevron {
-      width: 18px; height: 18px;
-      color: var(--text-dim);
-      transition: transform 0.2s;
-      flex-shrink: 0;
-    }
-    .bl-row.open .bl-chevron { transform: rotate(180deg); color: var(--accent); }
+/* ── DETAIL PANEL ── */
+.bl-detail{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.bl-row.open .bl-detail{max-height:800px}
+.bl-detail-inner{padding:0 1.15rem 1.15rem;border-top:1px solid rgba(44,74,62,.08)}
 
-    /* Status */
-    .st {
-      display: inline-flex; align-items: center; gap: 0.3rem;
-      font-size: 0.68rem; font-weight: 500;
-      padding: 0.1rem 0.45rem; border-radius: 3px;
-    }
-    .st .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-    .st-approved { background: rgba(52,211,153,0.1); color: var(--green); }
-    .st-pending  { background: rgba(251,191,36,0.1); color: var(--yellow); }
-    .st-defeated { background: rgba(248,113,113,0.1); color: var(--red); }
+/* ── AI SUMMARY ── */
+.ai-box{margin-top:.85rem;padding:.9rem 1rem;background:var(--sand);border:1px solid rgba(232,201,138,.4);border-radius:8px;position:relative}
+.ai-label{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);margin-bottom:.45rem}
+.ai-label svg{width:13px;height:13px}
+.ai-text{font-size:.86rem;line-height:1.65;color:#555}
+.ai-kp{margin:.6rem 0 0;padding:0;list-style:none}
+.ai-kp li{padding:.22rem 0 .22rem 1rem;position:relative;font-size:.82rem;color:#555;line-height:1.5}
+.ai-kp li::before{content:'';position:absolute;left:0;top:.55rem;width:5px;height:5px;border-radius:50%;background:var(--rust);opacity:.5}
+.ai-note{margin-top:.45rem;font-size:.65rem;color:#aaa;font-style:italic}
 
-    /* ── DETAIL PANEL ── */
-    .bl-detail { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .bl-row.open .bl-detail { max-height: 700px; }
-    .bl-detail-inner {
-      padding: 0.75rem 0 1rem 90px;
-    }
+/* ── VOTE ── */
+.bl-vote{margin-top:.6rem;font-size:.82rem;color:#666}
+.bl-vote .vl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--rust);margin-right:.35rem}
 
-    /* AI Summary */
-    .ai-box {
-      padding: 0.85rem 1rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-bottom: 0.75rem;
-    }
-    .ai-label {
-      display: inline-flex; align-items: center; gap: 0.3rem;
-      font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--purple); margin-bottom: 0.4rem;
-    }
-    .ai-label svg { width: 12px; height: 12px; }
-    .ai-text { font-size: 0.84rem; line-height: 1.6; color: var(--text-secondary); }
-    .ai-text strong { color: var(--text); font-weight: 500; }
-    .ai-kp { margin-top: 0.5rem; padding: 0; list-style: none; }
-    .ai-kp li {
-      padding: 0.2rem 0 0.2rem 1rem;
-      position: relative;
-      font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;
-    }
-    .ai-kp li::before {
-      content: ''; position: absolute;
-      left: 0; top: 0.55rem;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--purple); opacity: 0.5;
-    }
-    .ai-note {
-      margin-top: 0.4rem;
-      font-size: 0.65rem; color: var(--text-dim); font-style: italic;
-    }
+/* ── DETAIL LINKS ── */
+.bl-links{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem}
+.bl-dlink{display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .6rem;background:var(--cream);border:1px solid rgba(44,74,62,.15);border-radius:4px;color:var(--forest);font-size:.75rem;font-weight:700;text-decoration:none;transition:all .15s}
+.bl-dlink:hover{background:var(--forest);color:var(--white);border-color:var(--forest)}
+.bl-dlink svg{width:11px;height:11px}
 
-    /* Vote + Links */
-    .bl-vote {
-      font-size: 0.8rem; color: var(--text-secondary);
-      margin-bottom: 0.5rem;
-    }
-    .bl-vote span.vl {
-      font-size: 0.65rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.03em;
-      color: var(--text-dim); margin-right: 0.3rem;
-    }
-    .bl-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .bl-dlink {
-      display: inline-flex; align-items: center; gap: 0.25rem;
-      padding: 0.3rem 0.6rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--accent); font-size: 0.75rem;
-      text-decoration: none; transition: all 0.15s;
-    }
-    .bl-dlink:hover { border-color: var(--accent); background: var(--accent-dim); }
-    .bl-dlink svg { width: 11px; height: 11px; }
+/* ── HIGHLIGHT ── */
+.hl{background:rgba(232,201,138,.4);border-radius:2px;padding:0 2px}
 
-    /* ── HIGHLIGHT ── */
-    .hl { background: rgba(74,158,255,0.15); border-radius: 2px; padding: 0 2px; }
+/* ── EMPTY ── */
+.empty{text-align:center;padding:3rem 1rem;color:#aaa;font-size:.9rem}
 
-    /* ── NO RESULTS ── */
-    .empty { text-align: center; padding: 3rem 1rem; color: var(--text-dim); font-size: 0.9rem; }
+/* ── FOOTER ── */
+footer{background:var(--charcoal);padding:2.5rem 2rem;text-align:center}
+footer .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+footer .footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--warm)}
+footer .footer-logo span{color:var(--sky)}
+footer p{font-size:.8rem;color:rgba(255,255,255,.35)}
+footer a{color:var(--warm);text-decoration:none}
+footer a:hover{color:var(--sky)}
 
-    /* ── FOOTER ── */
-    .site-footer {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    .site-footer .f-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700; font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
-    .site-footer .f-tag {
-      font-size: 0.8rem; color: var(--text-dim);
-      margin-bottom: 0.5rem;
-    }
-    .site-footer .f-src {
-      font-size: 0.72rem; color: var(--text-dim);
-    }
-    .site-footer .f-src a { color: var(--accent); text-decoration: none; }
-    .site-footer .f-src a:hover { text-decoration: underline; }
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      .site-nav { padding: 1rem; flex-wrap: wrap; gap: 0.5rem; }
-      .site-nav .nav-links { gap: 1rem; flex-wrap: wrap; }
-      .hero { padding: 3.5rem 1rem 2rem; }
-      .hero h1 { font-size: 2.5rem; }
-      .stat-line, .search-section, .filter-row, .list-section, .year-grid, .section-label { padding-left: 1rem; padding-right: 1rem; }
-      .year-grid { grid-template-columns: 1fr; }
-      .bl-header { grid-template-columns: 1fr auto; gap: 0.5rem; }
-      .bl-num { grid-column: 1 / -1; }
-      .bl-detail-inner { padding-left: 0; }
-    }
-  </style>
+@media(max-width:700px){
+  nav{padding:1rem 1.25rem}.nav-links{gap:.8rem}.nav-links a{font-size:.65rem}
+  main{padding:2rem 1.25rem 4rem}
+  .year-grid{grid-template-columns:repeat(2,1fr)}
+  .bl-header{grid-template-columns:1fr auto;gap:.4rem}
+  .bl-num{grid-column:1/-1}
+  .bl-actions{grid-column:1/-1}
+  .bl-detail-inner{padding-left:0}
+}
+</style>
 </head>
 <body>
 
-  <nav class="site-nav">
-    <a href="https://chriswjohnston.ca" class="nav-logo">Chris Johnston</a>
-    <ul class="nav-links">
-      <li><a href="https://chriswjohnston.ca#priorities">Priorities</a></li>
-      <li><a href="https://chriswjohnston.ca#issues">Issues</a></li>
-      <li><a href="https://chriswjohnston.ca#contact">Contact</a></li>
-      <li><a href="https://council.chriswjohnston.ca">Council Archive</a></li>
-      <li><a href="./" class="active">By-Law Archive</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a class="nav-logo" href="https://chriswjohnston.ca">Chris <span>Johnston</span></a>
+  <ul class="nav-links">
+    <li><a href="https://chriswjohnston.ca#priorities">Priorities</a></li>
+    <li><a href="https://chriswjohnston.ca#issues">Issues</a></li>
+    <li><a href="https://chriswjohnston.ca#contact">Contact</a></li>
+    <li><a href="https://council.chriswjohnston.ca">Council Archive</a></li>
+    <li><a href="./" class="active">By-Law Archive</a></li>
+  </ul>
+</nav>
 
-  <section class="hero">
-    <div class="hero-kicker">Nipissing Township</div>
-    <h1>By-Law <em>Archive</em></h1>
-    <p class="hero-sub">Every by-law passed by council — organized by year, searchable, and permanently preserved. AI summaries distill each by-law into plain language.</p>
-  </section>
+<div class="page-hero"><div class="inner">
+  <p class="eyebrow">Nipissing Township</p>
+  <h1>By-Law <em>Archive</em></h1>
+  <p>Every by-law passed by council — organized by year, searchable, and permanently preserved. AI summaries distill each by-law into plain language.</p>
+</div></div>
 
-  <div class="stat-line">
-    <p>
-      <strong id="total-count">0</strong> by-laws preserved across <strong id="year-span">—</strong>.<br>
-      Sourced from
-      <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com</a>
-      and council
-      <a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">agenda packages &amp; minutes</a>.
-      Updated every two weeks.
-    </p>
-    <p class="dimmed">Last updated <span id="last-updated">—</span></p>
+<main>
+  <div class="notice">
+    <strong id="total-count">0</strong> by-laws preserved across <strong id="year-span">—</strong>.
+    Sourced from <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com</a>
+    and council <a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">agenda packages &amp; minutes</a>. Updated every two weeks.
+    <div class="dimmed">Last updated <span id="last-updated">—</span></div>
   </div>
 
-  <section class="search-section">
+  <div class="search-section">
     <div class="search-wrap">
       <svg class="s-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="q" placeholder='Search by-laws… "dogs", "parking", "2024-33"'>
@@ -491,7 +205,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
-  </section>
+  </div>
 
   <div class="filter-row">
     <span class="f-label">Status</span>
@@ -500,25 +214,22 @@
     <button class="f-btn" data-f="pending" onclick="setF('pending')">Pending</button>
     <div class="f-sep"></div>
     <span class="f-label">Topic</span>
-    <div id="cat-btns"></div>
+    <div id="cat-btns" style="display:contents"></div>
   </div>
 
-  <div class="section-label" id="section-label">Select a year</div>
+  <p class="section-label" id="section-label">Select a year</p>
   <div id="home-grid" class="year-grid"></div>
   <div id="list-view" class="list-section" style="display:none"></div>
+</main>
 
-  <footer class="site-footer">
-    <div class="f-name">Chris Johnston</div>
-    <div class="f-tag">Candidate for Nipissing Township Council · Municipal Election October 2026</div>
-    <div class="f-src">
-      By-law archive sourced from
-      <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com</a>
-      — Last updated <span id="f-updated">—</span>
-    </div>
-  </footer>
+<footer><div class="footer-inner">
+  <div class="footer-logo">Chris <span>Johnston</span></div>
+  <p>Candidate for Nipissing Township Council &middot; Municipal Election October 2026</p>
+  <p>By-law archive sourced from <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com</a> &mdash; Last updated <span id="f-updated">—</span></p>
+</div></footer>
 
 <script>
-let D=[], Y=[], cYear=null, cF='all', cCat='all', debounce=null;
+let D=[],Y=[],cYear=null,cF='all',cCat='all',debounce=null;
 
 const ICO=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 const AI=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.5 2a3 3 0 0 0-3 3v1H6a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h.5v4a3 3 0 0 0 6 0v-4h.5a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-.5V5a3 3 0 0 0-3-3z"/><circle cx="8" cy="9.5" r="1" fill="currentColor"/><circle cx="12" cy="9.5" r="1" fill="currentColor"/></svg>`;
@@ -529,14 +240,12 @@ const CATS={
   'Property & Land':['land','zoning','trailer','property','sale of land','unopened road'],
   'Animals & Environment':['dog','animal','beaver','waste','landfill','disposal'],
   'Recreation & Community':['recreation','cemetery','dock','museum'],
-  'Governance':['procedural','accountability','transparency','delegation','code of conduct','social media','notice'],
-  'Public Safety':['fire','emergency'],
-  'Finance':['user fee','tax','budget','financial'],
+  'Governance':['procedural','accountability','transparency','delegation','code of conduct','social media','notice','confirm the proceedings','appointment'],
+  'Public Safety':['fire','emergency','safety zone'],
+  'Finance':['user fee','tax','budget','financial','interim tax','borrowing','auditor','estimates and tax rates','tax ratio'],
 };
 function cats(b){const t=`${b.title} ${b.number}`.toLowerCase();const r=[];for(const[c,kw]of Object.entries(CATS)){if(kw.some(k=>t.includes(k)))r.push(c);}return r.length?r:['Other'];}
-
-function score(b,q){const t=q.toLowerCase().split(/\s+/).filter(Boolean);const ti=b.title.toLowerCase(),n=b.number.toLowerCase(),s=(b.ai_summary||'').toLowerCase(),k=(b.ai_key_points||[]).join(' ').toLowerCase(),c=(b._c||[]).join(' ').toLowerCase(),v=(b.votes||'').toLowerCase();let sc=0;if(n===q.toLowerCase()||n.includes(q.toLowerCase()))sc+=100;if(ti.includes(q.toLowerCase()))sc+=50;for(const tk of t){if(n.includes(tk))sc+=30;if(ti.includes(tk))sc+=20;if(c.includes(tk))sc+=15;if(s.includes(tk))sc+=10;if(k.includes(tk))sc+=8;if(v.includes(tk))sc+=5;if(ti.split(/\s+/).some(w=>w.startsWith(tk)))sc+=12;}return sc;}
-
+function score(b,q){const ql=q.toLowerCase(),tk=ql.split(/\s+/).filter(Boolean),ti=b.title.toLowerCase(),n=b.number.toLowerCase(),su=(b.ai_summary||'').toLowerCase(),kp=(b.ai_key_points||[]).join(' ').toLowerCase(),ca=(b._c||[]).join(' ').toLowerCase(),vo=(b.votes||'').toLowerCase();let s=0;if(n===ql||n.includes(ql))s+=100;if(ti.includes(ql))s+=50;for(const t of tk){if(n.includes(t))s+=30;if(ti.includes(t))s+=20;if(ca.includes(t))s+=15;if(su.includes(t))s+=10;if(kp.includes(t))s+=8;if(vo.includes(t))s+=5;if(ti.split(/\s+/).some(w=>w.startsWith(t)))s+=12;}return s;}
 function hl(text,q){if(!q||!text)return text;const t=q.toLowerCase().split(/\s+/).filter(x=>x.length>1);let r=text;for(const tk of t){r=r.replace(new RegExp(`(${tk.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<span class="hl">$1</span>');}return r;}
 
 async function init(){
@@ -549,9 +258,8 @@ async function init(){
     document.getElementById('total-count').textContent=D.length;
     const ys=new Set(D.map(b=>b.year).filter(Boolean));
     Y=[...ys].sort((a,b)=>b-a);
-    const hasLegacy=D.some(b=>b.year===null);
-    const span=Y.length?`${hasLegacy?'pre-2010':Y[Y.length-1]}–${Y[0]}`:'—';
-    document.getElementById('year-span').textContent=span;
+    const hasLeg=D.some(b=>b.year===null);
+    document.getElementById('year-span').textContent=Y.length?`${hasLeg?'pre-2010':Y[Y.length-1]}–${Y[0]}`:'—';
     buildCats();
     const h=location.hash.replace('#','');
     if(h==='legacy')showYear('legacy');else if(h&&!isNaN(h))showYear(+h);else showHome();
@@ -637,7 +345,7 @@ function card(b,q){
     let kp='';if(b.ai_key_points&&b.ai_key_points.length)kp=`<ul class="ai-kp">${b.ai_key_points.map(p=>`<li>${p}</li>`).join('')}</ul>`;
     ai=`<div class="ai-box"><div class="ai-label">${AI} AI Summary</div><div class="ai-text">${b.ai_summary}</div>${kp}<div class="ai-note">Generated by AI — refer to the official document for legal accuracy.</div></div>`;
   }else{
-    ai=`<div class="ai-box"><div class="ai-label">${AI} AI Summary</div><div class="ai-text" style="color:var(--text-dim)">Summary not yet available. Generated during the automated scrape when the PDF is accessible.</div></div>`;
+    ai=`<div class="ai-box"><div class="ai-label">${AI} AI Summary</div><div class="ai-text" style="color:#aaa">Summary not yet available. Generated during the automated scrape when the PDF is accessible.</div></div>`;
   }
 
   let vote='';if(b.votes)vote=`<div class="bl-vote"><span class="vl">Vote</span> ${b.votes}</div>`;
@@ -653,17 +361,15 @@ function card(b,q){
 }
 
 function setF(f){cF=f;document.querySelectorAll('[data-f]').forEach(b=>{b.classList.toggle('on',b.dataset.f===f);});refresh();}
-function setCat(c){cCat=c;document.querySelectorAll('[data-c]').forEach(b=>{b.classList.remove('on','cat-on');if(b.dataset.c===c)b.classList.add(c==='all'?'cat-on':'cat-on');});refresh();}
+function setCat(c){cCat=c;document.querySelectorAll('[data-c]').forEach(b=>{b.classList.remove('on','cat-on');if(b.dataset.c===c)b.classList.add('cat-on');});refresh();}
 function refresh(){const q=document.getElementById('q').value.trim();if(q||cYear)renderList();else renderCards();}
 
 document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();document.getElementById('q').focus();}});
-
 document.addEventListener('DOMContentLoaded',()=>{
   const qi=document.getElementById('q'),qc=document.getElementById('q-clear');
   qi.addEventListener('input',()=>{const v=qi.value.trim();qc.classList.toggle('show',v.length>0);clearTimeout(debounce);debounce=setTimeout(()=>{if(v)showFiltered();else if(cYear)renderList();else showHome();},150);});
   init();
 });
-
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');if(h==='legacy')showYear('legacy');else if(h&&!isNaN(h))showYear(+h);else showHome();});
 </script>
 </body>
