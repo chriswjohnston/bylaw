@@ -566,7 +566,7 @@
     // --- INIT ---
     async function init() {
       try {
-        const resp = await fetch('./site/bylaws-data.json');
+        const resp = await fetch('./bylaws-data.json');
         const data = await resp.json();
         BYLAWS = data.bylaws || [];
         BYLAWS.forEach(b => { b._categories = categorize(b); });
@@ -576,16 +576,25 @@
         document.getElementById('total-count').textContent = BYLAWS.length;
         document.getElementById('approved-count').textContent = BYLAWS.filter(b => b.status === 'approved').length;
 
-        const yearsSet = new Set(BYLAWS.map(b => b.year));
+        // Normalize years: anything before 2000 or null gets grouped as null (legacy)
+        BYLAWS.forEach(b => {
+          if (b.year && b.year < 2000) b._originalYear = b.year;
+          if (!b.year || b.year < 2000) b.year = null;
+        });
+
+        const yearsSet = new Set(BYLAWS.map(b => b.year).filter(y => y !== null));
         ALL_YEARS = [...yearsSet].sort((a, b) => b - a);
+        const hasLegacy = BYLAWS.some(b => b.year === null);
         if (ALL_YEARS.length > 0) {
-          document.getElementById('year-span').textContent = `${ALL_YEARS[ALL_YEARS.length - 1]}–${ALL_YEARS[0]}`;
+          const earliest = hasLegacy ? 'Pre-2000' : ALL_YEARS[ALL_YEARS.length - 1];
+          document.getElementById('year-span').textContent = `${earliest}–${ALL_YEARS[0]}`;
         }
 
         buildCategoryFilters();
 
         const hash = window.location.hash.replace('#', '');
-        if (hash && !isNaN(hash)) showYear(parseInt(hash));
+        if (hash === 'legacy') showYear('legacy');
+        else if (hash && !isNaN(hash)) showYear(parseInt(hash));
         else showHome();
       } catch (err) {
         console.error('Failed to load:', err);
@@ -647,20 +656,42 @@
         let bylaws = BYLAWS.filter(b => b.year === year);
         if (currentCategory !== 'all') bylaws = bylaws.filter(b => b._categories.includes(currentCategory));
         if (currentFilter !== 'all') bylaws = bylaws.filter(b => b.status === currentFilter);
+        if (bylaws.length === 0) return;
         html += `
           <a class="year-card fade-in" onclick="showYear(${year}); return false;" href="#${year}">
             <div class="year-num">${year}</div>
             <div class="year-count">${bylaws.length} by-law${bylaws.length !== 1 ? 's' : ''}</div>
           </a>`;
       });
+
+      // Legacy by-laws (no valid year)
+      let legacy = BYLAWS.filter(b => b.year === null);
+      if (currentCategory !== 'all') legacy = legacy.filter(b => b._categories.includes(currentCategory));
+      if (currentFilter !== 'all') legacy = legacy.filter(b => b.status === currentFilter);
+      if (legacy.length > 0) {
+        html += `
+          <a class="year-card fade-in" onclick="showYear('legacy'); return false;" href="#legacy">
+            <div class="year-num" style="font-size:1.6rem;">Pre-2010</div>
+            <div class="year-count">${legacy.length} legacy by-law${legacy.length !== 1 ? 's' : ''}</div>
+          </a>`;
+      }
+
       grid.innerHTML = html;
     }
 
     function renderBylawList() {
       const section = document.getElementById('bylaws-section');
       const query = document.getElementById('search-input').value.trim();
+      const isLegacy = currentYear === 'legacy';
 
-      let bylaws = currentYear ? BYLAWS.filter(b => b.year === currentYear) : [...BYLAWS];
+      let bylaws;
+      if (isLegacy) {
+        bylaws = BYLAWS.filter(b => b.year === null);
+      } else if (currentYear) {
+        bylaws = BYLAWS.filter(b => b.year === currentYear);
+      } else {
+        bylaws = [...BYLAWS];
+      }
       if (currentCategory !== 'all') bylaws = bylaws.filter(b => b._categories.includes(currentCategory));
       if (currentFilter !== 'all') bylaws = bylaws.filter(b => b.status === currentFilter);
 
@@ -672,22 +703,33 @@
         if (currentCategory !== 'all') bylaws = bylaws.filter(b => b._categories.includes(currentCategory));
         if (currentFilter !== 'all') bylaws = bylaws.filter(b => b.status === currentFilter);
       } else {
-        bylaws.sort((a, b) => { if (b.year !== a.year) return b.year - a.year; return b.number.localeCompare(a.number); });
+        bylaws.sort((a, b) => {
+          const ya = a.year || 0, yb = b.year || 0;
+          if (yb !== ya) return yb - ya;
+          return b.number.localeCompare(a.number);
+        });
       }
 
+      // Year nav
+      const hasLegacy = BYLAWS.some(b => b.year === null);
       let yearNavHtml = `<a href="#" onclick="showHome(); return false;" class="${!currentYear ? 'active' : ''}">All Years</a>`;
       ALL_YEARS.forEach(y => {
         yearNavHtml += `<a href="#${y}" onclick="showYear(${y}); return false;" class="${currentYear === y ? 'active' : ''}">${y}</a>`;
       });
+      if (hasLegacy) {
+        yearNavHtml += `<a href="#legacy" onclick="showYear('legacy'); return false;" class="${isLegacy ? 'active' : ''}">Pre-2010</a>`;
+      }
 
+      // Title
       let titleHtml = '';
+      const yearLabel = isLegacy ? 'Pre-2010 Legacy' : currentYear;
       if (currentYear) {
         titleHtml = `
           <a href="#" onclick="showHome(); return false;" class="back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> All Years
           </a>
-          <h2 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:0.25rem;">${currentYear} <em style="color:var(--accent)">By-Laws</em></h2>
-          <div class="result-count"><strong>${bylaws.length}</strong> by-law${bylaws.length !== 1 ? 's' : ''} archived for ${currentYear}</div>`;
+          <h2 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:0.25rem;">${yearLabel} <em style="color:var(--accent)">By-Laws</em></h2>
+          <div class="result-count"><strong>${bylaws.length}</strong> by-law${bylaws.length !== 1 ? 's' : ''} archived${isLegacy ? ' (pre-2010 numbering)' : ' for ' + currentYear}</div>`;
       } else if (query) {
         titleHtml = `
           <a href="#" onclick="clearSearch(); return false;" class="back-link">
@@ -831,7 +873,8 @@
 
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.replace('#', '');
-      if (hash && !isNaN(hash)) showYear(parseInt(hash));
+      if (hash === 'legacy') showYear('legacy');
+      else if (hash && !isNaN(hash)) showYear(parseInt(hash));
       else showHome();
     });
   </script>

@@ -205,11 +205,23 @@ def scrape_bylaws_page():
             title = title[2:]
 
         # Determine year
-        year_match = re.match(r'(\d{4})', number)
-        if year_match:
-            year = int(year_match.group(1))
+        year = None
+        # For YYYY-NN format, the first 4 digits are the year
+        year_dash_match = re.match(r'(\d{4})[\-–]\d', number)
+        if year_dash_match:
+            year = int(year_dash_match.group(1))
         else:
-            year = None
+            # Legacy by-laws (e.g. "1088", "1227") — try to get year from URL
+            url_year_match = re.search(r'/(\d{4})[-–]', href) or re.search(r'/(\d{4})/', href)
+            if url_year_match:
+                candidate = int(url_year_match.group(1))
+                if 1990 <= candidate <= 2030:
+                    year = candidate
+            # If still no year, check the link text for a date
+            if not year:
+                date_in_text = re.search(r'((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+(\d{4}))', text)
+                if date_in_text:
+                    year = int(date_in_text.group(2))
 
         # Determine URL type
         pdf_url = None
