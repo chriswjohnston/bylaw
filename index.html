@@ -566,7 +566,7 @@
     // --- INIT ---
     async function init() {
       try {
-        const resp = await fetch('./bylaws-data.json');
+        const resp = await fetch('./site/bylaws-data.json');
         const data = await resp.json();
         BYLAWS = data.bylaws || [];
         BYLAWS.forEach(b => { b._categories = categorize(b); });
