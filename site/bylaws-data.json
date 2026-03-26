@@ -14,7 +14,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law allows off-road vehicles and ATVs with three or more wheels to legally drive on Township roads. It makes these vehicles street-legal within Nipissing Township's road system.",
+      "ai_key_points": [
+        "Off-road vehicles and ATVs with 3+ wheels can drive on Township roads",
+        "Vehicles must have low-pressure balloon-type tires (maximum 70 kpa/10 psi)",
+        "ATVs must have handlebars, straddled seat, and carry driver only",
+        "Must follow provincial Highway Traffic Act regulations",
+        "Highway Traffic Act penalties apply for violations"
+      ]
     },
     {
       "number": "1227",
@@ -28,7 +36,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes the rules and procedures the Township must follow when selling municipal land. It ensures transparency through public notice requirements and fair market pricing through appraisals.",
+      "ai_key_points": [
+        "Council must declare land 'surplus' before it can be sold",
+        "Public notice must be given before any land sale",
+        "Professional appraisals are required to determine fair market value",
+        "Council can choose sale method: public tender, real estate agent, or direct sale",
+        "Some small parcels and transfers to other governments don't need appraisals"
+      ]
     },
     {
       "number": "2011-42",
@@ -42,7 +58,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates rules for using trailers as temporary homes while building a permanent residence. It establishes a policy with specific requirements and application procedures for residents who need temporary housing during construction.",
+      "ai_key_points": [
+        "Allows trailers as temporary residences only during home construction",
+        "Requires following Township policy with specific requirements",
+        "Must use official application process with sample letter provided",
+        "Policy details are in attached Schedule A document"
+      ]
     },
     {
       "number": "2011-43",
@@ -56,7 +79,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law requires all properties with entrances or buildings to display official civic address numbers on standardized signs to help emergency services locate addresses. The Township installs the initial sign but property owners are responsible for maintenance costs.",
+      "ai_key_points": [
+        "Every property with an entrance or building must display a Township-assigned civic address number",
+        "Signs must be clearly visible from the road using specific materials and design",
+        "Township installs the initial sign and adds cost to building/entrance permits",
+        "Property owners must maintain signs in good repair or pay replacement costs",
+        "Unpaid sign costs are added to property tax bills after 30 days"
+      ]
     },
     {
       "number": "2013-39",
@@ -70,7 +101,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets a default speed limit of 60 km/h on all municipal roads in Nipissing Township that don't already have posted speed limit signs. It helps ensure consistent speed limits across the township.",
+      "ai_key_points": [
+        "Speed limit is 60 km/h on all unposted township roads",
+        "Only applies to roads under township jurisdiction, not provincial highways",
+        "Standard Highway Traffic Act penalties apply for speeding violations",
+        "Council held public meeting for input before passing the by-law",
+        "Passed in December 2013 following public consultation"
+      ]
     },
     {
       "number": "2015-23",
@@ -84,7 +123,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law allows off-road vehicles (like ATVs) to be driven on Township of Nipissing municipal roads, replacing the previous rules. It sets speed limits and equipment requirements while prohibiting use in parks, cemeteries, and community centers.",
+      "ai_key_points": [
+        "Off-road vehicles are now permitted on municipal roads within the township",
+        "Speed limit is 20 km/h on roads with 50 km/h limit, 50 km/h on faster roads",
+        "Vehicles must meet provincial equipment requirements under Ontario regulations",
+        "Prohibited in parks, beaches, cemeteries, and community centers except parking areas",
+        "Violating this by-law is an offence with legal penalties"
+      ]
     },
     {
       "number": "2019-41",
@@ -98,7 +145,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes minimum standards for maintaining Township roads based on traffic levels and speed limits. It classifies roads into different categories and sets requirements for snow plowing, repairs, and emergency weather responses.",
+      "ai_key_points": [
+        "Roads are classified into different maintenance categories based on daily traffic counts and speed limits",
+        "Township must maintain roads to minimum provincial standards but makes no promise to exceed them",
+        "During severe weather events, the Township will declare alerts and adjust road maintenance services",
+        "Road classifications and maintenance standards are reviewed every five years based on traffic counts",
+        "Private roads require upgrade to Township standards before being accepted into the municipal system"
+      ]
     },
     {
       "number": "2020-05",
@@ -112,7 +167,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law updates weight limits for vehicles crossing the Hummel Bridge on Hemlock Road between Nipissing Township and Powassan. It sets different maximum weights based on vehicle type to protect the bridge structure.",
+      "ai_key_points": [
+        "Applies to Hummel Bridge (Bridge No. 6) on Hemlock Road at the Powassan boundary",
+        "L1 vehicles cannot exceed 33 tonnes gross weight",
+        "L2 vehicles cannot exceed 23 tonnes gross weight",
+        "L3 vehicles cannot exceed 17 tonnes gross weight",
+        "Updates previous weight limits from by-law 2019-42"
+      ]
     },
     {
       "number": "2020-08",
@@ -126,7 +189,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes an agreement with the Municipality of Powassan regarding the maintenance and responsibilities for boundary roads that are shared between the two municipalities.",
+      "ai_key_points": [
+        "Formalizes shared responsibility for roads along the municipal boundary with Powassan",
+        "Establishes maintenance duties and cost-sharing arrangements between municipalities",
+        "Defines which municipality handles specific sections of boundary roads",
+        "Sets framework for ongoing cooperation on shared infrastructure"
+      ]
     },
     {
       "number": "2020-17",
@@ -140,7 +210,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law regulates how residents can use the Township's three public boat docks (Wades Landing, Chapman's Landing, and McQuaby Lake Launch). It sets time limits and rules to ensure everyone has fair access to these public facilities.",
+      "ai_key_points": [
+        "Boats can only be parked at docks for up to 4 hours continuously",
+        "No overnight parking allowed between 11:00 p.m. and 7:00 a.m.",
+        "Materials can only be stored on docks for 1 hour maximum",
+        "Commercial boats and barges need special permission from Township office",
+        "Violations result in $150 fines ($400 for unauthorized commercial use)"
+      ]
     },
     {
       "number": "2020-27",
@@ -154,7 +232,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules and regulations for the Township of Nipissing's landfill operations. It sets out what materials can be disposed of, operating procedures, and requirements for residents and businesses using the landfill facility.",
+      "ai_key_points": [
+        "Specifies what waste materials are accepted and prohibited at the landfill",
+        "Sets operating hours and procedures for landfill use",
+        "Establishes fees and charges for different types of waste disposal",
+        "Outlines safety requirements and responsibilities for landfill users",
+        "Provides penalties for violations of landfill regulations"
+      ]
     },
     {
       "number": "2020-52",
@@ -168,7 +254,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law changes how the Township assigns snow plows to specific routes during winter. It removes the requirement to assign specific truck numbers to particular roads, giving the Township more flexibility to respond to winter weather conditions.",
+      "ai_key_points": [
+        "Amends the Township's winter road maintenance standards from 2019",
+        "Removes requirement to assign specific plow trucks to designated routes",
+        "Allows more flexible snow plow deployment during winter storms",
+        "Helps Township respond more efficiently to winter weather events",
+        "Takes effect immediately upon passing in December 2020"
+      ]
     },
     {
       "number": "2021-38",
@@ -182,7 +276,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates a Recreation Committee to manage the Township's recreational programs and Community Centre at 2381 Highway 654. The committee oversees facility operations, sets user fees, and administers fitness and recreation services for residents.",
+      "ai_key_points": [
+        "Committee includes 2 council members and 4-8 township residents, appointed annually",
+        "Manages Community Centre operations including fitness centre and recreational programming",
+        "Sets facility usage fees subject to council approval",
+        "Must submit annual budget to council by February 1st",
+        "Holds minimum 4 meetings per year with elected chairperson and secretary"
+      ]
     },
     {
       "number": "2021-39",
@@ -196,7 +298,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates a Cemetery Committee to manage the township's three cemeteries. The committee will handle day-to-day operations, set rules, and manage budgets for these burial grounds.",
+      "ai_key_points": [
+        "Committee manages Nipissing Union, Commanda, and St. John's Alsace cemeteries",
+        "Five members: two councillors and three township residents",
+        "Committee sets cemetery rules and submits annual budget to Council",
+        "Must hold at least one meeting per year",
+        "Committee members appointed after each municipal election"
+      ]
     },
     {
       "number": "2021-48",
@@ -210,7 +320,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates a Community Safety Zone around South Shore Education Centre with reduced speed limits and doubled fines for speeding violations to protect students and residents.",
+      "ai_key_points": [
+        "Speed limit is 40 km/h on Beatty Street, Front Street, Blake Street, and Powerplant Road",
+        "Zone covers area around elementary school, park, and outdoor ice rink",
+        "Speeding fines are doubled in this designated safety zone",
+        "OPP will enforce the speed limits and safety rules",
+        "Zone operates 24/7 year-round for enhanced safety"
+      ]
     },
     {
       "number": "2021-50",
@@ -224,7 +342,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets parking rules for all public roads and municipal property in Nipissing Township. It establishes where you can and cannot park, creates emergency zones, and sets penalties for violations.",
+      "ai_key_points": [
+        "No parking within 3 metres of driveways or 9 metres of intersections",
+        "48-hour maximum parking limit on any roadway",
+        "Emergency Loading Zones at beaches and boat launches — vehicles will be towed",
+        "Winter parking restrictions at turnaround areas from October 31 to May 1",
+        "Fines range from $30-75, with vehicles subject to towing at owner's expense"
+      ]
     },
     {
       "number": "2021-57",
@@ -238,7 +364,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules for managing unopened road allowances in Nipissing Township. It likely addresses how these undeveloped road spaces can be used, maintained, or potentially closed by the municipality.",
+      "ai_key_points": [
+        "Regulates the use and management of unopened road allowances throughout the township",
+        "Establishes procedures for potentially closing or disposing of unused road allowances",
+        "May restrict public access or activities on these undeveloped road spaces",
+        "Provides framework for municipal decision-making regarding future road development"
+      ]
     },
     {
       "number": "2022-23",
@@ -252,7 +385,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law updates the rules about where trailers can be parked or stored on properties in Nipissing Township. It changes the existing zoning regulations to clarify trailer placement requirements.",
+      "ai_key_points": [
+        "Modifies existing rules for trailer parking and storage on residential properties",
+        "Updates Section 3.44 of the main zoning by-law from 2020",
+        "Changes may affect where residents can keep RVs, travel trailers, or utility trailers",
+        "New regulations help clarify what was previously allowed under zoning rules"
+      ]
     },
     {
       "number": "2022-29",
@@ -266,7 +406,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law regulates how property owners can install driveways that connect to municipal roads, including required culverts for drainage. You must get Township approval before installing any entrance to your property from a municipal road.",
+      "ai_key_points": [
+        "Must get approval from Township Operations Superintendent before installing any driveway entrance",
+        "Required culverts must be new, minimum 400mm diameter, 9 metres long",
+        "Property owner pays for and installs culvert according to Township specifications",
+        "Only one entrance allowed per residential dwelling",
+        "Work must start within 6 months of permit approval"
+      ]
     },
     {
       "number": "2022-34",
@@ -280,7 +428,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes the rules and procedures for how Township of Nipissing council meetings are conducted, including meeting schedules, voting procedures, and council member conduct.",
+      "ai_key_points": [
+        "Sets rules for council meetings including quorum requirements and voting procedures",
+        "Establishes when meetings are held and how they're called",
+        "Defines roles of Mayor, Deputy Mayor, and council members during meetings",
+        "Requires council members to follow conflict of interest rules",
+        "Creates procedures for public participation and presentations to council"
+      ]
     },
     {
       "number": "2022-38",
@@ -294,7 +450,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules and regulations for cemetery operations and use within the Township of Nipissing. It sets standards for burials, grave maintenance, and cemetery administration to ensure respectful and orderly management of municipal cemeteries.",
+      "ai_key_points": [
+        "Establishes rules for burial procedures and grave site preparation",
+        "Sets requirements for headstones, monuments and grave decorations",
+        "Defines cemetery operating hours and visitor conduct rules",
+        "Outlines maintenance responsibilities for grave sites and cemetery grounds",
+        "Specifies fees and permits required for cemetery services"
+      ]
     },
     {
       "number": "2022-42",
@@ -308,7 +472,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets rules for dog ownership in Nipissing Township, including licensing requirements, leash laws, and owner responsibilities. It helps ensure public safety and responsible pet ownership in the community.",
+      "ai_key_points": [
+        "All dogs must be licensed with the Township",
+        "Dogs must be leashed in public areas and under owner control",
+        "Owners must clean up after their dogs in public spaces",
+        "Penalties and fines apply for violations of dog ownership rules"
+      ]
     },
     {
       "number": "2022-53",
@@ -322,7 +493,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes an agreement with the Municipality of Callander regarding a shared boundary road. It sets out responsibilities for maintenance, costs, and management of the road that serves both communities.",
+      "ai_key_points": [
+        "Creates formal agreement between Nipissing Township and Callander for boundary road management",
+        "Establishes shared responsibilities for road maintenance and repair costs",
+        "Defines which municipality handles specific aspects of road upkeep",
+        "Ensures coordinated approach to road services affecting both communities"
+      ]
     },
     {
       "number": "2023-01",
@@ -336,7 +514,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules for how the Township of Nipissing must operate transparently and be accountable to residents. It ensures public access to information and responsible government decision-making.",
+      "ai_key_points": [
+        "Requires public meetings and proper notice for council decisions",
+        "Establishes procedures for residents to access municipal records and information",
+        "Sets standards for financial reporting and budget transparency",
+        "Creates accountability measures for municipal staff and elected officials"
+      ]
     },
     {
       "number": "2023-02",
@@ -350,7 +535,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law allows Township Council to delegate certain decision-making powers and responsibilities to municipal staff, committees, or other officials. This helps streamline operations and allows routine matters to be handled more efficiently without requiring full Council approval.",
+      "ai_key_points": [
+        "Council can delegate specific powers to staff and committees for routine decisions",
+        "Helps speed up municipal processes without requiring full Council meetings",
+        "Staff can make certain administrative decisions on behalf of Council",
+        "Council retains oversight and can revoke delegated authorities if needed"
+      ]
     },
     {
       "number": "2023-03",
@@ -364,7 +556,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules and procedures for how the Township of Nipissing can sell municipal land. It protects public interests by ensuring land sales follow proper processes and requirements.",
+      "ai_key_points": [
+        "Sets procedures Township must follow when selling municipal property",
+        "Ensures transparency and fairness in land sale processes",
+        "Protects public interest in disposal of municipal assets",
+        "Establishes requirements for notices and public consultation",
+        "Creates framework for evaluating and approving land sales"
+      ]
     },
     {
       "number": "2023-08",
@@ -378,7 +578,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law allows the Township to manage beaver dams that pose flood risks to roads and municipal property. Property owners must remove beaver dams that create flooding hazards or face enforcement action and costs.",
+      "ai_key_points": [
+        "Property owners cannot allow beaver dams that create flood risks or threaten public safety",
+        "Township can order immediate removal of beaver dams threatening municipal roads or infrastructure",
+        "If owners don't comply, Township can remove dams and charge costs to property taxes",
+        "Township officials can inspect properties and use drones to check for beaver dam issues",
+        "Violations can result in fines under the Provincial Offences Act"
+      ]
     },
     {
       "number": "2023-09",
@@ -392,7 +600,13 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes a Recreation Committee for the Township of Nipissing to oversee and make recommendations about recreational programs, facilities, and services in the community.",
+      "ai_key_points": [
+        "Creates an official Recreation Committee to advise Township Council on recreational matters",
+        "Committee will help plan and oversee local recreation programs and facilities",
+        "Provides formal structure for community input on recreational services and activities"
+      ]
     },
     {
       "number": "2023-10",
@@ -406,7 +620,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes or updates the rules for the Township's Museum Board, including how it operates, who can serve on it, and what responsibilities it has for managing the local museum.",
+      "ai_key_points": [
+        "Establishes the structure and governance of the Township's Museum Board",
+        "Sets out qualifications and appointment process for board members",
+        "Defines the board's responsibilities for museum operations and programming",
+        "Outlines meeting procedures and decision-making processes for the board"
+      ]
     },
     {
       "number": "2023-11",
@@ -420,7 +641,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes a Cemetery Committee to oversee and manage cemetery operations in the Township of Nipissing. The committee will make decisions about cemetery policies, maintenance, and administration to ensure proper care of burial grounds.",
+      "ai_key_points": [
+        "Creates a Cemetery Committee to manage township cemetery operations and policies",
+        "Committee oversees maintenance and care of municipal burial grounds",
+        "Establishes governance structure for cemetery-related decisions and administration",
+        "Ensures proper management of cemetery services for residents"
+      ]
     },
     {
       "number": "2023-15",
@@ -434,7 +662,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law officially establishes and continues the Township of Nipissing Fire Department, defining its structure, services, and operations. It outlines how the fire department will provide fire protection, emergency response, and fire prevention services to residents.",
+      "ai_key_points": [
+        "Continues the Township of Nipissing Fire Department with a Fire Chief as head",
+        "Fire department provides fire suppression, rescue, emergency response, and fire prevention services",
+        "Property owners may be charged costs for special fire/emergency response services and equipment",
+        "Fire Chief enforces fire safety laws and conducts fire prevention and public education",
+        "Department includes volunteer firefighters with specific training and promotion requirements"
+      ]
     },
     {
       "number": "2023-21",
@@ -448,7 +684,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules for how Township employees and officials use social media when representing the municipality. It protects the Township's reputation and ensures professional online conduct.",
+      "ai_key_points": [
+        "Applies to all Township employees and elected officials using social media",
+        "Sets guidelines for professional conduct when posting about Township business",
+        "Protects confidential information from being shared online",
+        "Establishes consequences for inappropriate social media use",
+        "Helps maintain public trust in municipal government"
+      ]
     },
     {
       "number": "2023-28",
@@ -462,7 +706,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes rules for how Township council members and local board members must behave in their official roles. It ensures elected officials act ethically and professionally when serving residents.",
+      "ai_key_points": [
+        "Sets ethical standards and professional conduct rules for council members and board appointees",
+        "Requires officials to act in the public interest and avoid conflicts of interest",
+        "Establishes complaint procedures for residents who believe officials violated the code",
+        "May include penalties like reprimands or suspension of pay for code violations"
+      ]
     },
     {
       "number": "2023-30",
@@ -476,7 +727,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law requires residents to get a license to keep trailers on their property for more than 21 days per year. It regulates where trailers can be placed and ensures proper sewage management.",
+      "ai_key_points": [
+        "Must get license if trailer stays on property more than 21 consecutive days yearly",
+        "Trailers only for recreational use — no permanent living allowed December 1 to April 30",
+        "Only one trailer per property, must follow setback rules from zoning by-law",
+        "Need proper sewage system connection or approved outhouse and greywater pit",
+        "Two license types: annual (full year) or short-term (1-3 months between May-November)"
+      ]
     },
     {
       "number": "2024-07",
@@ -490,7 +749,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes how the Township of Nipissing will notify residents about municipal matters, meetings, and decisions as required by provincial law. It ensures residents receive proper notice about issues that affect them.",
+      "ai_key_points": [
+        "Sets rules for how the township must inform residents about municipal business",
+        "Ensures compliance with Provincial Municipal Act notification requirements",
+        "Establishes standard procedures for public notices and announcements",
+        "Helps residents stay informed about local government decisions and meetings"
+      ]
     },
     {
       "number": "2024-33",
@@ -504,7 +770,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes the fees residents must pay for various municipal services and permits in the Township of Nipissing. It sets standardized rates for things like building permits, recreation programs, and other township services.",
+      "ai_key_points": [
+        "Sets official fees for municipal services like permits and programs",
+        "Establishes standardized rates across the township",
+        "Applies to building permits, recreation services, and administrative functions",
+        "Replaces previous fee schedules with updated 2024 rates"
+      ]
     }
   ]
 }
