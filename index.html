@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>By-Law Archive – Nipissing Township</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0f1117;
+      --bg-card: #181a22;
+      --bg-card-hover: #1e2130;
+      --bg-summary: #1a1d28;
+      --text: #e4e4e7;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --accent: #60a5fa;
+      --accent-hover: #93bbfd;
+      --accent-glow: rgba(96, 165, 250, 0.08);
+      --border: #2a2d3a;
+      --green: #4ade80;
+      --yellow: #fbbf24;
+      --red: #f87171;
+      --purple: #a78bfa;
+    }
+
+    body {
+      font-family: 'Source Sans 3', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    nav .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--text); }
+    nav .nav-links a.active { color: var(--accent); }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+    }
+    .hero .kicker {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .stats {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 2rem;
+    }
+    .stats-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .stat-pill strong { color: var(--text); font-weight: 600; }
+    .source-note { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; }
+    .source-note a { color: var(--accent); text-decoration: none; }
+    .source-note a:hover { text-decoration: underline; }
+
+    /* === SEARCH === */
+    .search-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem 0.75rem;
+    }
+    .search-container { position: relative; max-width: 600px; }
+    .search-icon {
+      position: absolute; left: 14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+    .search-container:focus-within .search-icon { color: var(--accent); }
+    .search-input {
+      width: 100%;
+      padding: 0.8rem 2.5rem 0.8rem 2.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.25s;
+    }
+    .search-input::placeholder { color: var(--text-dim); }
+    .search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+    .search-clear {
+      position: absolute; right: 12px; top: 50%;
+      transform: translateY(-50%);
+      background: none; border: none;
+      color: var(--text-dim); cursor: pointer;
+      padding: 4px; border-radius: 4px;
+      display: none; transition: color 0.2s;
+    }
+    .search-clear:hover { color: var(--text); }
+    .search-clear.visible { display: block; }
+    .search-hint {
+      font-size: 0.75rem; color: var(--text-dim);
+      margin-top: 0.5rem; padding-left: 0.25rem;
+    }
+    .search-hint kbd {
+      display: inline-block; padding: 1px 5px;
+      font-size: 0.7rem; font-family: inherit;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 4px; color: var(--text-muted);
+    }
+
+    /* === FILTERS === */
+    .filter-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 2rem 2rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-group { display: flex; gap: 0.35rem; align-items: center; }
+    .filter-group-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--text-dim); margin-right: 0.35rem;
+    }
+    .filter-divider { width: 1px; height: 24px; background: var(--border); margin: 0 0.5rem; }
+    .filter-btn {
+      padding: 0.4rem 0.85rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+    .category-btn.active { background: var(--purple); border-color: var(--purple); color: #fff; }
+    .category-btn:hover { border-color: var(--purple); color: var(--purple); }
+
+    /* === YEAR CARDS === */
+    .year-grid {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .year-grid .section-label {
+      grid-column: 1 / -1;
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-dim);
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.25rem;
+    }
+    .year-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 2rem;
+      text-decoration: none; color: var(--text);
+      display: flex; flex-direction: column; gap: 0.5rem;
+      transition: all 0.25s; cursor: pointer;
+    }
+    .year-card:hover { background: var(--bg-card-hover); border-color: var(--accent); transform: translateY(-2px); }
+    .year-card .year-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; }
+    .year-card .year-count { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* === BY-LAW LIST === */
+    .bylaws-section { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+    .year-nav { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .year-nav a {
+      padding: 0.45rem 1rem; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text-muted); font-size: 0.85rem;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .year-nav a:hover { border-color: var(--accent); color: var(--accent); }
+    .year-nav a.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+
+    /* === BY-LAW CARD === */
+    .bylaw-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .bylaw-card:hover { border-color: #3a3d4a; }
+    .bylaw-card-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .bylaw-card-header:hover { background: var(--bg-card-hover); }
+    .bylaw-num {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1rem;
+      white-space: nowrap; min-width: 80px;
+    }
+    .bylaw-info { min-width: 0; }
+    .bylaw-info .bylaw-title-text {
+      font-size: 0.92rem; color: var(--text);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .bylaw-info .bylaw-meta {
+      font-size: 0.78rem; color: var(--text-dim);
+      margin-top: 0.15rem;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+    }
+    .cat-tag {
+      display: inline-flex; align-items: center; gap: 0.25rem;
+      background: rgba(167, 139, 250, 0.1); color: var(--purple);
+      padding: 0.1rem 0.5rem; border-radius: 999px;
+      font-size: 0.7rem; font-weight: 500;
+    }
+    .bylaw-actions { display: flex; gap: 0.5rem; align-items: center; }
+    .bylaw-link {
+      color: var(--accent); text-decoration: none;
+      font-size: 0.8rem; display: inline-flex;
+      align-items: center; gap: 0.25rem;
+      padding: 0.3rem 0.6rem; border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .bylaw-link:hover { background: var(--accent-glow); }
+    .bylaw-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .expand-arrow {
+      width: 20px; height: 20px;
+      color: var(--text-dim);
+      transition: transform 0.25s ease, color 0.2s;
+      flex-shrink: 0;
+    }
+    .bylaw-card.expanded .expand-arrow { transform: rotate(180deg); color: var(--accent); }
+
+    /* STATUS */
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.72rem; font-weight: 500;
+      padding: 0.15rem 0.55rem; border-radius: 999px; white-space: nowrap;
+    }
+    .status-badge.approved { background: rgba(74, 222, 128, 0.12); color: var(--green); }
+    .status-badge.pending  { background: rgba(251, 191, 36, 0.12); color: var(--yellow); }
+    .status-badge.defeated { background: rgba(248, 113, 113, 0.12); color: var(--red); }
+    .status-badge .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+    /* === EXPANDED PANEL === */
+    .bylaw-detail { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .bylaw-card.expanded .bylaw-detail { max-height: 800px; }
+    .bylaw-detail-inner { padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+
+    /* AI SUMMARY */
+    .ai-summary {
+      margin-top: 1rem; padding: 1rem 1.15rem;
+      background: var(--bg-summary);
+      border: 1px solid var(--border);
+      border-radius: 10px; position: relative;
+    }
+    .ai-summary-label {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--purple); margin-bottom: 0.6rem;
+    }
+    .ai-summary-label svg { width: 14px; height: 14px; }
+    .ai-summary-text {
+      font-size: 0.88rem; line-height: 1.65; color: var(--text-muted);
+    }
+    .ai-summary-text strong { color: var(--text); font-weight: 600; }
+    .key-points { margin-top: 0.75rem; padding: 0; list-style: none; }
+    .key-points li {
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+      font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .key-points li::before {
+      content: ''; position: absolute;
+      left: 0; top: 0.65rem;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--purple); opacity: 0.6;
+    }
+    .ai-disclaimer {
+      margin-top: 0.6rem;
+      font-size: 0.68rem; color: var(--text-dim); font-style: italic;
+    }
+
+    .vote-detail {
+      margin-top: 0.75rem;
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .vote-item { font-size: 0.82rem; color: var(--text-muted); }
+    .vote-item .vote-label {
+      font-size: 0.7rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--text-dim); margin-bottom: 0.15rem;
+    }
+
+    .detail-links {
+      margin-top: 0.75rem;
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+    }
+    .detail-link {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.4rem 0.75rem; background: var(--bg);
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--accent); font-size: 0.8rem;
+      text-decoration: none; transition: all 0.15s;
+    }
+    .detail-link:hover { border-color: var(--accent); background: var(--accent-glow); }
+    .detail-link svg { width: 13px; height: 13px; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.85rem; margin-bottom: 1rem; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .result-count { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1rem; }
+    .result-count strong { color: var(--text-muted); }
+    .highlight { background: rgba(96, 165, 250, 0.18); color: var(--text); border-radius: 2px; padding: 0 2px; }
+
+    footer {
+      max-width: 1200px; margin: 0 auto; padding: 2rem;
+      border-top: 1px solid var(--border); text-align: center;
+    }
+    footer .footer-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+    footer .footer-tagline { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 0.75rem; }
+    footer .footer-source { font-size: 0.75rem; color: var(--text-dim); }
+    footer .footer-source a { color: var(--accent); text-decoration: none; }
+    footer .footer-source a:hover { text-decoration: underline; }
+
+    .no-results { text-align: center; padding: 3rem 1rem; color: var(--text-dim); font-size: 0.95rem; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+      nav .nav-links { gap: 0.75rem; flex-wrap: wrap; }
+      .hero { padding: 3rem 1rem 2rem; }
+      .stats, .search-section, .filter-bar, .bylaws-section, .year-grid { padding-left: 1rem; padding-right: 1rem; }
+      .year-grid { grid-template-columns: 1fr; }
+      .bylaw-card-header { grid-template-columns: 1fr auto; gap: 0.5rem; }
+      .bylaw-num { grid-column: 1 / -1; }
+      .bylaw-actions { grid-column: 1 / -1; }
+      .search-hint { display: none; }
+    }
+
+    .fade-in { opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .fade-in:nth-child(1) { animation-delay: 0s; }
+    .fade-in:nth-child(2) { animation-delay: 0.07s; }
+    .fade-in:nth-child(3) { animation-delay: 0.14s; }
+    .fade-in:nth-child(4) { animation-delay: 0.21s; }
+    .fade-in:nth-child(5) { animation-delay: 0.28s; }
+    .fade-in:nth-child(6) { animation-delay: 0.35s; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://chriswjohnston.ca" class="logo">Chris Johnston</a>
+    <ul class="nav-links">
+      <li><a href="https://chriswjohnston.ca#priorities">Priorities</a></li>
+      <li><a href="https://chriswjohnston.ca#issues">Issues</a></li>
+      <li><a href="https://chriswjohnston.ca#contact">Contact</a></li>
+      <li><a href="https://council.chriswjohnston.ca">Council Archive</a></li>
+      <li><a href="./" class="active">By-Law Archive</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="kicker">Nipissing Township</div>
+    <h1>By-Law <em>Archive</em></h1>
+    <p class="subtitle">Every by-law passed by Nipissing Township Council — organized, searchable, and preserved. AI-powered summaries help you understand each by-law at a glance.</p>
+  </section>
+
+  <section class="stats">
+    <div class="stats-row">
+      <div class="stat-pill"><strong id="total-count">0</strong> by-laws archived</div>
+      <div class="stat-pill"><strong id="year-span">—</strong></div>
+      <div class="stat-pill"><strong id="approved-count">0</strong> approved</div>
+    </div>
+    <p class="source-note">
+      Sourced from <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com/by-laws</a>
+      and council <a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">agenda packages &amp; minutes</a>.
+      Automatically updated every two weeks.<br>
+      — Last updated <span id="last-updated">—</span>
+    </p>
+  </section>
+
+  <section class="search-section">
+    <div class="search-container">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" id="search-input" placeholder='Search by-laws… try "dogs", "roads", "parking", "2024-33"'>
+      <button class="search-clear" id="search-clear" onclick="clearSearch()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="search-hint">Search by number, title, keyword, category, or topic. Press <kbd>/</kbd> to focus.</div>
+  </section>
+
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-group-label">Status</span>
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
+      <button class="filter-btn" data-filter="approved" onclick="setFilter('approved')">Approved</button>
+      <button class="filter-btn" data-filter="pending" onclick="setFilter('pending')">Pending</button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="filter-group" id="category-filters">
+      <span class="filter-group-label">Topic</span>
+    </div>
+  </div>
+
+  <div id="year-grid" class="year-grid"></div>
+  <div id="bylaws-section" class="bylaws-section" style="display: none;"></div>
+
+  <footer>
+    <div class="footer-name">Chris Johnston</div>
+    <div class="footer-tagline">Candidate for Nipissing Township Council · Municipal Election October 2026</div>
+    <div class="footer-source">
+      By-law archive sourced from <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com</a>
+      — Last updated <span id="footer-updated">—</span>
+    </div>
+  </footer>
+
+  <script>
+    let BYLAWS = [];
+    let ALL_YEARS = [];
+    let currentYear = null;
+    let currentFilter = 'all';
+    let currentCategory = 'all';
+    let searchDebounce = null;
+
+    const LINK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+    const AI_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.5 2a3 3 0 0 0-3 3v1H6a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h.5v4a3 3 0 0 0 6 0v-4h.5a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-.5V5a3 3 0 0 0-3-3z"/><circle cx="8" cy="9.5" r="1" fill="currentColor"/><circle cx="12" cy="9.5" r="1" fill="currentColor"/></svg>`;
+    const CHEVRON = `<svg class="expand-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>`;
+
+    // --- CATEGORY SYSTEM ---
+    const CATEGORIES = {
+      'Roads & Transport': ['road', 'highway', 'bridge', 'speed', 'vehicle', 'atv', 'off road', 'off-road', 'transport', 'entrance', 'culvert', 'snow', 'parking', 'weight', 'maintenance standard', 'boundary road', 'community safety zone', '911'],
+      'Property & Land': ['land', 'zoning', 'trailer', 'property', 'sale of land', 'unopened road'],
+      'Animals & Environment': ['dog', 'animal', 'beaver', 'waste', 'landfill', 'disposal'],
+      'Recreation & Community': ['recreation', 'cemetery', 'dock', 'museum', 'community centre', 'outdoor rink', 'fitness'],
+      'Governance': ['procedural', 'accountability', 'transparency', 'delegation', 'code of conduct', 'social media', 'notice', 'election', 'complaint', 'integrity'],
+      'Public Safety': ['fire', 'emergency', 'safety zone', 'bylaw enforcement'],
+      'Finance': ['user fee', 'tax', 'budget', 'financial'],
+    };
+
+    function categorize(bylaw) {
+      const text = `${bylaw.title} ${bylaw.number}`.toLowerCase();
+      const cats = [];
+      for (const [cat, keywords] of Object.entries(CATEGORIES)) {
+        if (keywords.some(kw => text.includes(kw))) cats.push(cat);
+      }
+      return cats.length ? cats : ['Other'];
+    }
+
+    // --- SEARCH SCORING ---
+    function searchScore(bylaw, query) {
+      const q = query.toLowerCase();
+      const tokens = q.split(/\s+/).filter(Boolean);
+      const title = bylaw.title.toLowerCase();
+      const num = bylaw.number.toLowerCase();
+      const summary = (bylaw.ai_summary || '').toLowerCase();
+      const keyPoints = (bylaw.ai_key_points || []).join(' ').toLowerCase();
+      const cats = (bylaw._categories || []).join(' ').toLowerCase();
+      const votes = (bylaw.votes || '').toLowerCase();
+
+      let score = 0;
+      if (num === q || num.includes(q)) score += 100;
+      if (title.includes(q)) score += 50;
+
+      for (const token of tokens) {
+        if (num.includes(token)) score += 30;
+        if (title.includes(token)) score += 20;
+        if (cats.includes(token)) score += 15;
+        if (summary.includes(token)) score += 10;
+        if (keyPoints.includes(token)) score += 8;
+        if (votes.includes(token)) score += 5;
+        const titleWords = title.split(/\s+/);
+        if (titleWords.some(w => w.startsWith(token))) score += 12;
+      }
+      return score;
+    }
+
+    function highlightText(text, query) {
+      if (!query || !text) return text;
+      const tokens = query.toLowerCase().split(/\s+/).filter(t => t.length > 1);
+      let result = text;
+      for (const token of tokens) {
+        const regex = new RegExp(`(${token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        result = result.replace(regex, '<span class="highlight">$1</span>');
+      }
+      return result;
+    }
+
+    // --- INIT ---
+    async function init() {
+      try {
+        const resp = await fetch('./bylaws-data.json');
+        const data = await resp.json();
+        BYLAWS = data.bylaws || [];
+        BYLAWS.forEach(b => { b._categories = categorize(b); });
+
+        document.getElementById('last-updated').textContent = data.last_updated || '—';
+        document.getElementById('footer-updated').textContent = data.last_updated || '—';
+        document.getElementById('total-count').textContent = BYLAWS.length;
+        document.getElementById('approved-count').textContent = BYLAWS.filter(b => b.status === 'approved').length;
+
+        const yearsSet = new Set(BYLAWS.map(b => b.year));
+        ALL_YEARS = [...yearsSet].sort((a, b) => b - a);
+        if (ALL_YEARS.length > 0) {
+          document.getElementById('year-span').textContent = `${ALL_YEARS[ALL_YEARS.length - 1]}–${ALL_YEARS[0]}`;
+        }
+
+        buildCategoryFilters();
+
+        const hash = window.location.hash.replace('#', '');
+        if (hash && !isNaN(hash)) showYear(parseInt(hash));
+        else showHome();
+      } catch (err) {
+        console.error('Failed to load:', err);
+        document.getElementById('year-grid').innerHTML = '<div class="no-results">Failed to load by-law data.</div>';
+      }
+    }
+
+    function buildCategoryFilters() {
+      const container = document.getElementById('category-filters');
+      const catCounts = {};
+      BYLAWS.forEach(b => { b._categories.forEach(c => { catCounts[c] = (catCounts[c] || 0) + 1; }); });
+
+      let html = '<button class="filter-btn category-btn active" data-cat="all" onclick="setCategory(\'all\')">All Topics</button>';
+      const sorted = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
+      for (const [cat, count] of sorted) {
+        if (cat === 'Other' && count < 3) continue;
+        html += `<button class="filter-btn category-btn" data-cat="${cat}" onclick="setCategory('${cat}')">${cat}</button>`;
+      }
+      container.innerHTML += html;
+    }
+
+    // --- NAVIGATION ---
+    function showHome() {
+      currentYear = null;
+      document.getElementById('year-grid').style.display = 'grid';
+      document.getElementById('bylaws-section').style.display = 'none';
+      window.location.hash = '';
+      renderYearCards();
+    }
+    function showYear(year) {
+      currentYear = year;
+      document.getElementById('year-grid').style.display = 'none';
+      document.getElementById('bylaws-section').style.display = 'block';
+      window.location.hash = year;
+      renderBylawList();
+    }
+    function showFilteredList() {
+      document.getElementById('year-grid').style.display = 'none';
+      document.getElementById('bylaws-section').style.display = 'block';
+      currentYear = null;
+      renderBylawList();
+    }
+    function clearSearch() {
+      document.getElementById('search-input').value = '';
+      document.getElementById('search-clear').classList.remove('visible');
+      if (currentYear) renderBylawList(); else showHome();
+    }
+
+    // --- RENDER ---
+    function renderYearCards() {
+      const grid = document.getElementById('year-grid');
+      if (document.getElementById('search-input').value.trim()) { showFilteredList(); return; }
+
+      grid.style.display = 'grid';
+      document.getElementById('bylaws-section').style.display = 'none';
+
+      let html = '<div class="section-label">Select a year</div>';
+      ALL_YEARS.forEach(year => {
+        let bylaws = BYLAWS.filter(b => b.year === year);
+        if (currentCategory !== 'all') bylaws = bylaws.filter(b => b._categories.includes(currentCategory));
+        if (currentFilter !== 'all') bylaws = bylaws.filter(b => b.status === currentFilter);
+        html += `
+          <a class="year-card fade-in" onclick="showYear(${year}); return false;" href="#${year}">
+            <div class="year-num">${year}</div>
+            <div class="year-count">${bylaws.length} by-law${bylaws.length !== 1 ? 's' : ''}</div>
+          </a>`;
+      });
+      grid.innerHTML = html;
+    }
+
+    function renderBylawList() {
+      const section = document.getElementById('bylaws-section');
+      const query = document.getElementById('search-input').value.trim();
+
+      let bylaws = currentYear ? BYLAWS.filter(b => b.year === currentYear) : [...BYLAWS];
+      if (currentCategory !== 'all') bylaws = bylaws.filter(b => b._categories.includes(currentCategory));
+      if (currentFilter !== 'all') bylaws = bylaws.filter(b => b.status === currentFilter);
+
+      if (query) {
+        bylaws = BYLAWS.map(b => ({ bylaw: b, score: searchScore(b, query) }))
+          .filter(r => r.score > 0)
+          .sort((a, b) => b.score - a.score)
+          .map(r => r.bylaw);
+        if (currentCategory !== 'all') bylaws = bylaws.filter(b => b._categories.includes(currentCategory));
+        if (currentFilter !== 'all') bylaws = bylaws.filter(b => b.status === currentFilter);
+      } else {
+        bylaws.sort((a, b) => { if (b.year !== a.year) return b.year - a.year; return b.number.localeCompare(a.number); });
+      }
+
+      let yearNavHtml = `<a href="#" onclick="showHome(); return false;" class="${!currentYear ? 'active' : ''}">All Years</a>`;
+      ALL_YEARS.forEach(y => {
+        yearNavHtml += `<a href="#${y}" onclick="showYear(${y}); return false;" class="${currentYear === y ? 'active' : ''}">${y}</a>`;
+      });
+
+      let titleHtml = '';
+      if (currentYear) {
+        titleHtml = `
+          <a href="#" onclick="showHome(); return false;" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> All Years
+          </a>
+          <h2 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:0.25rem;">${currentYear} <em style="color:var(--accent)">By-Laws</em></h2>
+          <div class="result-count"><strong>${bylaws.length}</strong> by-law${bylaws.length !== 1 ? 's' : ''} archived for ${currentYear}</div>`;
+      } else if (query) {
+        titleHtml = `
+          <a href="#" onclick="clearSearch(); return false;" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Clear search
+          </a>
+          <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:0.25rem;">Search Results</h2>
+          <div class="result-count"><strong>${bylaws.length}</strong> result${bylaws.length !== 1 ? 's' : ''} for "${query}"</div>`;
+      }
+
+      section.innerHTML = `
+        ${titleHtml}
+        <div class="year-nav">${yearNavHtml}</div>
+        ${bylaws.length === 0
+          ? '<div class="no-results">No by-laws found matching your search.</div>'
+          : bylaws.map(b => renderBylawCard(b, query)).join('')}`;
+    }
+
+    function renderBylawCard(b, query) {
+      const statusClass = b.status || 'approved';
+      const statusLabel = statusClass.charAt(0).toUpperCase() + statusClass.slice(1);
+      const titleDisplay = query ? highlightText(b.title, query) : b.title;
+      const numDisplay = query ? highlightText(b.number, query) : b.number;
+      const catTags = b._categories.map(c => `<span class="cat-tag">${c}</span>`).join('');
+
+      let docLinkHtml = '';
+      if (b.pdf_url) {
+        const label = b.pdf_url.endsWith('.docx') ? 'DOCX' : 'PDF';
+        docLinkHtml = `<a class="bylaw-link" href="${b.pdf_url}" target="_blank" onclick="event.stopPropagation()">${label} ${LINK_ICON}</a>`;
+      } else if (b.page_url) {
+        docLinkHtml = `<a class="bylaw-link" href="${b.page_url}" target="_blank" onclick="event.stopPropagation()">View ${LINK_ICON}</a>`;
+      }
+
+      // AI Summary
+      let summaryHtml;
+      if (b.ai_summary) {
+        let kpHtml = '';
+        if (b.ai_key_points && b.ai_key_points.length) {
+          kpHtml = `<ul class="key-points">${b.ai_key_points.map(p => `<li>${p}</li>`).join('')}</ul>`;
+        }
+        summaryHtml = `
+          <div class="ai-summary">
+            <div class="ai-summary-label">${AI_ICON} AI Summary</div>
+            <div class="ai-summary-text">${b.ai_summary}</div>
+            ${kpHtml}
+            <div class="ai-disclaimer">Generated by AI — always refer to the official document for legal accuracy.</div>
+          </div>`;
+      } else {
+        summaryHtml = `
+          <div class="ai-summary">
+            <div class="ai-summary-label">${AI_ICON} AI Summary</div>
+            <div class="ai-summary-text">Summary not yet available. Summaries are generated during the automated scrape when the by-law PDF is accessible.</div>
+            <div class="ai-disclaimer">Summaries will appear here once generated.</div>
+          </div>`;
+      }
+
+      let voteHtml = '';
+      if (b.votes) {
+        voteHtml = `<div class="vote-detail"><div class="vote-item"><div class="vote-label">Vote Record</div>${b.votes}</div></div>`;
+      }
+
+      let detailLinks = '<div class="detail-links">';
+      if (b.pdf_url) {
+        const lbl = b.pdf_url.endsWith('.docx') ? 'Download DOCX' : 'Download PDF';
+        detailLinks += `<a class="detail-link" href="${b.pdf_url}" target="_blank">${LINK_ICON} ${lbl}</a>`;
+      }
+      if (b.page_url) detailLinks += `<a class="detail-link" href="${b.page_url}" target="_blank">${LINK_ICON} Township Page</a>`;
+      if (b.minutes_url) detailLinks += `<a class="detail-link" href="${b.minutes_url}" target="_blank">${LINK_ICON} Meeting Minutes</a>`;
+      if (b.agenda_package_url) detailLinks += `<a class="detail-link" href="${b.agenda_package_url}" target="_blank">${LINK_ICON} Agenda Package</a>`;
+      detailLinks += '</div>';
+
+      return `
+        <div class="bylaw-card">
+          <div class="bylaw-card-header" onclick="toggleCard(this)">
+            <div class="bylaw-num">${numDisplay}</div>
+            <div class="bylaw-info">
+              <div class="bylaw-title-text">${titleDisplay}</div>
+              <div class="bylaw-meta">
+                <span class="status-badge ${statusClass}"><span class="dot"></span>${statusLabel}</span>
+                ${catTags}
+                ${b.meeting_date ? `<span>${b.meeting_date}</span>` : ''}
+              </div>
+            </div>
+            <div class="bylaw-actions">${docLinkHtml}</div>
+            ${CHEVRON}
+          </div>
+          <div class="bylaw-detail">
+            <div class="bylaw-detail-inner">
+              ${summaryHtml}
+              ${voteHtml}
+              ${detailLinks}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function toggleCard(header) { header.closest('.bylaw-card').classList.toggle('expanded'); }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-btn:not(.category-btn)').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+      });
+      refresh();
+    }
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cat === cat);
+      });
+      refresh();
+    }
+    function refresh() {
+      const s = document.getElementById('search-input').value.trim();
+      if (s || currentYear) renderBylawList(); else renderYearCards();
+    }
+
+    // Keyboard shortcut
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        document.getElementById('search-input').focus();
+      }
+      if (e.key === 'Escape') document.getElementById('search-input').blur();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const clearBtn = document.getElementById('search-clear');
+      searchInput.addEventListener('input', () => {
+        const val = searchInput.value.trim();
+        clearBtn.classList.toggle('visible', val.length > 0);
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+          if (val) showFilteredList();
+          else if (currentYear) renderBylawList();
+          else showHome();
+        }, 150);
+      });
+      init();
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && !isNaN(hash)) showYear(parseInt(hash));
+      else showHome();
+    });
+  </script>
+</body>
+</html>
