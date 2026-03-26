@@ -1,0 +1,54 @@
+name: Scrape Nipissing By-Laws
+
+on:
+  schedule:
+    # Run every 2 weeks on Monday at 8am UTC (3am EST)
+    - cron: '0 8 1,15 * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests beautifulsoup4 pymupdf anthropic pytesseract Pillow
+
+      - name: Run scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd $GITHUB_WORKSPACE
+          python scraper/scrape.py
+
+      - name: Commit and push changes
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config user.name "By-Law Scraper Bot"
+          git config user.email "bot@chriswjohnston.ca"
+          git add site/bylaws-data.json site/bylaws/
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            BYLAW_COUNT=$(python -c "import json; d=json.load(open('site/bylaws-data.json')); print(len(d['bylaws']))")
+            git commit -m "Update by-law archive — ${BYLAW_COUNT} by-laws [automated]"
+            git push
+          fi

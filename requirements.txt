@@ -1,0 +1,10 @@
+requests>=2.31
+beautifulsoup4>=4.12
+pymupdf>=1.23
+anthropic>=0.40
+# Optional — for OCR of scanned agenda packages:
+# pytesseract>=0.3
+# Pillow>=10.0
+# Also requires system package: tesseract-ocr
+pytesseract>=0.3.10
+Pillow>=10.0
