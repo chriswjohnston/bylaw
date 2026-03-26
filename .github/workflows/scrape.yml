@@ -2,7 +2,7 @@ name: Scrape Nipissing By-Laws
 
 on:
   schedule:
-    # Run every 2 weeks on Monday at 8am UTC (3am EST)
+    # Run every 2 weeks on the 1st and 15th at 8am UTC (3am EST)
     - cron: '0 8 1,15 * *'
   workflow_dispatch: # Allow manual trigger
 
@@ -12,33 +12,44 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pymupdf anthropic
 
+      # 4. Run scraper
       - name: Run scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scrape.py
 
+      # 5. Commit and push changes safely
       - name: Commit and push changes
         run: |
           git config user.name "By-Law Scraper Bot"
           git config user.email "bot@chriswjohnston.ca"
-          git add site/bylaws-data.json site/bylaws/
-          
+
+          # Ensure folders exist so git add doesn't fail
+          mkdir -p site/bylaws
+
+          # Add files if they exist
+          git add site/bylaws-data.json site/bylaws/* 2>/dev/null || true
+
+          # Only commit if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
             BYLAW_COUNT=$(python -c "import json; d=json.load(open('site/bylaws-data.json')); print(len(d['bylaws']))")
             git commit -m "Update by-law archive — ${BYLAW_COUNT} by-laws [automated]"
             git push
-          fi
