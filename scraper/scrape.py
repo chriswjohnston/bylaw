@@ -252,9 +252,194 @@ def scrape_council_meetings():
         })
 
     meetings.sort(key=lambda m: m["date"])
-    print(f"  Found {len(meetings)} meetings")
+    print(f"  Found {len(meetings)} meetings from main listing page")
     print(f"    with minutes: {sum(1 for m in meetings if m['minutes_url'])}")
     print(f"    with packages: {sum(1 for m in meetings if m['package_url'])}")
+
+    # Discover older meetings stored as WordPress sub-pages (2018-2023)
+    # These use URL patterns like:
+    #   /council-meeting-dates-agendas-minutes/minutes-may-18-2021/
+    #   /council-meeting-dates-agendas-minutes/agenda-may-18-2021/
+    #   /council-meeting-dates-agendas-minutes/may-10-2022-minutes/  (2022 variant)
+    existing_dates = {m["date"] for m in meetings}
+    print(f"\n  Probing for older meetings (2018–2023) as WordPress pages...")
+
+    import calendar
+    months = ['january','february','march','april','may','june','july',
+              'august','september','october','november','december']
+    older_found = 0
+
+    for year in range(2018, 2024):
+        for month_idx in range(1, 13):
+            month_name = months[month_idx - 1]
+            cal = calendar.monthcalendar(year, month_idx)
+            tuesdays = [week[1] for week in cal if week[1] != 0]
+
+            # Check 1st and 3rd Tuesday (typical meeting schedule)
+            check_days = []
+            if len(tuesdays) >= 1: check_days.append(tuesdays[0])
+            if len(tuesdays) >= 3: check_days.append(tuesdays[2])
+            # Also check 2nd and 4th for special or rescheduled meetings
+            if len(tuesdays) >= 2: check_days.append(tuesdays[1])
+            if len(tuesdays) >= 4: check_days.append(tuesdays[3])
+
+            for day in check_days:
+                date_str = f"{year}-{month_idx:02d}-{day:02d}"
+                if date_str in existing_dates:
+                    continue
+
+                # Try multiple URL patterns
+                slug_variants = [
+                    f"minutes-{month_name}-{day}-{year}",
+                    f"{month_name}-{day}-{year}-minutes",
+                ]
+                minutes_url = None
+                agenda_url = None
+
+                for slug in slug_variants:
+                    url = f"{COUNCIL_PAGE}{slug}/"
+                    try:
+                        resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+                        if resp.status_code == 200:
+                            minutes_url = url
+                            break
+                    except Exception:
+                        continue
+
+                if minutes_url:
+                    # Also check for matching agenda page
+                    agenda_slugs = [
+                        f"agenda-{month_name}-{day}-{year}",
+                        f"{month_name}-{day}-{year}-agenda",
+                    ]
+                    for slug in agenda_slugs:
+                        url = f"{COUNCIL_PAGE}{slug}/"
+                        try:
+                            resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+                            if resp.status_code == 200:
+                                agenda_url = url
+                                break
+                        except Exception:
+                            continue
+
+                    date_obj = datetime(year, month_idx, day)
+                    meetings.append({
+                        "date": date_str,
+                        "date_display": date_obj.strftime("%B %d, %Y"),
+                        "is_special": False,
+                        "agenda_url": agenda_url,
+                        "minutes_url": minutes_url,
+                        "package_url": None,  # Older meetings don't have separate packages
+                        "year": year,
+                        "minutes_type": "html",  # Flag: these are HTML pages, not PDFs
+                    })
+                    older_found += 1
+                    print(f"    Found: {date_obj.strftime('%B %d, %Y')} → {minutes_url}")
+
+    # Also check the special-meeting-minutes page (contains multiple meetings)
+    special_url = f"{COUNCIL_PAGE}special-meeting-minutes/"
+    try:
+        resp = requests.head(special_url, headers=HEADERS, timeout=10, allow_redirects=True)
+        if resp.status_code == 200:
+            # This page has multiple special meetings embedded; we'll parse it in step 3
+            meetings.append({
+                "date": "special-meetings",
+                "date_display": "Special Meetings (Multiple)",
+                "is_special": True,
+                "agenda_url": None,
+                "minutes_url": special_url,
+                "package_url": None,
+                "year": None,
+                "minutes_type": "html_multi",
+            })
+            print(f"    Found: Special Meetings page")
+    except Exception:
+        pass
+
+    meetings.sort(key=lambda m: m["date"] if m["date"] != "special-meetings" else "9999")
+    print(f"  Older meetings discovered: {older_found}")
+
+    # Probe for unlisted PDF-format minutes (2022-2025)
+    # The main page sometimes drops older years. These meetings have PDF minutes at
+    # predictable URLs in wp-content/uploads/
+    print(f"\n  Probing for unlisted PDF minutes (2022–2025)...")
+    pdf_found = 0
+    for year in range(2022, 2026):
+        for month_idx in range(1, 13):
+            month_name = months[month_idx - 1].capitalize()
+            cal = calendar.monthcalendar(year, month_idx)
+            tuesdays = [week[1] for week in cal if week[1] != 0]
+
+            check_days = []
+            if len(tuesdays) >= 1: check_days.append(tuesdays[0])
+            if len(tuesdays) >= 3: check_days.append(tuesdays[2])
+
+            for day in check_days:
+                date_str = f"{year}-{month_idx:02d}-{day:02d}"
+                if date_str in existing_dates:
+                    continue
+                # Also skip if we already found this as a WP sub-page
+                if any(m["date"] == date_str for m in meetings):
+                    continue
+
+                # Try common PDF URL patterns for minutes
+                min_patterns = [
+                    f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Minutes-{month_name}-{day}-{year}.pdf",
+                    f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Minutes-{month_name}-{day}-{year}-1.pdf",
+                ]
+                # Upload folder can be month before for early-month meetings
+                if month_idx > 1:
+                    prev = month_idx - 1
+                    min_patterns.append(
+                        f"{BASE_URL}/wp-content/uploads/{year}/{prev:02d}/Minutes-{month_name}-{day}-{year}.pdf"
+                    )
+
+                minutes_url = None
+                for url in min_patterns:
+                    try:
+                        resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+                        if resp.status_code == 200:
+                            minutes_url = url
+                            break
+                    except Exception:
+                        continue
+
+                if minutes_url:
+                    # Try to find matching agenda package
+                    pkg_patterns = [
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Agenda-Package-{month_name}-{day}-{year}.pdf",
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/{month_name}-{day}-{year}-Council-Agenda-Package.pdf",
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Council-Agenda-Package-{month_name[:3]}-{day}-{year}.pdf",
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/{month_name}-{day}-{year}-Council-Package.pdf",
+                    ]
+                    package_url = None
+                    for url in pkg_patterns:
+                        try:
+                            resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+                            if resp.status_code == 200:
+                                package_url = url
+                                break
+                        except Exception:
+                            continue
+
+                    date_obj = datetime(year, month_idx, day)
+                    meetings.append({
+                        "date": date_str,
+                        "date_display": date_obj.strftime("%B %d, %Y"),
+                        "is_special": False,
+                        "agenda_url": None,
+                        "minutes_url": minutes_url,
+                        "package_url": package_url,
+                        "year": year,
+                    })
+                    pdf_found += 1
+                    pkg_note = f" + package" if package_url else ""
+                    print(f"    Found: {date_obj.strftime('%B %d, %Y')}{pkg_note}")
+
+    print(f"  Unlisted PDF meetings discovered: {pdf_found}")
+
+    meetings.sort(key=lambda m: m["date"] if m["date"] != "special-meetings" else "9999")
+    print(f"  Total meetings now: {len(meetings)}")
     return meetings
 
 
@@ -330,14 +515,31 @@ def scrape_all_minutes(meetings):
     for meeting in meetings:
         if not meeting.get("minutes_url"):
             continue
+        if meeting.get("date") == "special-meetings":
+            continue  # Handle separately
 
-        pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
-        if not pdf_path:
-            continue
+        minutes_type = meeting.get("minutes_type", "pdf")
+        text = None
 
-        text = extract_pdf_text(pdf_path)
+        if minutes_type == "html":
+            # WordPress sub-page — fetch HTML and extract text
+            try:
+                soup = fetch_page(meeting["minutes_url"])
+                content = soup.find("div", class_="entry-content") or soup.find("article")
+                if content:
+                    text = content.get_text(separator="\n", strip=True)
+            except Exception as e:
+                print(f"    WARN: Failed to fetch HTML minutes for {meeting['date']}: {e}")
+                continue
+        else:
+            # PDF minutes (2024+)
+            pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
+            if not pdf_path:
+                continue
+            text = extract_pdf_text(pdf_path)
+
         if not text or len(text.strip()) < 100:
-            print(f"    WARN: No text from {meeting['date']} minutes (may need OCR)")
+            print(f"    WARN: No text from {meeting['date']} minutes")
             continue
 
         found = parse_bylaws_from_minutes(text, meeting)
@@ -345,6 +547,28 @@ def scrape_all_minutes(meetings):
             labels = ", ".join(f"{b['number']}" for b in found)
             print(f"    {meeting['date_display']}: {len(found)} by-law(s) — {labels}")
         all_bylaws.extend(found)
+
+    # Also parse the special-meetings page if present
+    special = [m for m in meetings if m.get("date") == "special-meetings"]
+    if special:
+        m = special[0]
+        try:
+            soup = fetch_page(m["minutes_url"])
+            content = soup.find("div", class_="entry-content") or soup.find("article")
+            if content:
+                text = content.get_text(separator="\n", strip=True)
+                # This page may contain multiple meetings; parse them all
+                # The resolution parser will handle it since it splits on R####-###
+                found = parse_bylaws_from_minutes(text, {
+                    **m,
+                    "date": "special",
+                    "date_display": "Special Meeting",
+                })
+                if found:
+                    print(f"    Special Meetings page: {len(found)} by-law(s)")
+                all_bylaws.extend(found)
+        except Exception as e:
+            print(f"    WARN: Special meetings page failed: {e}")
 
     print(f"\n  Total by-laws from minutes: {len(all_bylaws)}")
     return all_bylaws
@@ -774,10 +998,26 @@ def run():
     for meeting in meetings:
         if not meeting.get("minutes_url"):
             continue
-        pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
-        if not pdf_path:
-            continue
-        text = extract_pdf_text(pdf_path)
+        if meeting.get("date") == "special-meetings":
+            continue  # Handle below
+
+        minutes_type = meeting.get("minutes_type", "pdf")
+        text = None
+
+        if minutes_type == "html":
+            try:
+                soup = fetch_page(meeting["minutes_url"])
+                content = soup.find("div", class_="entry-content") or soup.find("article")
+                if content:
+                    text = content.get_text(separator="\n", strip=True)
+            except Exception:
+                continue
+        else:
+            pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
+            if not pdf_path:
+                continue
+            text = extract_pdf_text(pdf_path)
+
         if not text or len(text.strip()) < 100:
             continue
 
@@ -787,11 +1027,26 @@ def run():
                 existing_res[r["number"]] = r
                 new_res_count += 1
             else:
-                # Update missing fields
                 old = existing_res[r["number"]]
                 for k in ("title", "votes", "motion_text", "minutes_url", "meeting_date", "category"):
                     if not old.get(k) and r.get(k):
                         old[k] = r[k]
+
+    # Parse the special meetings page too
+    special = [m for m in meetings if m.get("date") == "special-meetings"]
+    if special:
+        try:
+            soup = fetch_page(special[0]["minutes_url"])
+            content = soup.find("div", class_="entry-content") or soup.find("article")
+            if content:
+                text = content.get_text(separator="\n", strip=True)
+                resolutions = parse_resolutions_from_minutes(text, special[0])
+                for r in resolutions:
+                    if r["number"] not in existing_res:
+                        existing_res[r["number"]] = r
+                        new_res_count += 1
+        except Exception:
+            pass
 
     all_res = sorted(existing_res.values(), key=lambda r: r.get("number", ""))
     res_data["resolutions"] = all_res
