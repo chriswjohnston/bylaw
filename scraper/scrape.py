@@ -54,9 +54,9 @@ except ImportError:
 BASE_URL = "https://nipissingtownship.com"
 BYLAWS_PAGE = f"{BASE_URL}/municipal-information/by-laws/"
 COUNCIL_PAGE = f"{BASE_URL}/council-meeting-dates-agendas-minutes/"
-DATA_FILE = Path("site/bylaws-data.json")
-RES_FILE = Path("site/resolutions-data.json")
-PDF_DIR = Path("site/bylaws")
+DATA_FILE = Path("bylaws-data.json")
+RES_FILE = Path("resolutions-data.json")
+PDF_DIR = Path("bylaws")
 HEADERS = {"User-Agent": "NipissingBylawArchiver/2.0 (civic transparency project)"}
 
 
@@ -926,7 +926,7 @@ def merge(existing, new_list):
             # This is a PDF extraction result, attach to existing
             num = b["_pdf_for"]
             if num in idx and not idx[num].get("pdf_url"):
-                rel = b["_pdf_path"].replace("site/", "")
+                rel = b["_pdf_path"]
                 idx[num]["pdf_url"] = rel
             continue
 
