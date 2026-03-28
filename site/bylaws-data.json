@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-26",
+  "last_updated": "2026-03-28",
   "source": "https://nipissingtownship.com/municipal-information/by-laws/",
   "bylaws": [
     {
@@ -14,7 +14,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This bylaw allows ATVs and off-road vehicles with 3+ wheels to be driven on Township of Nipissing roads, following provincial safety rules.",
+      "ai_key_points": [
+        "ATVs and off-road vehicles with 3+ wheels can drive on township roads",
+        "Vehicles must have special low-pressure tires (max 70 kpa/10 psi)",
+        "Must follow provincial Highway Traffic Act rules and regulations",
+        "Penalties follow standard Highway Traffic Act fines and consequences"
+      ]
     },
     {
       "number": "1227",
@@ -28,7 +35,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This bylaw sets rules for how Nipissing Township can sell municipal land. It requires appraisals, public notice, and council approval before selling any township-owned property.",
+      "ai_key_points": [
+        "Council must declare land 'surplus' before selling it",
+        "Township must get appraisal and give public notice before most land sales",
+        "Council can choose sale method: public tender, real estate agent, or direct sale",
+        "No appraisal needed for narrow strips, closed roads, or sales to other governments",
+        "Clerk must certify all requirements were followed for each sale"
+      ]
     },
     {
       "number": "2011-42",
@@ -42,7 +57,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates rules for using a trailer as temporary housing while building your permanent home in Nipissing Township.",
+      "ai_key_points": [
+        "You can live in a trailer temporarily while constructing your permanent residence",
+        "Must follow specific policy requirements outlined in attached documents",
+        "Policy includes application process with sample letter format",
+        "Only allowed during active construction of main dwelling"
+      ]
     },
     {
       "number": "2011-43",
@@ -56,7 +78,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law requires all properties with buildings or driveways to have municipal address signs installed and maintained for emergency services like 911.",
+      "ai_key_points": [
+        "Every property with a building or driveway entrance must have a municipal address sign",
+        "The township installs the first sign and bills the cost to your permit",
+        "Property owners must maintain signs in good condition and pay for replacements",
+        "If you don't maintain your sign, the township will fix it and bill you",
+        "Unpaid sign costs get added to your property tax bill after 30 days"
+      ]
     },
     {
       "number": "2013-39",
@@ -70,7 +100,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets the speed limit at 60 km/h on all Township roads that don't already have posted speed limit signs.",
+      "ai_key_points": [
+        "Speed limit is 60 km/h on all unposted Township roads",
+        "Only applies to roads owned by the Township of Nipissing",
+        "A public meeting was held before making this rule",
+        "Breaking this speed limit results in Highway Traffic Act penalties"
+      ]
     },
     {
       "number": "2015-23",
@@ -84,7 +121,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This bylaw allows off-road vehicles like ATVs to drive on Township of Nipissing municipal roads with specific speed limits and equipment requirements.",
+      "ai_key_points": [
+        "Off-road vehicles can drive on municipal roads in Nipissing Township",
+        "Speed limit is 20 km/h on roads with 50 km/h limit, 50 km/h on faster roads",
+        "Vehicles must meet provincial equipment and safety requirements",
+        "Cannot drive on parks, beaches, cemeteries, or community centres",
+        "Breaking these rules is an offence with legal penalties"
+      ]
     },
     {
       "number": "2019-41",
@@ -142,7 +187,13 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates an agreement with the Town of Powassan about maintaining and managing a road that forms the boundary between the two municipalities.",
+      "ai_key_points": [
+        "Establishes shared responsibility for a boundary road between Nipissing Township and Powassan",
+        "Sets out maintenance duties and costs for the shared road",
+        "Defines which municipality handles specific road services and repairs"
+      ]
     },
     {
       "number": "2020-17",
@@ -156,7 +207,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets rules for using the Township's three public boat docks. It limits how long you can park boats and store materials to ensure fair access for everyone.",
+      "ai_key_points": [
+        "Boats can only be parked at docks for 4 hours maximum",
+        "No overnight parking between 11 PM and 7 AM",
+        "Materials can only be stored on docks for 1 hour while loading/unloading",
+        "Commercial boats need special permission from Township office",
+        "Fines range from $150 to $400 for violations"
+      ]
     },
     {
       "number": "2020-27",
@@ -192,7 +251,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "The Township changed its snow plow route schedule to give crews more flexibility. Specific truck numbers were removed from routes so plows can respond better to winter storms.",
+      "ai_key_points": [
+        "Updated the snow plow route assignments for municipal roads",
+        "Removed specific truck numbers from designated plow routes",
+        "Allows more flexible response to winter weather events",
+        "Amendment to existing road maintenance standards from 2019"
+      ]
     },
     {
       "number": "2021-38",
@@ -206,7 +272,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This bylaw creates a Recreation Committee to run recreational programs and manage the Township Community Centre at 2381 Highway 654.",
+      "ai_key_points": [
+        "Committee has 2 council members and 4-8 township residents, appointed yearly",
+        "Committee runs recreation programs and manages the Community Centre and Fitness Centre",
+        "Committee must submit annual budget to Council by February 1st",
+        "Committee sets user fees for facilities, subject to Council approval",
+        "Committee must hold at least 4 meetings per year"
+      ]
     },
     {
       "number": "2021-39",
@@ -220,7 +294,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "The Township created a Cemetery Committee to manage three local cemeteries. The committee has 5 members and must follow provincial cemetery laws.",
+      "ai_key_points": [
+        "Committee manages Nipissing Union, Commanda, and St. John's Alsace cemeteries",
+        "5 members total: 2 council members and 3 township residents",
+        "Committee must submit annual budget to council by February 1st",
+        "Must hold at least one meeting per year",
+        "Can only spend money approved in their budget or by council"
+      ]
     },
     {
       "number": "2021-48",
@@ -234,7 +316,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "Creates a Community Safety Zone on specific streets near South Shore Education Centre with 40 km/h speed limit and doubled speeding fines.",
+      "ai_key_points": [
+        "Speed limit is 40 km/h on Beatty Street, Front Street, Blake Street, and Powerplant Road",
+        "Community Safety Zone covers area from Highway 654 to the school property",
+        "Speeding fines are doubled in this zone at all times",
+        "Zone protects elementary school, park, and ice rink from truck traffic",
+        "Ontario Provincial Police enforce the speed limits and fines"
+      ]
     },
     {
       "number": "2021-50",
@@ -270,7 +360,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law controls access to and use of unopened road allowances in Nipissing Township. You need permission before using these undeveloped road areas for any purpose.",
+      "ai_key_points": [
+        "Prohibits unauthorized use of unopened road allowances without township permission",
+        "Requires permits for activities like storage, parking, or structures on these lands",
+        "Sets fines and penalties for violations of the access rules",
+        "Protects township property rights on undeveloped road areas"
+      ]
     },
     {
       "number": "2021-58",
@@ -284,7 +381,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law prohibits dumping garbage, waste, or debris on public or private property without permission. Violators can be fined up to $5,000.",
+      "ai_key_points": [
+        "Cannot dump any waste, garbage, or debris on roads, parks, or other people's property",
+        "Includes household trash, construction materials, yard waste, and hazardous substances",
+        "Property owners must clean up unauthorized waste dumped on their land",
+        "Fines range from $300 to $5,000 depending on the violation",
+        "Bylaw officers can enter properties to investigate dumping complaints"
+      ]
     },
     {
       "number": "2021-63",
@@ -298,7 +403,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law prohibits residents from putting snow on roads and bridges in Nipissing Township. Violators can be fined for creating safety hazards.",
+      "ai_key_points": [
+        "You cannot put snow on any road or bridge in the township",
+        "This includes snow from driveways, sidewalks, and private property",
+        "Snow on roads creates safety hazards for drivers and snowplows",
+        "Breaking this rule can result in fines and penalties",
+        "The township can enforce this through bylaw officers"
+      ]
     },
     {
       "number": "2022-23",
@@ -312,7 +425,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law changes the rules about trailers in Nipissing Township. It updates an existing zoning law from 2020 that controls where and how trailers can be used.",
+      "ai_key_points": [
+        "Updates existing trailer regulations in the township's zoning rules",
+        "Modifies Section 3.44 of the 2020 zoning by-law",
+        "Changes rules about trailer placement and use on properties",
+        "Part of municipal zoning enforcement with potential fines for violations"
+      ]
     },
     {
       "number": "2022-29",
@@ -326,7 +446,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This bylaw regulates how property owners install driveways that connect to municipal roads. You must get township approval before installing any entrance culvert.",
+      "ai_key_points": [
+        "Must get approval from Operations Superintendent before installing any driveway entrance",
+        "Property owner buys and installs culvert following specific size and material requirements",
+        "One entrance per home allowed, must pass final inspection within one week",
+        "If you damage roads during installation, you pay repair costs within 15 days",
+        "Permit expires if work doesn't start within 6 months of approval"
+      ]
     },
     {
       "number": "2022-34",
@@ -362,7 +490,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets rules for cemeteries in Nipissing Township, covering burials, monuments, and general cemetery conduct to ensure proper maintenance and respect.",
+      "ai_key_points": [
+        "Cemetery operations must follow specific burial procedures and monument installation requirements",
+        "Visitors must respect cemetery grounds and follow posted rules and hours",
+        "Monument and grave marker installations require approval and must meet size standards",
+        "Violations can result in fines and enforcement action by township officials"
+      ]
     },
     {
       "number": "2022-42",
@@ -398,7 +533,13 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law creates an agreement with Callander about maintaining a road that sits on the border between the two municipalities.",
+      "ai_key_points": [
+        "Establishes shared responsibility for a boundary road between Nipissing Township and Callander",
+        "Sets out maintenance duties and costs for the shared road",
+        "Creates formal agreement to avoid disputes over road upkeep"
+      ]
     },
     {
       "number": "2023-01",
@@ -412,7 +553,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets rules for how Township of Nipissing council members and staff must be open and accountable to residents in their decision-making and operations.",
+      "ai_key_points": [
+        "Council meetings and decisions must be transparent and accessible to the public",
+        "Officials must disclose conflicts of interest and follow ethical guidelines",
+        "Financial information and spending must be reported publicly",
+        "Complaint processes established for residents to report accountability issues",
+        "Penalties may apply for violations of transparency and accountability requirements"
+      ]
     },
     {
       "number": "2023-02",
@@ -426,7 +575,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law allows Township Council to give certain decision-making powers to staff members and committees so they can handle routine municipal business without requiring full Council approval.",
+      "ai_key_points": [
+        "Council can delegate specific powers and duties to township staff and committees",
+        "Staff can make certain decisions without needing full Council meetings",
+        "Helps speed up routine municipal business and administrative tasks",
+        "Council retains oversight and can revoke delegated authority when needed"
+      ]
     },
     {
       "number": "2023-03",
@@ -440,7 +596,13 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets rules for selling land in Nipissing Township. It likely requires permits or approvals before land can be sold.",
+      "ai_key_points": [
+        "Land sales in the township must follow specific rules and procedures",
+        "Property owners may need permits or approvals before selling land",
+        "Penalties apply for selling land without following the by-law requirements"
+      ]
     },
     {
       "number": "2023-08",
@@ -476,7 +638,13 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes a Recreation Committee for the Township of Nipissing to oversee parks, recreation facilities, and community programs.",
+      "ai_key_points": [
+        "Creates a Recreation Committee to manage township recreation services and facilities",
+        "Committee makes recommendations to council about parks and recreation matters",
+        "Establishes committee structure, member appointments, and meeting procedures"
+      ]
     },
     {
       "number": "2023-10",
@@ -490,7 +658,13 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes a Museum Board for the Township of Nipissing to oversee local museum operations and cultural heritage activities.",
+      "ai_key_points": [
+        "Creates a Museum Board to manage township museum services and programs",
+        "Sets rules for board membership, meetings, and decision-making processes",
+        "Defines the board's responsibilities for preserving local history and culture"
+      ]
     },
     {
       "number": "2023-11",
@@ -504,7 +678,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes a Cemetery Committee for the Township of Nipissing to oversee and manage municipal cemeteries and related matters.",
+      "ai_key_points": [
+        "Creates a Cemetery Committee to manage township cemeteries",
+        "Committee will have specific members appointed by council",
+        "Committee oversees cemetery operations and policies",
+        "Replaces any previous cemetery committee by-laws"
+      ]
     },
     {
       "number": "2023-15",
@@ -518,7 +699,15 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law establishes the Township of Nipissing Fire Department and sets rules for how it operates, including firefighter requirements and cost recovery.",
+      "ai_key_points": [
+        "Creates the Township of Nipissing Fire Department with a Fire Chief in charge",
+        "New firefighters must complete a one-year probation period and required training",
+        "Fire Chief can discipline, suspend, or recommend dismissal of firefighters for rule violations",
+        "Property owners may be charged for emergency response costs and special equipment needed",
+        "Fire department must provide fire prevention, education, and emergency response services"
+      ]
     },
     {
       "number": "2023-21",
@@ -532,7 +721,14 @@
       "votes": null,
       "meeting_date": null,
       "agenda_package_url": null,
-      "minutes_url": null
+      "minutes_url": null,
+      "ai_summary": "This by-law sets rules for how Township employees and officials use social media when representing the municipality or discussing Township business.",
+      "ai_key_points": [
+        "Township staff must follow guidelines when posting about work on social media",
+        "Personal social media use shouldn't conflict with Township duties or values",
+        "Confidential Township information cannot be shared on social media platforms",
+        "Violations may result in disciplinary action including termination"
+      ]
     },
     {
       "number": "2023-28",
@@ -579,32 +775,661 @@
       ]
     },
     {
+      "number": "2024-01",
+      "year": 2024,
+      "title": "provide for an Interim Tax Levy",
+      "date_passed": "2025-12-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": null,
+      "meeting_date": "2025-12-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-2-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-2-2024.pdf",
+      "ai_summary": "This by-law sets temporary property tax rates for 2024 until the final municipal budget is approved. Residents must pay these interim taxes by the due dates.",
+      "ai_key_points": [
+        "Sets temporary property tax rates for early 2024 before final budget approval",
+        "Property owners must pay interim taxes by specified due dates",
+        "Covers municipal, education, and other required tax portions",
+        "Allows township to collect revenue while preparing the final budget"
+      ]
+    },
+    {
+      "number": "2024-02",
+      "year": 2024,
+      "title": "appoint an Emergency Management Program Committee for the Township of Nipissing",
+      "date_passed": "2025-12-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by T. Butler",
+      "meeting_date": "2025-12-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-2-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-2-2024.pdf",
+      "ai_summary": "The Township of Nipissing is creating an Emergency Management Program Committee to help plan for and respond to local emergencies and disasters.",
+      "ai_key_points": [
+        "Creates a new committee to handle emergency planning for the township",
+        "Committee will develop plans for responding to disasters and emergencies",
+        "Helps ensure the community is prepared for various emergency situations"
+      ]
+    },
+    {
+      "number": "2024-03",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on January 2, 2024",
+      "date_passed": "2025-12-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by D. Yemm",
+      "meeting_date": "2025-12-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-2-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-2-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, motions, and actions that Township Council took during their January 2, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from January 2, 2024 meeting officially valid and legal",
+        "Standard administrative procedure to formalize Council proceedings",
+        "No specific regulations, requirements, or penalties for residents"
+      ]
+    },
+    {
+      "number": "2024-04",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its special meeting held on January 10, 2024",
+      "date_passed": "2024-01-10",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by T. Butler",
+      "meeting_date": "2024-01-10",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-10-2024-Special-Meeting-Agenda_.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-10-2024-Special.pdf",
+      "ai_summary": "This by-law officially approves and makes legal all decisions and actions taken by Township Council during their special meeting on January 10, 2024.",
+      "ai_key_points": [
+        "Confirms all Council decisions from the January 10, 2024 special meeting are valid",
+        "Makes official any motions, resolutions, or votes passed during that meeting",
+        "Standard procedure to ensure Council actions have proper legal authority"
+      ]
+    },
+    {
+      "number": "2024-05",
+      "year": 2024,
+      "title": "amend Zoning By-Law 2020-20, as amended",
+      "date_passed": "2024-01-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2024-01-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-16-2024-Council-Agenda-Meeting.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-16-2024.pdf",
+      "ai_summary": "This by-law makes changes to the Township's zoning rules from 2020. It updates what can be built where and under what conditions.",
+      "ai_key_points": [
+        "Amends the existing 2020 zoning by-law with new rules",
+        "Changes regulations about land use and building requirements",
+        "Updates zoning restrictions for properties in the Township"
+      ]
+    },
+    {
+      "number": "2024-06",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on January 16, 2024",
+      "date_passed": "2024-01-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by T. Butler, Seconded by S. Kirkey",
+      "meeting_date": "2024-01-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/January-16-2024-Council-Agenda-Meeting.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/01/Minutes-January-16-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, votes, and actions that Township Council made during their January 16, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from January 16, 2024 meeting officially valid and legal",
+        "Confirms all votes and resolutions passed by Council members are binding",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
       "number": "2024-07",
       "year": 2024,
       "title": "Providing Public Notice under the Municipal Act, 2001",
-      "date_passed": null,
+      "date_passed": "2024-02-06",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/By-law-2024-07-Providing-Public-Notice.pdf",
       "page_url": null,
       "source": "bylaws_page",
       "status": "approved",
-      "votes": null,
-      "meeting_date": null,
-      "agenda_package_url": null,
-      "minutes_url": null
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2024-02-06",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Council-Agenda-Package-Feb-6-2024.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-6-2024.pdf",
+      "ai_summary": "This by-law sets the rules for how the Township of Nipissing must notify residents about municipal meetings, decisions, and public hearings.",
+      "ai_key_points": [
+        "Establishes how the township must give public notice for meetings and decisions",
+        "Sets requirements for posting notices in newspapers and public locations",
+        "Defines minimum notice periods before public meetings can be held",
+        "Specifies what information must be included in public notices"
+      ]
+    },
+    {
+      "number": "2024-08",
+      "year": 2024,
+      "title": "appoint a Building Inspector for the purpose of the enforcement of the Building Code Act, its regulations and the Building By-Law for the Corporati...",
+      "date_passed": "2024-02-06",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-02-06",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Council-Agenda-Package-Feb-6-2024.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-6-2024.pdf",
+      "ai_summary": "The Township of Nipissing has appointed a Building Inspector to enforce building codes and building-related bylaws. This person will ensure construction projects follow proper safety and building standards.",
+      "ai_key_points": [
+        "Township appointed an official Building Inspector for code enforcement",
+        "Inspector will enforce Building Code Act and local building bylaws",
+        "Ensures construction projects meet required safety and building standards",
+        "Gives township authority to monitor and regulate building activities"
+      ]
+    },
+    {
+      "number": "2024-09",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on February 6, 2024",
+      "date_passed": "2024-02-06",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by T. Butler, Seconded by S. Foote",
+      "meeting_date": "2024-02-06",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Council-Agenda-Package-Feb-6-2024.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-6-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions that Township Council made during their February 6, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from February 6, 2024 meeting officially legal and binding",
+        "Ensures all motions and votes from that meeting are properly recorded in law",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2024-10",
+      "year": 2024,
+      "title": "amend By-Law Number 2022-34, cited as the “Procedural By-Law” to update the public notice guidelines for meetings",
+      "date_passed": "2024-02-20",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by T. Butler, Seconded by S. Kirkey",
+      "meeting_date": "2024-02-20",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/February-20-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-20-2024.pdf",
+      "ai_summary": "This by-law updates the rules about how the Township must notify residents about upcoming public meetings. It changes the existing procedures for giving public notice.",
+      "ai_key_points": [
+        "Updates existing rules for notifying residents about public meetings",
+        "Amends the Township's Procedural By-Law from 2022",
+        "Changes how public notice must be given for meetings",
+        "Sets new guidelines for meeting notifications"
+      ]
+    },
+    {
+      "number": "2024-11",
+      "year": 2024,
+      "title": "Amend By-Law number 2021-50, to regulate the parking of vehicles within the Corporation of the Township of Nipissing",
+      "date_passed": "2024-02-20",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-02-20",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/February-20-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-20-2024.pdf",
+      "ai_summary": "This bylaw updates the Township of Nipissing's parking rules from 2021. It changes how and where vehicles can be parked in the township.",
+      "ai_key_points": [
+        "Updates existing parking regulations from bylaw 2021-50",
+        "Regulates where vehicles can and cannot park in the township",
+        "Applies to all vehicles within Township of Nipissing boundaries",
+        "Modifies previous parking restrictions and requirements"
+      ]
+    },
+    {
+      "number": "2024-12",
+      "year": 2024,
+      "title": "Amend By-Law Number 2019-41, cited as the Township of Nipissing Road Status and Maintenance By-Law",
+      "date_passed": "2024-02-20",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by T. Butler",
+      "meeting_date": "2024-02-20",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/February-20-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-20-2024.pdf",
+      "ai_summary": "This by-law updates the Township's 2019 rules about which roads the municipality maintains and how they're maintained.",
+      "ai_key_points": [
+        "Updates the existing 2019 road maintenance rules",
+        "Changes which roads the Township is responsible for maintaining",
+        "Modifies maintenance standards and procedures for municipal roads"
+      ]
+    },
+    {
+      "number": "2024-13",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on February 20, 2024",
+      "date_passed": "2024-02-20",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-02-20",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/February-20-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/02/Minutes-February-20-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions taken by Township Council during their February 20, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from February 20, 2024 meeting officially valid and legal",
+        "Confirms any motions, resolutions, or votes passed during that specific meeting",
+        "Standard procedural by-law to formalize Council proceedings into municipal law"
+      ]
+    },
+    {
+      "number": "2024-14",
+      "year": 2024,
+      "title": "appoint an Interim Deputy Clerk for the Township of Nipissing",
+      "date_passed": "2024-03-05",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-03-05",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/March-5-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-5-2024.pdf",
+      "ai_summary": "The Township of Nipissing appointed someone to temporarily fill the Deputy Clerk position. This person will handle clerk duties when the main Clerk is unavailable.",
+      "ai_key_points": [
+        "An Interim Deputy Clerk has been officially appointed for the Township",
+        "This person will act as backup when the regular Clerk is away",
+        "The appointment is temporary until a permanent Deputy Clerk is hired",
+        "No penalties or requirements for residents - this is an internal staffing decision"
+      ]
+    },
+    {
+      "number": "2024-15",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on March 5, 2024",
+      "date_passed": "2024-03-05",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2024-03-05",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/March-5-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-5-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions and actions taken by Township Council during their March 5, 2024 meeting.",
+      "ai_key_points": [
+        "Confirms all Council decisions from March 5, 2024 meeting are legally valid",
+        "Makes official record of what Council discussed and voted on",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2024-16",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on March 19, 2024",
+      "date_passed": "2024-03-19",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by T. Butler",
+      "meeting_date": "2024-03-19",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/March-19-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/03/Minutes-March-19-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions, motions, and actions taken by Township Council during their March 19, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from March 19, 2024 meeting officially legal and binding",
+        "Standard procedural by-law with no new regulations or requirements for residents",
+        "No penalties specified as this only confirms past Council proceedings"
+      ]
+    },
+    {
+      "number": "2024-17",
+      "year": 2024,
+      "title": "adopt a Human Resources Policy and Procedure Manual",
+      "date_passed": "2024-04-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by T. Butler, Seconded by S. Foote",
+      "meeting_date": "2024-04-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/April-2-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-2-2024.pdf",
+      "ai_summary": "The Township of Nipissing adopted a new manual that sets the rules for how the municipality manages its employees and workplace policies.",
+      "ai_key_points": [
+        "Establishes official rules for hiring, managing, and working with township employees",
+        "Creates standardized procedures for human resources matters within the municipality",
+        "Provides guidelines for employee conduct, benefits, and workplace standards"
+      ]
+    },
+    {
+      "number": "2024-18",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on April 2, 2024",
+      "date_passed": "2024-04-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by T. Butler, Seconded by D. Yemm",
+      "meeting_date": "2024-04-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/April-2-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-2-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions and actions that Township Council made during their meeting on April 2, 2024.",
+      "ai_key_points": [
+        "Makes all Council decisions from April 2, 2024 meeting legally binding",
+        "Standard procedure to formalize Council votes and resolutions",
+        "No new regulations or requirements for residents"
+      ]
+    },
+    {
+      "number": "2024-19",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on April 16, 2024",
+      "date_passed": "2024-04-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2024-04-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/April-16-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/04/Minutes-April-16-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions and actions that Township Council took during their meeting on April 16, 2024.",
+      "ai_key_points": [
+        "Makes all Council decisions from April 16, 2024 meeting official and legally valid",
+        "Standard administrative procedure to formalize Council proceedings",
+        "No specific regulations, requirements, or penalties for residents"
+      ]
+    },
+    {
+      "number": "2024-20",
+      "year": 2024,
+      "title": "appoint a Councillor",
+      "date_passed": "2024-05-09",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-05-09",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Agenda-Package-May-9-24-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Minutes-May-9-2024.pdf",
+      "ai_summary": "This by-law officially appoints someone to fill a vacant councillor position on Nipissing Township's municipal council.",
+      "ai_key_points": [
+        "Fills an empty council seat with a new councillor",
+        "Gives the appointed person full voting rights and council duties",
+        "Takes effect immediately once passed by council"
+      ]
+    },
+    {
+      "number": "2024-21",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on May 9, 2024",
+      "date_passed": "2024-05-09",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Kirkey",
+      "meeting_date": "2024-05-09",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Agenda-Package-May-9-24-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Special-Meeting-Minutes-May-9-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, motions, and actions that Township Council made during their meeting on May 9, 2024.",
+      "ai_key_points": [
+        "Confirms all Council decisions made at the May 9, 2024 meeting are official",
+        "Makes all motions and votes from that meeting legally binding",
+        "Standard procedural by-law with no specific regulations or penalties"
+      ]
+    },
+    {
+      "number": "2024-22",
+      "year": 2024,
+      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in...",
+      "date_passed": "2024-05-14",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by D. Yemm",
+      "meeting_date": "2024-05-14",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf",
+      "ai_summary": "This by-law sets the 2024 budget and tax rates for Nipissing Township. It also establishes penalties and interest charges for late property tax payments.",
+      "ai_key_points": [
+        "Sets the township's 2024 budget and spending estimates",
+        "Establishes property tax rates for the year",
+        "Creates penalties and interest charges for late tax payments",
+        "Provides the legal framework for collecting municipal taxes"
+      ]
+    },
+    {
+      "number": "2024-23",
+      "year": 2024,
+      "title": "set tax ratios for Municipal Purposes for the year 2024",
+      "date_passed": "2024-05-14",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by J. Scott",
+      "meeting_date": "2024-05-14",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf",
+      "ai_summary": "This by-law sets the tax rates that different types of properties will pay for municipal services in 2024. It determines how much residential, commercial, and industrial properties are taxed relative to each other.",
+      "ai_key_points": [
+        "Sets tax ratios for different property types (residential, commercial, industrial) for 2024",
+        "Determines how much each property class pays relative to residential properties",
+        "Establishes the municipal tax burden distribution across property categories",
+        "Takes effect January 1, 2024 for the tax year"
+      ]
+    },
+    {
+      "number": "2024-24",
+      "year": 2024,
+      "title": "amend the Remuneration Schedule in the Township of Nipissing Pay Equity Plan",
+      "date_passed": "2024-05-14",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2024-05-14",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf",
+      "ai_summary": "This by-law updates the pay rates in the Township's Pay Equity Plan to ensure fair compensation between male and female job classes.",
+      "ai_key_points": [
+        "Updates salary schedules to maintain pay equity between jobs traditionally done by men vs women",
+        "Ensures the Township complies with provincial pay equity laws",
+        "Changes take effect immediately upon passing of the by-law"
+      ]
+    },
+    {
+      "number": "2024-25",
+      "year": 2024,
+      "title": "adopt the Municipal Position Descriptions for municipal staff positions for the Township of Nipissing",
+      "date_passed": "2024-05-14",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-05-14",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf",
+      "ai_summary": "This by-law officially approves job descriptions for all municipal staff positions in Nipissing Township. It defines roles and responsibilities for township employees.",
+      "ai_key_points": [
+        "Establishes official job descriptions for all municipal staff positions",
+        "Defines duties and responsibilities for township employees",
+        "Creates formal structure for municipal workforce organization"
+      ]
+    },
+    {
+      "number": "2024-26",
+      "year": 2024,
+      "title": "confirm the appointment of members to the Township of Nipissing Committee of Adjustment",
+      "date_passed": "2024-05-14",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-05-14",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf",
+      "ai_summary": "This by-law officially confirms who has been appointed to serve on the Township's Committee of Adjustment for 2024.",
+      "ai_key_points": [
+        "Confirms appointment of specific people to the Committee of Adjustment",
+        "Committee handles applications for property variances and planning appeals",
+        "No penalties specified - this is an administrative appointment by-law"
+      ]
+    },
+    {
+      "number": "2024-27",
+      "year": 2024,
+      "title": "By-Law 2024-27",
+      "date_passed": "2024-05-14",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Kirkey",
+      "meeting_date": "2024-05-14",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-14-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-14-2024.pdf"
+    },
+    {
+      "number": "2024-28",
+      "year": 2024,
+      "title": "authorize an Agreement between the Corporation of the Township of Nipissing and the Municipality of Callander for Playground Inspection Services",
+      "date_passed": "2024-05-28",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-05-28",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-28-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-28-2024.pdf",
+      "ai_summary": "The Township of Nipissing is partnering with the Municipality of Callander to share playground inspection services. This agreement allows both communities to ensure their playgrounds are safe.",
+      "ai_key_points": [
+        "Township authorizes sharing playground inspection services with Municipality of Callander",
+        "Agreement ensures playground safety through professional inspections",
+        "Partnership allows cost-sharing between two municipalities"
+      ]
+    },
+    {
+      "number": "2024-29",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on May 28, 2024. Carried",
+      "date_passed": "2024-05-28",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-05-28",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/May-28-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/05/Minutes-May-28-2024.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions taken by Township Council during their May 28, 2024 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from May 28, 2024 meeting officially valid",
+        "Ensures any votes or resolutions passed that day are legally binding",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2024-30",
+      "year": 2024,
+      "title": "authorize the entering into and execution of an Automatic Aid Agreement between the Township of Nipissing and the Municipality of Powassan",
+      "date_passed": "2024-06-04",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-06-04",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/June-4-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-4-2024.pdf",
+      "ai_summary": "This by-law allows Nipissing Township and Powassan Municipality to automatically help each other during emergencies. Fire departments can respond across municipal boundaries when needed.",
+      "ai_key_points": [
+        "Emergency services can automatically respond to calls in either municipality",
+        "Fire departments will provide mutual aid without waiting for formal requests",
+        "Both communities share resources during emergencies like fires or accidents",
+        "Township council authorized signing the agreement with Powassan"
+      ]
+    },
+    {
+      "number": "2024-31",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on June 4, 2024. Carried",
+      "date_passed": "2024-06-04",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-06-04",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/June-4-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-4-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions and actions taken by Township Council during their June 4, 2024 meeting.",
+      "ai_key_points": [
+        "Confirms all decisions made at the June 4, 2024 council meeting are official",
+        "Makes council proceedings from that meeting legally binding",
+        "Standard administrative procedure to formalize council actions"
+      ]
+    },
+    {
+      "number": "2024-32",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on June 18, 2024. Carried",
+      "date_passed": "2024-06-18",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Kirkey",
+      "meeting_date": "2024-06-18",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/June-18-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/06/Minutes-June-18-2024.pdf",
+      "ai_summary": "This by-law officially approves and makes legal all decisions and actions that Township Council made during their meeting on June 18, 2024.",
+      "ai_key_points": [
+        "Confirms all decisions made by Council at their June 18, 2024 meeting are official",
+        "Makes all motions and votes from that meeting legally binding",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
     },
     {
       "number": "2024-33",
       "year": 2024,
       "title": "User Fees",
-      "date_passed": null,
+      "date_passed": "2024-07-16",
       "pdf_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/User-Fee-By-Law-2024-33.pdf",
       "page_url": null,
       "source": "bylaws_page",
       "status": "approved",
-      "votes": null,
-      "meeting_date": null,
-      "agenda_package_url": null,
-      "minutes_url": null,
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-07-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/July-16-2024-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/Minutes-July-16-2024.pdf",
       "ai_summary": "Sets the schedule of user fees charged by the township for various services including building permits, planning applications, landfill use, facility rentals, and administrative services.",
       "ai_key_points": [
         "Building permit fees based on project value",
@@ -612,6 +1437,511 @@
         "Landfill tipping fees for non-residential waste",
         "Community centre and facility rental rates",
         "Photocopying, search, and admin fee schedule"
+      ]
+    },
+    {
+      "number": "2024-34",
+      "year": 2024,
+      "title": "Amend Zoning By-Law 2020-20, as amended",
+      "date_passed": "2024-07-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-07-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/July-16-2024-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/Minutes-July-16-2024.pdf",
+      "ai_summary": "This by-law makes changes to the Township's existing zoning rules from 2020. It updates what can be built where and how properties can be used.",
+      "ai_key_points": [
+        "Updates the Township's zoning rules that control what can be built on different properties",
+        "Changes regulations about how land and buildings can be used in certain areas",
+        "Modifies existing zoning restrictions or requirements for property development",
+        "Affects property owners' rights to build, renovate, or change how they use their land"
+      ]
+    },
+    {
+      "number": "2024-35",
+      "year": 2024,
+      "title": "enter into a Municipal Funding Agreement in order to access the Canada Community-Building Fund",
+      "date_passed": "2024-07-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-07-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/July-16-2024-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/Minutes-July-16-2024.pdf",
+      "ai_summary": "The Township is signing an agreement with the government to receive federal funding for community infrastructure projects like roads, water systems, and public transit.",
+      "ai_key_points": [
+        "Township can access Canada Community-Building Fund for local infrastructure projects",
+        "Must sign Municipal Funding Agreement to receive the federal money",
+        "Funds support roads, water systems, transit and other community infrastructure"
+      ]
+    },
+    {
+      "number": "2024-36",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on July 16, 2024. Carried",
+      "date_passed": "2024-07-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-07-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/July-16-2024-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/07/Minutes-July-16-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions and actions that Township Council took during their July 16, 2024 meeting.",
+      "ai_key_points": [
+        "Confirms all decisions made by Council on July 16, 2024 are official",
+        "Makes Council proceedings from that meeting legally binding",
+        "Standard administrative procedure to formalize Council actions"
+      ]
+    },
+    {
+      "number": "2024-37",
+      "year": 2024,
+      "title": "adopt a policy to establish procedures and practices for the investment of municipal funds",
+      "date_passed": "2024-08-13",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-08-13",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Council-Agenda-Package-August-13-2024-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Minutes-August-13-2024.pdf",
+      "ai_summary": "This by-law creates rules for how the Township invests its money. It establishes procedures to ensure municipal funds are invested safely and responsibly.",
+      "ai_key_points": [
+        "Creates official policy for investing Township money and funds",
+        "Establishes procedures and practices for safe municipal investments",
+        "Ensures responsible handling of public funds through formal guidelines"
+      ]
+    },
+    {
+      "number": "2024-38",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on August 13, 2024. Carried",
+      "date_passed": "2024-08-13",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by J. Scott",
+      "meeting_date": "2024-08-13",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Council-Agenda-Package-August-13-2024-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/08/Minutes-August-13-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions and actions that Township Council made during their meeting on August 13, 2024.",
+      "ai_key_points": [
+        "Confirms all votes and decisions made by Council on August 13, 2024",
+        "Makes the meeting proceedings officially valid and legally binding",
+        "Standard administrative procedure to formalize Council actions"
+      ]
+    },
+    {
+      "number": "2024-39",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on September 3, 2024",
+      "date_passed": "2024-09-03",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-09-03",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Council-Agenda-Package-September-3-2024.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-3-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions that Township Council made during their September 3, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from September 3, 2024 meeting officially legal and binding",
+        "Standard administrative procedure to formalize Council proceedings",
+        "No new regulations, requirements, or penalties for residents"
+      ]
+    },
+    {
+      "number": "2024-40",
+      "year": 2024,
+      "title": "Amend Zoning By-Law 2020-20, as amended",
+      "date_passed": "2024-09-17",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-09-17",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Septrmber-17-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-17-2024.pdf",
+      "ai_summary": "This by-law makes changes to the Township's zoning rules from 2020. It updates what can be built where and how properties can be used.",
+      "ai_key_points": [
+        "Amends the existing zoning by-law that controls land use and building requirements",
+        "Updates rules about what types of buildings and activities are allowed in different areas",
+        "Changes may affect property development, building permits, and land use permissions",
+        "Specific details of the amendments would be outlined in the full by-law document"
+      ]
+    },
+    {
+      "number": "2024-41",
+      "year": 2024,
+      "title": "adopt Municipal Position Descriptions for municipal staff positions for the Township of Nipissing",
+      "date_passed": "2024-09-17",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-09-17",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Septrmber-17-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-17-2024.pdf",
+      "ai_summary": "The Township of Nipissing has officially adopted job descriptions for all municipal staff positions. These descriptions outline duties and responsibilities for township employees.",
+      "ai_key_points": [
+        "Creates official job descriptions for all municipal staff positions",
+        "Outlines specific duties and responsibilities for township employees",
+        "Establishes formal employment standards for municipal workers"
+      ]
+    },
+    {
+      "number": "2024-42",
+      "year": 2024,
+      "title": "adopt a revised Organizational Chart for the Township of Nipissing",
+      "date_passed": "2024-09-17",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-09-17",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Septrmber-17-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-17-2024.pdf",
+      "ai_summary": "The Township of Nipissing updated its organizational chart in 2024. This shows how municipal departments and staff positions are structured and organized.",
+      "ai_key_points": [
+        "Updates the official organizational structure of Township departments and staff positions",
+        "Shows reporting relationships and hierarchy within municipal government",
+        "Replaces any previous organizational charts with the new 2024 version"
+      ]
+    },
+    {
+      "number": "2024-43",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on September 17, 2024",
+      "date_passed": "2024-09-17",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-09-17",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Septrmber-17-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/Minutes-September-17-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions, motions, and actions taken by Township Council during their September 17, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from September 17, 2024 meeting officially legal and binding",
+        "Confirms all motions, resolutions, and actions taken during that Council session",
+        "Standard administrative procedure to formalize Council proceedings into law"
+      ]
+    },
+    {
+      "number": "2024-44",
+      "year": 2024,
+      "title": "appoint a Deputy Treasurer-Office Assistant for the Township of Nipissing",
+      "date_passed": "2024-10-01",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by D. Yemm",
+      "meeting_date": "2024-10-01",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/October-1-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-1-2024.pdf",
+      "ai_summary": "The Township of Nipissing has appointed someone to the position of Deputy Treasurer-Office Assistant through this by-law.",
+      "ai_key_points": [
+        "Appoints a new Deputy Treasurer-Office Assistant for the Township",
+        "Creates or fills a municipal staff position",
+        "Takes effect immediately upon passage"
+      ]
+    },
+    {
+      "number": "2024-45",
+      "year": 2024,
+      "title": "amend By-Law 2021-58 which prohibits the unauthorized disposal of waste and establishes and regulates a system for the disposal of solid waste in t...",
+      "date_passed": "2024-10-01",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-10-01",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/October-1-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-1-2024.pdf",
+      "ai_summary": "This by-law updates the Township's waste disposal rules. It controls how residents can throw away garbage and sets up the official waste collection system.",
+      "ai_key_points": [
+        "Residents cannot dump waste illegally anywhere in the Township",
+        "Must follow Township's official garbage collection and disposal system",
+        "Updates previous waste management rules from 2021",
+        "Regulates what types of solid waste can be disposed of and how"
+      ]
+    },
+    {
+      "number": "2024-46",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on October 1, 2024",
+      "date_passed": "2024-10-01",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-10-01",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/09/October-1-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-1-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions taken by Township Council during their October 1, 2024 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from October 1, 2024 meeting officially legal and binding",
+        "Standard administrative procedure to formalize Council proceedings",
+        "No specific regulations, requirements, or penalties for residents"
+      ]
+    },
+    {
+      "number": "2024-47",
+      "year": 2024,
+      "title": "Amend Zoning By-Law 2020-20, as amended",
+      "date_passed": "2024-10-22",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by D. Yemm",
+      "meeting_date": "2024-10-22",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/October-22-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-22-2024.pdf",
+      "ai_summary": "This by-law makes changes to the Township's zoning rules from 2020. It updates what can be built where and how properties can be used.",
+      "ai_key_points": [
+        "Updates the Township's zoning rules that control land use and development",
+        "Modifies existing regulations about what can be built on different properties",
+        "Changes requirements for property owners and developers in the Township",
+        "Builds on previous zoning amendments made since 2020"
+      ]
+    },
+    {
+      "number": "2024-48",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on October 22, 2024",
+      "date_passed": "2024-10-22",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by D. Yemm, Seconded by S. Foote",
+      "meeting_date": "2024-10-22",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/October-22-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/10/Minutes-October-22-2024.pdf",
+      "ai_summary": "This by-law officially confirms and validates all decisions, motions, and actions made by Township Council during their meeting on October 22, 2024.",
+      "ai_key_points": [
+        "Makes all Council decisions from October 22, 2024 meeting legally binding",
+        "Confirms all motions and votes passed during that Council meeting",
+        "Standard procedure to validate Council proceedings and ensure legal authority"
+      ]
+    },
+    {
+      "number": "2024-49",
+      "year": 2024,
+      "title": "enter into an agreement for OPP Provision of 9-1-1 Primary Public Safety Answering Point (P-PSAP) Services",
+      "date_passed": "2024-11-12",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-11-12",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Council-Agenda-Package-Nov-12-2024-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Minutes-November-12-2024.pdf",
+      "ai_summary": "The Township of Nipissing approved an agreement with the OPP to provide 911 emergency call answering services for residents.",
+      "ai_key_points": [
+        "OPP will handle all 911 emergency calls for the township",
+        "Creates a formal agreement for primary emergency dispatch services",
+        "Ensures residents have professional 911 call response coverage"
+      ]
+    },
+    {
+      "number": "2024-50",
+      "year": 2024,
+      "title": "enter into an agreement for the provision of fire communication (call-taking, call alerting) services with the North Bay Regional Health Centre for...",
+      "date_passed": "2024-11-12",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-11-12",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Council-Agenda-Package-Nov-12-2024-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Minutes-November-12-2024.pdf",
+      "ai_summary": "The Township of Nipissing is entering into an agreement with North Bay Regional Health Centre to handle fire emergency calls and dispatch services.",
+      "ai_key_points": [
+        "North Bay Regional Health Centre will take fire emergency calls for the township",
+        "The health centre will also handle alerting/dispatching fire crews when needed",
+        "This creates a formal service agreement between the two organizations"
+      ]
+    },
+    {
+      "number": "2024-51",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on November 12, 2024",
+      "date_passed": "2024-11-12",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2024-11-12",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Council-Agenda-Package-Nov-12-2024-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/11/Minutes-November-12-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions and actions that Township Council made during their meeting on November 12, 2024.",
+      "ai_key_points": [
+        "Confirms all decisions made by Council at the November 12, 2024 meeting are official",
+        "Makes all votes and resolutions from that meeting legally binding",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2024-52",
+      "year": 2024,
+      "title": "appoint a Mayor. Dave Yemm is appointed the Mayor of the Township of Nipissing effective immediately",
+      "date_passed": "2024-12-03",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by J. Scott",
+      "meeting_date": "2024-12-03",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-3-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf",
+      "ai_summary": "The Township of Nipissing has officially appointed Dave Yemm as the new Mayor, effective immediately.",
+      "ai_key_points": [
+        "Dave Yemm is now the official Mayor of Nipissing Township",
+        "The appointment takes effect right away",
+        "This is a formal municipal appointment through by-law"
+      ]
+    },
+    {
+      "number": "2024-53",
+      "year": 2024,
+      "title": "appoint a Deputy Mayor. Shelly Foote is appointed the Deputy Mayor of the Township of Nipissing effective immediately",
+      "date_passed": "2024-12-03",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-12-03",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-3-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf",
+      "ai_summary": "The Township of Nipissing has officially appointed Shelly Foote as the new Deputy Mayor. This appointment takes effect immediately upon passing of the by-law.",
+      "ai_key_points": [
+        "Shelly Foote is appointed as Deputy Mayor of Township of Nipissing",
+        "The appointment is effective immediately",
+        "This is an official municipal appointment under by-law authority"
+      ]
+    },
+    {
+      "number": "2024-54",
+      "year": 2024,
+      "title": "establish the remuneration and payment of expenses to members of Council",
+      "date_passed": "2024-12-17",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by J. Scott",
+      "meeting_date": "2024-12-17",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-17-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-17-2024.pdf",
+      "ai_summary": "This by-law sets how much Township of Nipissing council members get paid and what expenses they can claim for doing their job.",
+      "ai_key_points": [
+        "Sets official pay rates for mayor and councillors",
+        "Lists what expenses council members can claim reimbursement for",
+        "Establishes rules for when and how payments are made"
+      ]
+    },
+    {
+      "number": "2024-55",
+      "year": 2024,
+      "title": "amend the Renumeration Schedule in the Township of Nipissing Pay Equity Plan",
+      "date_passed": "2024-12-03",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2024-12-03",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-3-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf",
+      "ai_summary": "This by-law updates the pay rates in the Township's Pay Equity Plan to ensure fair compensation between male and female job positions.",
+      "ai_key_points": [
+        "Updates salary schedules in the Township's Pay Equity Plan",
+        "Ensures equal pay for work of equal value between genders",
+        "Changes compensation rates for municipal employees",
+        "Maintains legal compliance with Ontario pay equity laws"
+      ]
+    },
+    {
+      "number": "2024-56",
+      "year": 2024,
+      "title": "enter into an Agreement for a Municipal Facilities Maintenance Contract for the Township of Nipissing",
+      "date_passed": "2024-12-03",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by J. Scott",
+      "meeting_date": "2024-12-03",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-3-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf",
+      "ai_summary": "The Township is entering into a contract with a company to maintain and repair municipal buildings and facilities. This by-law authorizes the agreement.",
+      "ai_key_points": [
+        "Township authorizes signing a maintenance contract for municipal buildings",
+        "Contract covers upkeep and repairs of Township facilities",
+        "Agreement allows Township to hire outside company for facility maintenance"
+      ]
+    },
+    {
+      "number": "2024-57",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on November 12, 2024",
+      "date_passed": "2024-12-03",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Foote",
+      "meeting_date": "2024-12-03",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-3-2024-Council-Agenda-Package-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-3-2024.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, votes, and actions taken by Township Council during their November 12, 2024 meeting.",
+      "ai_key_points": [
+        "Confirms all Council decisions from November 12, 2024 meeting are official",
+        "Makes all votes and actions from that meeting legally binding",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2024-58",
+      "year": 2024,
+      "title": "confirm the proceedings of Council at its meeting held on December 17, 2024",
+      "date_passed": "2024-12-17",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by S. Kirkey",
+      "meeting_date": "2024-12-17",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/December-17-2024-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2024/12/Minutes-December-17-2024.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions taken by Township Council during their December 17, 2024 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from December 17, 2024 meeting officially valid",
+        "Ensures any votes or resolutions passed that day have legal effect",
+        "Standard administrative procedure to formalize Council proceedings"
       ]
     },
     {
@@ -625,8 +1955,15 @@
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "ai_summary": "This by-law officially confirms who will serve on the Township's Committee of Adjustment for 2025. The committee handles applications for property variances and planning permissions.",
+      "ai_key_points": [
+        "Confirms appointment of specific people to serve on Committee of Adjustment",
+        "Committee reviews applications for property variances and minor planning exemptions",
+        "Appointments are for 2025 calendar year",
+        "No penalties or requirements specified - administrative appointment only"
+      ]
     },
     {
       "number": "2025-02",
@@ -639,8 +1976,14 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "ai_summary": "This by-law allows the Township of Nipissing to temporarily borrow money during 2025 to pay for day-to-day expenses when needed.",
+      "ai_key_points": [
+        "Township can borrow money temporarily to cover operating costs in 2025",
+        "Borrowing is only allowed to meet current expenses during the fiscal year",
+        "Authority expires December 31, 2025"
+      ]
     },
     {
       "number": "2025-03",
@@ -653,8 +1996,15 @@
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2025-01-07",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "ai_summary": "The Township of Nipissing is setting temporary property tax rates for 2025 until the final tax rates are approved later in the year.",
+      "ai_key_points": [
+        "Sets interim property tax rates for 2025 before final budget approval",
+        "Property owners must pay these temporary taxes by specified due dates",
+        "Final tax rates will be set later and may result in adjustments",
+        "Applies to all taxable properties within Township of Nipissing boundaries"
+      ]
     },
     {
       "number": "2025-04",
@@ -667,8 +2017,14 @@
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "ai_summary": "The Township of Nipissing is hiring a licensed professional accountant to review and audit the municipality's financial records for 2025.",
+      "ai_key_points": [
+        "Township must hire a licensed auditor each year to review municipal finances",
+        "Auditor must be properly licensed under Ontario's Public Accountancy Act",
+        "This ensures independent oversight of how township spends taxpayer money"
+      ]
     },
     {
       "number": "2025-05",
@@ -681,8 +2037,664 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by J. Scott",
       "meeting_date": "2025-01-07",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-7-2025-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-7-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions that Township Council made during their January 7, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from January 7, 2025 meeting officially legal and binding",
+        "Standard procedural by-law - no new rules or penalties for residents",
+        "Ensures Council's votes and decisions have proper legal authority"
+      ]
+    },
+    {
+      "number": "2025-06",
+      "year": 2025,
+      "title": "amend Zoning By-Law 2020-20 as amended",
+      "date_passed": "2025-01-21",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by S. Kirkey",
+      "meeting_date": "2025-01-21",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-21-2025-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-21-2025-1.pdf",
+      "ai_summary": "This by-law makes changes to the Township's existing zoning rules from 2020. It updates what can be built where and under what conditions.",
+      "ai_key_points": [
+        "Amends the existing 2020 zoning by-law with new or updated rules",
+        "Changes regulations about land use and building requirements in the Township",
+        "Updates zoning restrictions for specific areas or property types",
+        "Modifies development standards and permitted uses for certain zones"
+      ]
+    },
+    {
+      "number": "2025-07",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on January 21, 2025",
+      "date_passed": "2025-01-21",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-01-21",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/January-21-2025-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/01/Minutes-January-21-2025-1.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, resolutions, and actions taken by Township Council during their January 21, 2025 meeting.",
+      "ai_key_points": [
+        "Confirms all Council decisions from January 21, 2025 meeting are official",
+        "Makes all resolutions and actions from that meeting legally binding",
+        "Standard procedural by-law with no new regulations or requirements"
+      ]
+    },
+    {
+      "number": "2025-08",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on February 4, 2025",
+      "date_passed": "2025-02-04",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-02-04",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/02/February-4-2025-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-February-4-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions, motions, and actions taken by Township Council during their February 4, 2025 meeting.",
+      "ai_key_points": [
+        "Confirms all Council decisions from February 4, 2025 meeting are official",
+        "Makes all motions and resolutions from that meeting legally binding",
+        "Standard procedural by-law with no new regulations or penalties"
+      ]
+    },
+    {
+      "number": "2025-09",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on February 18, 2025",
+      "date_passed": "2025-02-18",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by J. Scott",
+      "meeting_date": "2025-02-18",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Agenda-Package-February-18-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/02/Minutes-February-18-2025.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions taken by Township Council during their February 18, 2025 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from February 18, 2025 meeting officially legal",
+        "Confirms any resolutions, motions, or votes from that meeting are valid",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-10",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on March 4, 2025",
+      "date_passed": "2025-03-04",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
+      "meeting_date": "2025-03-04",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/03/March-4-2025-Council-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-4-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, votes, and actions taken by Township Council during their March 4, 2025 meeting.",
+      "ai_key_points": [
+        "Confirms all Council decisions made at March 4, 2025 meeting are official and legal",
+        "Makes all votes and resolutions from that meeting binding",
+        "Standard administrative procedure to validate Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-11",
+      "year": 2025,
+      "title": "appoint an Area Weed Inspector for the Corporation of the Township of Nipissing",
+      "date_passed": "2025-03-18",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "pending",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-03-18",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Agenda-Package-March-18-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-18-2025.pdf",
+      "ai_summary": "The Township of Nipissing has appointed someone as the official Area Weed Inspector. This person will enforce weed control rules in the township.",
+      "ai_key_points": [
+        "Township officially appoints an Area Weed Inspector for 2025",
+        "Inspector will enforce provincial weed control laws in Nipissing Township",
+        "Appointment allows legal enforcement of weed removal on private properties"
+      ]
+    },
+    {
+      "number": "2025-12",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on March 18, 2025",
+      "date_passed": "2025-03-18",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
+      "meeting_date": "2025-03-18",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Agenda-Package-March-18-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/03/Minutes-March-18-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, votes, and actions taken by Township Council during their March 18, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from March 18, 2025 meeting officially legal and binding",
+        "Standard procedural by-law - no new rules or penalties for residents",
+        "Ensures Council's votes and actions from that meeting are properly recorded"
+      ]
+    },
+    {
+      "number": "2025-13",
+      "year": 2025,
+      "title": "adopt the estimates for all sums required for the year, to provide for the adoption of tax rates and to further provide for penalty and interest in...",
+      "date_passed": "2025-04-08",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "pending",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-04-08",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Agenda-Package-April-8-2025-updated-.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Minutes-April-8-2025.pdf",
+      "ai_summary": "This by-law sets the 2025 budget and tax rates for Nipissing Township. It also establishes penalties and interest charges for late tax payments.",
+      "ai_key_points": [
+        "Sets the township's 2025 budget and spending estimates",
+        "Establishes tax rates residents will pay in 2025",
+        "Creates penalty charges for late property tax payments",
+        "Sets interest rates on overdue taxes"
+      ]
+    },
+    {
+      "number": "2025-14",
+      "year": 2025,
+      "title": "set tax ratios for municipal purposes for the Year 2025",
+      "date_passed": "2025-04-08",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "pending",
+      "votes": "Moved by S. Foote, Seconded by J. Scott",
+      "meeting_date": "2025-04-08",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Agenda-Package-April-8-2025-updated-.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Minutes-April-8-2025.pdf",
+      "ai_summary": "This by-law sets the tax rates that different types of properties will pay for municipal services in Nipissing Township for 2025.",
+      "ai_key_points": [
+        "Establishes how much tax residential, commercial, and industrial properties pay relative to each other",
+        "Sets the official tax ratios the municipality will use to calculate property tax bills",
+        "Applies to all property taxes collected for municipal services in 2025"
+      ]
+    },
+    {
+      "number": "2025-15",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on April 8, 2025",
+      "date_passed": "2025-04-08",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by S. Kirkey",
+      "meeting_date": "2025-04-08",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Agenda-Package-April-8-2025-updated-.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/04/Minutes-April-8-2025.pdf",
+      "ai_summary": "This by-law officially confirms and validates all decisions, votes, and actions taken by Township Council during their meeting on April 8, 2025.",
+      "ai_key_points": [
+        "Makes all Council decisions from April 8, 2025 meeting legally binding",
+        "Confirms all votes and resolutions passed during that Council meeting",
+        "Standard procedural by-law with no specific regulations or penalties for residents"
+      ]
+    },
+    {
+      "number": "2025-16",
+      "year": 2025,
+      "title": "Amend By-Law Number 2023-30, cited as the “Trailer Licence By-Law” to correct wording and by-law references",
+      "date_passed": "2025-05-13",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "pending",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-05-13",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/05/May-13-Council-Agenda-Package-updated-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-13-2025.pdf",
+      "ai_summary": "This by-law fixes errors in the existing trailer licensing rules from 2023. It corrects wording mistakes and updates references to other by-laws.",
+      "ai_key_points": [
+        "Corrects wording errors in the 2023 Trailer Licence By-Law",
+        "Updates references to other municipal by-laws",
+        "Does not change actual trailer licensing requirements or penalties",
+        "Technical amendment to improve clarity of existing rules"
+      ]
+    },
+    {
+      "number": "2025-17",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on May 13, 2025",
+      "date_passed": "2025-05-13",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-05-13",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/05/May-13-Council-Agenda-Package-updated-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-13-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, votes, and actions taken by Township Council during their meeting on May 13, 2025.",
+      "ai_key_points": [
+        "Makes all Council decisions from May 13, 2025 meeting officially valid and legal",
+        "Confirms all votes and resolutions passed during that Council meeting",
+        "Standard procedural by-law with no new regulations or penalties for residents"
+      ]
+    },
+    {
+      "number": "2025-18",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on May 27, 2025",
+      "date_passed": "2025-05-27",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by J. Scott",
+      "meeting_date": "2025-05-27",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/05/May-27-2025-Agenda-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/05/Minutes-May-27-2025.pdf",
+      "ai_summary": "This by-law officially approves and makes legal all decisions and actions taken by Township Council during their May 27, 2025 meeting.",
+      "ai_key_points": [
+        "Confirms all Council decisions from May 27, 2025 meeting are official and legally binding",
+        "Makes all votes and resolutions passed at that meeting valid under law",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-19",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on June 10, 2025",
+      "date_passed": "2025-06-10",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-06-10",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Agenda-Package-June-10-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-June-10-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions and actions taken by Township Council during their June 10, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from June 10, 2025 meeting officially legal and binding",
+        "Standard procedural by-law with no new regulations or requirements for residents",
+        "No penalties specified as this is administrative confirmation only"
+      ]
+    },
+    {
+      "number": "2025-20",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on June 24, 2025",
+      "date_passed": "2025-06-24",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "meeting_date": "2025-06-24",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Agenda-Package-June-24.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/06/Minutes-June-24-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions, motions, and actions taken by Township Council during their meeting on June 24, 2025.",
+      "ai_key_points": [
+        "Makes all Council decisions from June 24, 2025 meeting officially legal and binding",
+        "Standard procedural by-law with no new regulations or requirements for residents",
+        "No penalties specified as this is administrative confirmation only"
+      ]
+    },
+    {
+      "number": "2025-21",
+      "year": 2025,
+      "title": "amend Zoning By-Law 2020-20, as amended",
+      "date_passed": "2025-07-15",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by J. Scott",
+      "meeting_date": "2025-07-15",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/07/Agenda-Package-July-15-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-July-15-2025.pdf",
+      "ai_summary": "This by-law makes changes to the Township's existing zoning rules from 2020. It updates what can be built where and under what conditions.",
+      "ai_key_points": [
+        "Modifies existing zoning regulations that control land use and development",
+        "Changes rules about what types of buildings or activities are allowed in certain areas",
+        "Updates requirements for property development and construction standards",
+        "Amends the 2020 zoning by-law with new or revised restrictions"
+      ]
+    },
+    {
+      "number": "2025-22",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on July 15, 2025",
+      "date_passed": "2025-07-15",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by J. Scott",
+      "meeting_date": "2025-07-15",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/07/Agenda-Package-July-15-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/07/Minutes-July-15-2025.pdf",
+      "ai_summary": "This by-law officially confirms and validates all decisions, motions, and actions that Township Council made during their meeting on July 15, 2025.",
+      "ai_key_points": [
+        "Makes all Council decisions from July 15, 2025 meeting legally valid and binding",
+        "Ensures proper legal authority for any actions Council took during that meeting",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-23",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on August 12, 2025",
+      "date_passed": "2025-08-12",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S.Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-08-12",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/08/Agenda-Package-August-12.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/08/Minutes-August-12-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions taken by Township Council during their August 12, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from August 12, 2025 meeting officially legal and binding",
+        "Standard procedural by-law with no new regulations or requirements for residents",
+        "No penalties specified - this is administrative housekeeping for Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-24",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on September 2, 2025",
+      "date_passed": "2025-09-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S.Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-09-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Agenda-Package-September-2-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-2-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions, motions, and actions taken by Township Council during their September 2, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from September 2, 2025 meeting officially legal and binding",
+        "Standard procedure to formalize Council votes and actions from the meeting",
+        "No new regulations, requirements, or penalties are created by this by-law"
+      ]
+    },
+    {
+      "number": "2025-25",
+      "year": 2025,
+      "title": "amend Zoning By-Law 2020-20 as amended",
+      "date_passed": "2025-09-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2025-09-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Agenda-Package-September-16-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-16-2025.pdf",
+      "ai_summary": "This by-law makes changes to the Township's zoning rules from 2020. It updates what can be built where and how properties can be used.",
+      "ai_key_points": [
+        "Amends the existing zoning by-law 2020-20 that controls land use in the Township",
+        "Changes rules about what types of buildings and activities are allowed on different properties",
+        "Updates zoning regulations that were previously established in 2020",
+        "Modifies property development and use requirements for residents and businesses"
+      ]
+    },
+    {
+      "number": "2025-26",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on September 16, 2025",
+      "date_passed": "2025-09-16",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-09-16",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Agenda-Package-September-16-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/09/Minutes-September-16-2025.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions made by Township Council during their September 16, 2025 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from September 16, 2025 meeting officially legal",
+        "Ensures any motions or resolutions passed that day are properly recorded",
+        "Standard procedure to validate Council proceedings and prevent legal challenges"
+      ]
+    },
+    {
+      "number": "2025-27",
+      "year": 2025,
+      "title": "stop up, close and sell part of the Original Shore Road Allowance in front of Lot 3, Concession 19 designated as Part 1 on Plan 42R22637, in the To...",
+      "date_passed": "2025-10-07",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-10-07",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Agenda-Package-October-7-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-7-2025.pdf",
+      "ai_summary": "The Township is permanently closing and selling a section of the old Shore Road in front of a specific property to a private buyer.",
+      "ai_key_points": [
+        "Part of Original Shore Road Allowance in front of Lot 3, Concession 19 is being closed permanently",
+        "The closed road section will be sold to a private purchaser",
+        "The specific area is identified as Part 1 on registered Plan 42R22637",
+        "Once closed, this road section will no longer be public property or accessible"
+      ]
+    },
+    {
+      "number": "2025-28",
+      "year": 2025,
+      "title": "amend Zoning By-Law 2020-20 as amended",
+      "date_passed": "2025-10-07",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-10-07",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Agenda-Package-October-7-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-7-2025.pdf",
+      "ai_summary": "This by-law makes changes to the Township's zoning rules from 2020. It updates what can be built where and under what conditions.",
+      "ai_key_points": [
+        "Amends the existing zoning by-law that controls land use in the Township",
+        "Updates rules about what types of buildings and activities are allowed in different areas",
+        "Changes requirements for property development and construction projects",
+        "Modifies existing zoning restrictions or permissions for specific properties or zones"
+      ]
+    },
+    {
+      "number": "2025-29",
+      "year": 2025,
+      "title": "amend Zoning By-Law 2020-20 as amended",
+      "date_passed": "2025-10-07",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-10-07",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Agenda-Package-October-7-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-7-2025.pdf",
+      "ai_summary": "This by-law makes changes to the Township's main zoning rules from 2020. It updates what can be built where and under what conditions.",
+      "ai_key_points": [
+        "Updates the Township's zoning rules that control what can be built on different properties",
+        "Changes requirements for property development and land use in the Township",
+        "Modifies existing zoning restrictions and permissions from the 2020 zoning by-law",
+        "Affects where residents can build homes, businesses, and other structures"
+      ]
+    },
+    {
+      "number": "2025-30",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on October 7, 2025",
+      "date_passed": "2025-10-07",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2025-10-07",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Agenda-Package-October-7-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-7-2025.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally binding all decisions, motions, and actions taken by Township Council during their October 7, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from October 7, 2025 meeting officially legal and binding",
+        "Standard procedural by-law to formalize Council actions and resolutions",
+        "No specific regulations, requirements, or penalties for residents"
+      ]
+    },
+    {
+      "number": "2025-31",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on October 28, 2025",
+      "date_passed": "2025-10-28",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2025-10-28",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Agenda-Package-October-28-2025-1.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/10/Minutes-October-28-2025.pdf",
+      "ai_summary": "This by-law officially confirms and validates all decisions, motions, and actions taken by Township Council during their October 28, 2025 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from October 28, 2025 meeting legally binding",
+        "Confirms all motions and votes passed during that Council session",
+        "Standard administrative procedure to validate Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-32",
+      "year": 2025,
+      "title": "adopt an Asset Management Plan for the Township of Nipissing",
+      "date_passed": "2025-11-18",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-11-18",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Agenda-Package-November-18-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Minutes-November-18-2025.pdf",
+      "ai_summary": "The Township of Nipissing has officially adopted a plan to manage and maintain all municipal assets like roads, buildings, and infrastructure.",
+      "ai_key_points": [
+        "Township officially adopts an Asset Management Plan for municipal infrastructure",
+        "Plan guides how the municipality will maintain roads, buildings, and other assets",
+        "Helps ensure proper planning and budgeting for infrastructure repairs and replacements"
+      ]
+    },
+    {
+      "number": "2025-33",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on November 18, 2025",
+      "date_passed": "2025-11-18",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2025-11-18",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Agenda-Package-November-18-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/11/Minutes-November-18-2025.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions taken by Township Council during their November 18, 2025 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from November 18, 2025 meeting officially valid",
+        "Ensures all motions and votes from that meeting are legally binding",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
+    },
+    {
+      "number": "2025-34",
+      "year": 2025,
+      "title": "appoint an Integrity Commissioner for the Township of Nipissing",
+      "date_passed": "2025-12-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Foote",
+      "meeting_date": "2025-12-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Agenda-Package-December-2-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-2-2025.pdf",
+      "ai_summary": "The Township is hiring an Integrity Commissioner to oversee ethical conduct of council members and local board members. This person will investigate complaints and ensure officials follow proper ethical standards.",
+      "ai_key_points": [
+        "Appoints an Integrity Commissioner to monitor ethical behavior of elected officials",
+        "Commissioner investigates complaints about misconduct by council and board members",
+        "Ensures township officials follow required codes of conduct and ethical standards",
+        "Provides independent oversight of local government integrity and accountability"
+      ]
+    },
+    {
+      "number": "2025-35",
+      "year": 2025,
+      "title": "establish the remuneration and payment of expenses to members of Council",
+      "date_passed": "2025-12-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by S. Kirkey",
+      "meeting_date": "2025-12-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Agenda-Package-December-2-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-2-2025.pdf",
+      "ai_summary": "This by-law sets how much Township of Nipissing council members get paid and what expenses they can claim for doing their municipal duties.",
+      "ai_key_points": [
+        "Sets salary amounts for mayor and councillors",
+        "Defines what expenses council members can claim reimbursement for",
+        "Establishes when and how payments are made to council members"
+      ]
+    },
+    {
+      "number": "2025-36",
+      "year": 2025,
+      "title": "amend the Remuneration Schedule in the Township of Nipissing Pay Equity Plan",
+      "date_passed": "2025-12-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2025-12-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Agenda-Package-December-2-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-2-2025.pdf",
+      "ai_summary": "This by-law updates the pay schedule in the Township's Pay Equity Plan to ensure fair compensation between different job positions.",
+      "ai_key_points": [
+        "Updates salary and wage rates in the Township's pay equity system",
+        "Ensures equal pay for work of equal value across different positions",
+        "Changes take effect in 2025 for Township employees",
+        "Part of ongoing legal requirement to maintain pay equity"
+      ]
+    },
+    {
+      "number": "2025-37",
+      "year": 2025,
+      "title": "confirm the proceedings of Council at its meeting held on December 2, 2025",
+      "date_passed": "2025-12-02",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2025-12-02",
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Agenda-Package-December-2-2025.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2025/12/Minutes-December-2-2025.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions taken by Township Council during their December 2, 2025 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from December 2, 2025 meeting officially valid",
+        "Ensures any votes or resolutions passed that day have legal force",
+        "Standard procedure to confirm Council proceedings are properly recorded"
+      ]
     },
     {
       "number": "2026-01",
@@ -695,8 +2707,15 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-01-06",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Agenda-Package-January-6-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf",
+      "ai_summary": "The Township is hiring someone to maintain municipal buildings and facilities. This by-law authorizes the Township to enter into an employment agreement with this maintenance person.",
+      "ai_key_points": [
+        "Township will hire a Municipal Facilities Maintenance Person",
+        "Authorizes creating an employment agreement for this position",
+        "Position will handle upkeep and maintenance of Township buildings",
+        "By-law enables Township to formally enter into the hiring contract"
+      ]
     },
     {
       "number": "2026-02",
@@ -709,8 +2728,15 @@
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2026-01-06",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Agenda-Package-January-6-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf",
+      "ai_summary": "This by-law allows Nipissing Township to collect property taxes early in 2026 before the final tax rates are set by the province.",
+      "ai_key_points": [
+        "Township can collect interim property taxes in early 2026",
+        "Interim taxes based on previous year's rates until final rates set",
+        "Allows municipality to maintain cash flow before provincial budget approval",
+        "Property owners must pay interim taxes by specified due dates"
+      ]
     },
     {
       "number": "2026-03",
@@ -723,8 +2749,14 @@
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2026-01-06",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Agenda-Package-January-6-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-6-2026.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions made by Township Council at their January 6, 2026 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from January 6, 2026 meeting officially valid",
+        "Ensures any motions or votes from that meeting have legal force",
+        "Standard procedure to formalize Council proceedings"
+      ]
     },
     {
       "number": "2026-04",
@@ -737,8 +2769,15 @@
       "status": "approved",
       "votes": "Moved by J. Scott, Seconded by S. Kirkey",
       "meeting_date": "2026-02-03",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Agenda-Package-February-3-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
+      "ai_summary": "This by-law updates the Township of Nipissing's parking rules from 2021. It sets new regulations for where and how vehicles can be parked within the township.",
+      "ai_key_points": [
+        "Updates existing parking regulations from By-Law 2021-50",
+        "Regulates where vehicles can legally park in the township",
+        "Sets rules for parking on municipal property and roads",
+        "May include penalties for parking violations"
+      ]
     },
     {
       "number": "2026-05",
@@ -751,8 +2790,14 @@
       "status": "approved",
       "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
       "meeting_date": "2026-01-20",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-20-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Agenda-January-20-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/01/Minutes-January-20-2026.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions made by Township Council during their January 20, 2026 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from January 20, 2026 meeting officially valid",
+        "Ensures any votes or resolutions passed that day have legal force",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
     },
     {
       "number": "2026-06",
@@ -765,8 +2810,14 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-02-03",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Agenda-Package-February-3-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
+      "ai_summary": "The Township of Nipissing is authorized to sign an agreement for managing forest fires in the municipality. This allows coordinated fire prevention and response services.",
+      "ai_key_points": [
+        "Township can enter into forest fire management agreement with other agencies",
+        "Enables coordinated fire prevention and firefighting services in municipal areas",
+        "Provides framework for managing forest fire emergencies and responses"
+      ]
     },
     {
       "number": "2026-07",
@@ -779,8 +2830,14 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-02-03",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Agenda-Package-February-3-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-3-2026.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, motions, and actions that Township Council made during their February 3, 2026 meeting.",
+      "ai_key_points": [
+        "Makes all Council decisions from February 3, 2026 meeting officially valid and binding",
+        "Standard administrative procedure to formalize Council proceedings",
+        "No specific regulations, requirements, or penalties for residents"
+      ]
     },
     {
       "number": "2026-08",
@@ -793,8 +2850,14 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-02-17",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-17-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Feb-17-Council-Package.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/02/Minutes-February-17-2026.pdf",
+      "ai_summary": "This by-law officially confirms and makes legally valid all decisions and actions taken by Township Council during their meeting on February 17, 2026.",
+      "ai_key_points": [
+        "Makes all Council decisions from February 17, 2026 meeting officially legal and binding",
+        "Standard administrative procedure to formalize Council proceedings",
+        "No specific regulations, requirements, or penalties - just confirms meeting validity"
+      ]
     },
     {
       "number": "2026-09",
@@ -807,8 +2870,14 @@
       "status": "approved",
       "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
       "meeting_date": "2026-03-03",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-3-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-Package-March-3-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-3-2026.pdf",
+      "ai_summary": "This by-law officially confirms and makes legal all decisions, motions, and actions that Township Council made during their meeting on March 3, 2026.",
+      "ai_key_points": [
+        "Confirms all Council decisions from March 3, 2026 meeting are official and legally binding",
+        "Makes all motions passed during the meeting valid under municipal law",
+        "Standard procedural by-law with no new regulations or penalties for residents"
+      ]
     },
     {
       "number": "2026-10",
@@ -821,8 +2890,15 @@
       "status": "approved",
       "votes": "Moved by S. Kirkey, Seconded by J. Scott",
       "meeting_date": "2026-03-17",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-Package-Mar-17-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
+      "ai_summary": "This by-law sets the Township of Nipissing's 2026 budget and tax rates. It also establishes penalties and interest charges for late property tax payments.",
+      "ai_key_points": [
+        "Adopts the Township's 2026 budget estimates and spending plans",
+        "Sets the property tax rates residents will pay in 2026",
+        "Establishes penalty fees for late tax payments",
+        "Sets interest charges that accumulate on overdue taxes"
+      ]
     },
     {
       "number": "2026-11",
@@ -835,8 +2911,15 @@
       "status": "approved",
       "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
       "meeting_date": "2026-03-17",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-Package-Mar-17-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
+      "ai_summary": "This by-law sets the tax rates that different types of properties will pay for municipal services in 2026. It determines how much residential, commercial, and industrial properties contribute to township costs.",
+      "ai_key_points": [
+        "Sets tax ratios for different property types (residential, commercial, industrial) for 2026",
+        "Determines how much each property class pays relative to residential properties",
+        "Affects property tax bills for all property owners in the township",
+        "Required annual process to fund municipal services and operations"
+      ]
     },
     {
       "number": "2026-12",
@@ -849,8 +2932,14 @@
       "status": "approved",
       "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
       "meeting_date": "2026-03-17",
-      "agenda_package_url": null,
-      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+      "agenda_package_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Agenda-Package-Mar-17-2026.pdf",
+      "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf",
+      "ai_summary": "This by-law officially confirms that all decisions and actions taken by Township Council during their March 17, 2026 meeting are valid and legally binding.",
+      "ai_key_points": [
+        "Makes all Council decisions from March 17, 2026 meeting officially valid",
+        "Ensures any motions passed or actions taken that day have legal force",
+        "Standard administrative procedure to formalize Council proceedings"
+      ]
     }
   ],
   "resolutions": [
