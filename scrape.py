@@ -54,8 +54,9 @@ except ImportError:
 BASE_URL = "https://nipissingtownship.com"
 BYLAWS_PAGE = f"{BASE_URL}/municipal-information/by-laws/"
 COUNCIL_PAGE = f"{BASE_URL}/council-meeting-dates-agendas-minutes/"
-DATA_FILE = Path("site/bylaws-data.json")
-PDF_DIR = Path("site/bylaws")
+DATA_FILE = Path("bylaws-data.json")
+RES_FILE = Path("resolutions-data.json")
+PDF_DIR = Path("bylaws")
 HEADERS = {"User-Agent": "NipissingBylawArchiver/2.0 (civic transparency project)"}
 
 
@@ -74,6 +75,13 @@ def save_data(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"  Saved {len(data['bylaws'])} by-laws to {DATA_FILE}")
+
+
+def load_resolutions():
+    if RES_FILE.exists():
+        with open(RES_FILE) as f:
+            return json.load(f)
+    return {"last_updated": None, "resolutions": []}
 
 
 def fetch_page(url):
@@ -244,9 +252,214 @@ def scrape_council_meetings():
         })
 
     meetings.sort(key=lambda m: m["date"])
-    print(f"  Found {len(meetings)} meetings")
+    print(f"  Found {len(meetings)} meetings from main listing page")
     print(f"    with minutes: {sum(1 for m in meetings if m['minutes_url'])}")
     print(f"    with packages: {sum(1 for m in meetings if m['package_url'])}")
+
+    # Discover older meetings stored as WordPress sub-pages (2018-2023)
+    # Instead of probing hundreds of URLs, use a known list that we've verified exist.
+    # The scraper will try these and skip any that 404.
+    existing_dates = {m["date"] for m in meetings}
+    print(f"\n  Checking known older meeting URLs (2018–2023)...")
+
+    # Known WordPress sub-page meetings (verified to exist)
+    # Format: (date_str, minutes_slug, agenda_slug_or_None)
+    KNOWN_OLDER = [
+        # 2022
+        ("2022-05-10", "may-10-2022-minutes", None),
+        # 2021
+        ("2021-05-18", "minutes-may-18-2021", "agenda-may-18-2021"),
+        ("2021-09-07", "minutes-september-7-2021", "agenda-september-7-2021"),
+        # 2020
+        ("2020-09-15", "minutes-september-15-2020", None),
+        # 2019
+        ("2019-01-08", "minutes-january-8-2019", None),
+        # 2018
+        ("2018-02-06", "minutes-february-6-2018", None),
+    ]
+
+    # Also try to discover more by checking common patterns with short timeouts
+    import calendar
+    months_list = ['january','february','march','april','may','june','july',
+              'august','september','october','november','december']
+    
+    # Build candidate URLs — only 1st and 3rd Tuesday, only 2 slug variants
+    candidates = []
+    for year in range(2018, 2024):
+        for month_idx in range(1, 13):
+            month_name = months_list[month_idx - 1]
+            cal = calendar.monthcalendar(year, month_idx)
+            tuesdays = [week[1] for week in cal if week[1] != 0]
+            check_days = []
+            if len(tuesdays) >= 1: check_days.append(tuesdays[0])
+            if len(tuesdays) >= 3: check_days.append(tuesdays[2])
+            for day in check_days:
+                date_str = f"{year}-{month_idx:02d}-{day:02d}"
+                if date_str in existing_dates:
+                    continue
+                # Check if already in KNOWN_OLDER
+                if any(k[0] == date_str for k in KNOWN_OLDER):
+                    continue
+                candidates.append((date_str, year, month_idx, day, month_name))
+
+    older_found = 0
+
+    # First add all known URLs
+    for date_str, minutes_slug, agenda_slug in KNOWN_OLDER:
+        if date_str in existing_dates:
+            continue
+        parts = date_str.split('-')
+        year, month_idx, day = int(parts[0]), int(parts[1]), int(parts[2])
+        minutes_url = f"{COUNCIL_PAGE}{minutes_slug}/"
+        agenda_url = f"{COUNCIL_PAGE}{agenda_slug}/" if agenda_slug else None
+        date_obj = datetime(year, month_idx, day)
+        meetings.append({
+            "date": date_str,
+            "date_display": date_obj.strftime("%B %d, %Y"),
+            "is_special": False,
+            "agenda_url": agenda_url,
+            "minutes_url": minutes_url,
+            "package_url": None,
+            "year": year,
+            "minutes_type": "html",
+        })
+        older_found += 1
+        print(f"    Known: {date_obj.strftime('%B %d, %Y')}")
+
+    # Then probe candidates with very short timeout (3s) — skip on any error
+    print(f"  Probing {len(candidates)} candidate dates (3s timeout each)...")
+    for date_str, year, month_idx, day, month_name in candidates:
+        slugs = [f"minutes-{month_name}-{day}-{year}", f"{month_name}-{day}-{year}-minutes"]
+        minutes_url = None
+        for slug in slugs:
+            url = f"{COUNCIL_PAGE}{slug}/"
+            try:
+                resp = requests.head(url, headers=HEADERS, timeout=3, allow_redirects=True)
+                if resp.status_code == 200:
+                    minutes_url = url
+                    break
+            except Exception:
+                continue
+
+        if minutes_url:
+            date_obj = datetime(year, month_idx, day)
+            meetings.append({
+                "date": date_str,
+                "date_display": date_obj.strftime("%B %d, %Y"),
+                "is_special": False,
+                "agenda_url": None,
+                "minutes_url": minutes_url,
+                "package_url": None,
+                "year": year,
+                "minutes_type": "html",
+            })
+            older_found += 1
+            print(f"    Found: {date_obj.strftime('%B %d, %Y')} → {slug}")
+
+    # Also check the special-meeting-minutes page (contains multiple meetings)
+    special_url = f"{COUNCIL_PAGE}special-meeting-minutes/"
+    try:
+        resp = requests.head(special_url, headers=HEADERS, timeout=10, allow_redirects=True)
+        if resp.status_code == 200:
+            # This page has multiple special meetings embedded; we'll parse it in step 3
+            meetings.append({
+                "date": "special-meetings",
+                "date_display": "Special Meetings (Multiple)",
+                "is_special": True,
+                "agenda_url": None,
+                "minutes_url": special_url,
+                "package_url": None,
+                "year": None,
+                "minutes_type": "html_multi",
+            })
+            print(f"    Found: Special Meetings page")
+    except Exception:
+        pass
+
+    meetings.sort(key=lambda m: m["date"] if m["date"] != "special-meetings" else "9999")
+    print(f"  Older meetings discovered: {older_found}")
+
+    # Probe for unlisted PDF-format minutes (2022-2025)
+    # The main page sometimes drops older years. These meetings have PDF minutes at
+    # predictable URLs in wp-content/uploads/
+    print(f"\n  Probing for unlisted PDF minutes (2022–2025)...")
+    pdf_found = 0
+    for year in range(2022, 2026):
+        for month_idx in range(1, 13):
+            month_name = months[month_idx - 1].capitalize()
+            cal = calendar.monthcalendar(year, month_idx)
+            tuesdays = [week[1] for week in cal if week[1] != 0]
+
+            check_days = []
+            if len(tuesdays) >= 1: check_days.append(tuesdays[0])
+            if len(tuesdays) >= 3: check_days.append(tuesdays[2])
+
+            for day in check_days:
+                date_str = f"{year}-{month_idx:02d}-{day:02d}"
+                if date_str in existing_dates:
+                    continue
+                # Also skip if we already found this as a WP sub-page
+                if any(m["date"] == date_str for m in meetings):
+                    continue
+
+                # Try common PDF URL patterns for minutes
+                min_patterns = [
+                    f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Minutes-{month_name}-{day}-{year}.pdf",
+                    f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Minutes-{month_name}-{day}-{year}-1.pdf",
+                ]
+                # Upload folder can be month before for early-month meetings
+                if month_idx > 1:
+                    prev = month_idx - 1
+                    min_patterns.append(
+                        f"{BASE_URL}/wp-content/uploads/{year}/{prev:02d}/Minutes-{month_name}-{day}-{year}.pdf"
+                    )
+
+                minutes_url = None
+                for url in min_patterns:
+                    try:
+                        resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+                        if resp.status_code == 200:
+                            minutes_url = url
+                            break
+                    except Exception:
+                        continue
+
+                if minutes_url:
+                    # Try to find matching agenda package
+                    pkg_patterns = [
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Agenda-Package-{month_name}-{day}-{year}.pdf",
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/{month_name}-{day}-{year}-Council-Agenda-Package.pdf",
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Council-Agenda-Package-{month_name[:3]}-{day}-{year}.pdf",
+                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/{month_name}-{day}-{year}-Council-Package.pdf",
+                    ]
+                    package_url = None
+                    for url in pkg_patterns:
+                        try:
+                            resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+                            if resp.status_code == 200:
+                                package_url = url
+                                break
+                        except Exception:
+                            continue
+
+                    date_obj = datetime(year, month_idx, day)
+                    meetings.append({
+                        "date": date_str,
+                        "date_display": date_obj.strftime("%B %d, %Y"),
+                        "is_special": False,
+                        "agenda_url": None,
+                        "minutes_url": minutes_url,
+                        "package_url": package_url,
+                        "year": year,
+                    })
+                    pdf_found += 1
+                    pkg_note = f" + package" if package_url else ""
+                    print(f"    Found: {date_obj.strftime('%B %d, %Y')}{pkg_note}")
+
+    print(f"  Unlisted PDF meetings discovered: {pdf_found}")
+
+    meetings.sort(key=lambda m: m["date"] if m["date"] != "special-meetings" else "9999")
+    print(f"  Total meetings now: {len(meetings)}")
     return meetings
 
 
@@ -322,14 +535,31 @@ def scrape_all_minutes(meetings):
     for meeting in meetings:
         if not meeting.get("minutes_url"):
             continue
+        if meeting.get("date") == "special-meetings":
+            continue  # Handle separately
 
-        pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
-        if not pdf_path:
-            continue
+        minutes_type = meeting.get("minutes_type", "pdf")
+        text = None
 
-        text = extract_pdf_text(pdf_path)
+        if minutes_type == "html":
+            # WordPress sub-page — fetch HTML and extract text
+            try:
+                soup = fetch_page(meeting["minutes_url"])
+                content = soup.find("div", class_="entry-content") or soup.find("article")
+                if content:
+                    text = content.get_text(separator="\n", strip=True)
+            except Exception as e:
+                print(f"    WARN: Failed to fetch HTML minutes for {meeting['date']}: {e}")
+                continue
+        else:
+            # PDF minutes (2024+)
+            pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
+            if not pdf_path:
+                continue
+            text = extract_pdf_text(pdf_path)
+
         if not text or len(text.strip()) < 100:
-            print(f"    WARN: No text from {meeting['date']} minutes (may need OCR)")
+            print(f"    WARN: No text from {meeting['date']} minutes")
             continue
 
         found = parse_bylaws_from_minutes(text, meeting)
@@ -338,56 +568,103 @@ def scrape_all_minutes(meetings):
             print(f"    {meeting['date_display']}: {len(found)} by-law(s) — {labels}")
         all_bylaws.extend(found)
 
+    # Also parse the special-meetings page if present
+    special = [m for m in meetings if m.get("date") == "special-meetings"]
+    if special:
+        m = special[0]
+        try:
+            soup = fetch_page(m["minutes_url"])
+            content = soup.find("div", class_="entry-content") or soup.find("article")
+            if content:
+                text = content.get_text(separator="\n", strip=True)
+                # This page may contain multiple meetings; parse them all
+                # The resolution parser will handle it since it splits on R####-###
+                found = parse_bylaws_from_minutes(text, {
+                    **m,
+                    "date": "special",
+                    "date_display": "Special Meeting",
+                })
+                if found:
+                    print(f"    Special Meetings page: {len(found)} by-law(s)")
+                all_bylaws.extend(found)
+        except Exception as e:
+            print(f"    WARN: Special meetings page failed: {e}")
+
     print(f"\n  Total by-laws from minutes: {len(all_bylaws)}")
     return all_bylaws
 
 
-# ── Step 4: Extract by-laws from agenda packages (OCR) ─
+# ── Step 4: Extract by-laws from agenda packages ─────
 
 def scrape_agenda_packages(meetings, known_numbers):
-    """Try to extract additional by-law info from agenda packages.
-    Primarily useful for getting the full by-law text/PDF."""
-    if not OCR_AVAILABLE:
-        print("\n═══ Step 4: Agenda Packages — SKIPPED (no OCR) ═══")
-        print("  Install pytesseract + tesseract-ocr for agenda package scanning")
-        return []
-
-    print("\n═══ Step 4: Scanning Agenda Packages (OCR) ═══")
-    extra = []
+    """Extract by-law PDFs from agenda packages.
+    Downloads each package, finds by-law pages via text extraction
+    (falling back to OCR if available), and saves standalone PDFs.
+    
+    Also tries the council archive mirror at council.chriswjohnston.ca
+    if the township URL fails."""
+    print("\n═══ Step 4: Scanning Agenda Packages for By-Law PDFs ═══")
+    results = []
 
     for meeting in meetings:
         if not meeting.get("package_url"):
             continue
 
         pdf_path = download_pdf(meeting["package_url"], "temp_pdfs/packages")
+        
+        # Fallback: try council archive mirror
+        if not pdf_path:
+            mirror_url = meeting["package_url"].replace(
+                "nipissingtownship.com/wp-content/uploads/",
+                f"council.chriswjohnston.ca/{meeting['year']}/files/"
+            )
+            # Simplify the filename for the mirror
+            pdf_path = download_pdf(mirror_url, "temp_pdfs/packages")
+        
         if not pdf_path:
             continue
 
+        # Try text extraction first (works for most packages)
         text = extract_pdf_text(pdf_path)
         if not text or len(text.strip()) < 100:
-            continue
+            if OCR_AVAILABLE:
+                print(f"    {meeting['date']}: No text, trying OCR...")
+                text = ocr_pdf(pdf_path)
+            if not text or len(text.strip()) < 100:
+                print(f"    {meeting['date']}: Package unreadable, skipping")
+                continue
 
-        # Find by-law numbers mentioned
-        nums = set(re.findall(r'By[\-\s]?Law\s*(?:No\.?\s*)?(\d{4}[\-–]\d{1,3})', text, re.IGNORECASE))
+        # Find ALL by-law numbers in the package
+        nums = set(re.findall(r'By[\-\s]?Law\s*(?:No\.?\s*|Number\s*)?(\d{4}[\-–]\d{1,3})', text, re.IGNORECASE))
         nums = {n.replace("–", "-") for n in nums}
 
-        # Filter to ones we haven't seen yet
-        new_nums = nums - known_numbers
-        if not new_nums:
+        if not nums:
             continue
 
+        print(f"    {meeting['date_display']}: Found by-laws {', '.join(sorted(nums))}")
+
+        # Extract standalone PDFs for each by-law
+        for num in nums:
+            extracted = extract_bylaw_pdf(pdf_path, num)
+            if extracted:
+                results.append({"_pdf_for": num, "_pdf_path": str(extracted)})
+
+        # For by-laws not yet in our database, create entries
+        new_nums = nums - known_numbers
         for num in new_nums:
             title = None
-            # Try to extract title
             escaped = re.escape(num).replace(r'\-', r'[\-–]')
             tm = re.search(
-                rf'By[\-\s]?Law\s*(?:No\.?\s*)?{escaped}\s*[\-–:,]\s*(.{{5,120}}?)[\n\r\.]',
-                text, re.IGNORECASE
+                rf'[Bb]eing\s+a\s+[Bb]y[\-\s]?[Ll]aw\s+(?:to\s+)?(.{{5,150}}?)[\n\r\.]',
+                text[max(0, text.lower().find(num.lower())-200):text.lower().find(num.lower())+500] if num.lower() in text.lower() else '',
+                re.IGNORECASE
             )
             if tm:
                 title = re.sub(r'\s+', ' ', tm.group(1)).strip()
+                if len(title) > 120:
+                    title = title[:117] + '...'
 
-            extra.append({
+            results.append({
                 "number": num,
                 "year": parse_year(num),
                 "title": title or f"By-Law {num}",
@@ -402,22 +679,20 @@ def scrape_agenda_packages(meetings, known_numbers):
                 "minutes_url": meeting.get("minutes_url"),
             })
 
-        # Try to extract individual by-law PDFs
-        for num in nums & known_numbers | new_nums:
-            try:
-                extracted = extract_bylaw_pdf(pdf_path, num)
-                if extracted:
-                    extra.append({"_pdf_for": num, "_pdf_path": str(extracted)})
-            except Exception:
-                pass
-
-    actual = [b for b in extra if "number" in b]
-    print(f"  Found {len(actual)} additional by-laws from agenda packages")
-    return actual
+    actual = [b for b in results if "number" in b]
+    pdfs = [b for b in results if "_pdf_for" in b]
+    print(f"  New by-laws found: {len(actual)}")
+    print(f"  PDFs extracted: {len(pdfs)}")
+    return results
 
 
 def extract_bylaw_pdf(package_path, bylaw_num):
-    """Extract pages belonging to a specific by-law from an agenda package."""
+    """Extract pages belonging to a specific by-law from an agenda package.
+    
+    By-laws in Nipissing packages follow this pattern:
+    - Start: "THE CORPORATION OF THE TOWNSHIP OF NIPISSING" + "BY-LAW NUMBER YYYY-NN"
+    - End: Signature block (Mayor / Municipal Administrator) or next by-law header
+    """
     doc = fitz.open(str(package_path))
     escaped = re.escape(bylaw_num).replace(r'\-', r'[\-–]')
     pages = []
@@ -425,19 +700,43 @@ def extract_bylaw_pdf(package_path, bylaw_num):
 
     for i in range(len(doc)):
         text = doc[i].get_text()
-        if not text and OCR_AVAILABLE:
-            mat = fitz.Matrix(200 / 72, 200 / 72)
-            pix = doc[i].get_pixmap(matrix=mat)
-            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-            text = pytesseract.image_to_string(img)
+        
+        # Try OCR if no text
+        if (not text or len(text.strip()) < 20) and OCR_AVAILABLE:
+            try:
+                mat = fitz.Matrix(200 / 72, 200 / 72)
+                pix = doc[i].get_pixmap(matrix=mat)
+                img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+                text = pytesseract.image_to_string(img)
+            except Exception:
+                text = ""
 
-        if re.search(rf'By[\-\s]?Law\s*(?:No\.?\s*)?{escaped}', text, re.IGNORECASE):
+        if not text:
+            if in_bl:
+                pages.append(i)  # Continuation page (might be a scanned schedule)
+            continue
+
+        # Check if this page starts a by-law matching our number
+        has_our_bylaw = bool(re.search(
+            rf'BY[\-\s]?LAW\s*(?:NO\.?\s*|NUMBER\s*)?{escaped}',
+            text, re.IGNORECASE
+        ))
+        # Check if this page starts a DIFFERENT by-law
+        has_other_bylaw = bool(re.search(
+            r'CORPORATION\s+OF\s+THE\s+TOWNSHIP.*?BY[\-\s]?LAW\s*(?:NO\.?\s*|NUMBER\s*)\d{4}[\-–]\d',
+            text, re.IGNORECASE | re.DOTALL
+        )) and not has_our_bylaw
+
+        if has_our_bylaw and not in_bl:
             in_bl = True
             pages.append(i)
         elif in_bl:
-            if re.search(r'By[\-\s]?Law\s*(?:No\.?\s*)?\d{4}[\-–]\d', text) and \
-               not re.search(escaped, text, re.IGNORECASE):
-                in_bl = False
+            if has_other_bylaw:
+                in_bl = False  # Hit the next by-law
+            elif re.search(r'(?:^|\n)\s*\d+[\.\)]\s+[A-Z]', text) and \
+                 'BY-LAW' not in text.upper() and \
+                 re.search(r'(?:AGENDA|ITEM\s+\d|CORRESPONDENCE)', text, re.IGNORECASE):
+                in_bl = False  # Hit a new agenda section
             else:
                 pages.append(i)
 
@@ -452,7 +751,7 @@ def extract_bylaw_pdf(package_path, bylaw_num):
         new_doc.save(str(out_path))
         new_doc.close()
         doc.close()
-        print(f"    Extracted {bylaw_num} ({len(pages)} pages)")
+        print(f"    Extracted {bylaw_num} ({len(pages)} pages) → {out_path.name}")
         return out_path
 
     doc.close()
@@ -515,7 +814,16 @@ def generate_all_summaries(bylaws):
     done = 0
     for b in need:
         pdf_text = None
-        if b.get("pdf_url"):
+        
+        # Check for locally extracted PDF first (from agenda packages)
+        local_pdf = PDF_DIR / str(b.get("year") or "unknown") / f"By-Law-{b['number']}.pdf"
+        if local_pdf.exists():
+            pdf_text = extract_pdf_text(local_pdf)
+            if pdf_text and len(pdf_text.strip()) > 50:
+                print(f"  Using extracted PDF for {b['number']}")
+        
+        # Fall back to downloading from URL
+        if not pdf_text and b.get("pdf_url"):
             p = download_pdf(b["pdf_url"], "temp_pdfs/bylaws")
             if p:
                 pdf_text = extract_pdf_text(p)
@@ -547,6 +855,88 @@ def generate_all_summaries(bylaws):
     print(f"  Generated {done} summaries")
 
 
+# ── Step 6: Resolution Parsing ─────────────────────────
+
+def categorize_resolution(text):
+    t = text.lower()
+    if re.search(r'minutes.+adopted|adopt.+minutes', t): return 'Minutes Adoption'
+    if re.search(r'meeting be adjourned', t): return 'Adjournment'
+    if re.search(r'confirm the proceedings', t): return 'Confirming By-Law'
+    if re.search(r'statement of accounts|accounts.+approved', t): return 'Accounts Payable'
+    if re.search(r'correspondence.+report|receive the correspondence|accept the correspondence', t): return 'Correspondence'
+    if re.search(r'by[\-\s]?law', t): return 'By-Law'
+    if re.search(r'budget|tax levy|tax rate|tax ratio|capital forecast|estimates and tax rates|financial statement', t): return 'Budget & Finance'
+    if re.search(r'tender|quotation|accept the.+proposal|purchase', t): return 'Procurement'
+    if re.search(r'appoint|resignation|committee', t): return 'Appointments'
+    if re.search(r'whereas.+support|resolution.+support|circulated to', t): return 'Support Resolution'
+    if re.search(r'authorize|delegation|attendance|conference|grant|sign.+agreement', t): return 'Authorization'
+    if re.search(r'closed.+session|resume.+open|closed to the public', t): return 'Closed Session'
+    if re.search(r'donate|waive', t): return 'Donations & Waivers'
+    return 'General'
+
+
+def create_res_title(text, category):
+    if category in ('Minutes Adoption', 'Adjournment', 'Correspondence', 'Closed Session'):
+        return category
+    if category == 'Accounts Payable':
+        m = re.search(r'[Tt]otaling\s*\$([\d,]+\.\d{2})', text)
+        return f"Accounts Payable – ${m.group(1)}" if m else 'Accounts Payable'
+    if category == 'Confirming By-Law':
+        return 'Confirming By-Law'
+    title = re.sub(r'^(?:THAT|That)\s+', '', text)
+    first = re.split(r'[.;]', title)[0].strip()
+    if len(first) > 120:
+        first = first[:117] + '...'
+    return first or category
+
+
+def parse_resolutions_from_minutes(text, meeting):
+    """Parse ALL resolutions from a minutes PDF text."""
+    results = []
+    blocks = re.split(r'(R\d{4}[\-–]\d{1,3})', text)
+
+    for i in range(1, len(blocks), 2):
+        res_num = blocks[i].replace('–', '-')
+        if i + 1 >= len(blocks):
+            continue
+        body = blocks[i + 1].strip()
+
+        # Mover / seconder
+        mm = re.match(r'\s*[:.]?\s*([A-Z]\.\s*\w+(?:\s+\w+)?)\s*,\s*([A-Z]\.\s*\w+(?:\s+\w+)?)\s*[:\n]', body)
+        mover = mm.group(1).strip() if mm else None
+        seconder = mm.group(2).strip() if mm else None
+
+        motion = body[mm.end():].strip() if mm else body
+        cp = motion.rfind('Carried')
+        if cp > 0:
+            motion = motion[:cp].strip()
+        motion = re.sub(r'\s+', ' ', motion).rstrip('. \n')
+
+        status = 'carried' if 'Carried' in body else 'defeated' if re.search(r'Defeated|Lost|Failed', body) else 'unknown'
+
+        bylaw_match = re.search(r'By[\-\s]?Law\s*(?:No\.?\s*|Number\s*)?(\d{4}[\-–]\d{1,3})', motion, re.IGNORECASE)
+        category = categorize_resolution(motion)
+        title = create_res_title(motion, category)
+        votes = f"Moved by {mover}, Seconded by {seconder}" if mover and seconder else None
+
+        results.append({
+            'number': res_num,
+            'title': title,
+            'motion_text': motion[:500] if len(motion) > 500 else motion,
+            'meeting_date': meeting['date'],
+            'minutes_url': meeting.get('minutes_url'),
+            'status': status,
+            'votes': votes,
+            'mover': mover,
+            'seconder': seconder,
+            'is_bylaw': bool(bylaw_match),
+            'bylaw_number': bylaw_match.group(1).replace('–', '-') if bylaw_match else None,
+            'category': category,
+        })
+
+    return results
+
+
 # ── Merge ──────────────────────────────────────────────
 
 def merge(existing, new_list):
@@ -556,7 +946,7 @@ def merge(existing, new_list):
             # This is a PDF extraction result, attach to existing
             num = b["_pdf_for"]
             if num in idx and not idx[num].get("pdf_url"):
-                rel = b["_pdf_path"].replace("site/", "")
+                rel = b["_pdf_path"]
                 idx[num]["pdf_url"] = rel
             continue
 
@@ -619,7 +1009,74 @@ def run():
     # Step 5
     generate_all_summaries(all_bl)
 
-    # Save
+    # Step 6: Extract resolutions from minutes
+    print("\n═══ Step 6: Extracting Resolutions from Minutes ═══")
+    res_data = load_resolutions()
+    existing_res = {r["number"]: r for r in res_data.get("resolutions", [])}
+    new_res_count = 0
+
+    for meeting in meetings:
+        if not meeting.get("minutes_url"):
+            continue
+        if meeting.get("date") == "special-meetings":
+            continue  # Handle below
+
+        minutes_type = meeting.get("minutes_type", "pdf")
+        text = None
+
+        if minutes_type == "html":
+            try:
+                soup = fetch_page(meeting["minutes_url"])
+                content = soup.find("div", class_="entry-content") or soup.find("article")
+                if content:
+                    text = content.get_text(separator="\n", strip=True)
+            except Exception:
+                continue
+        else:
+            pdf_path = download_pdf(meeting["minutes_url"], "temp_pdfs/minutes")
+            if not pdf_path:
+                continue
+            text = extract_pdf_text(pdf_path)
+
+        if not text or len(text.strip()) < 100:
+            continue
+
+        resolutions = parse_resolutions_from_minutes(text, meeting)
+        for r in resolutions:
+            if r["number"] not in existing_res:
+                existing_res[r["number"]] = r
+                new_res_count += 1
+            else:
+                old = existing_res[r["number"]]
+                for k in ("title", "votes", "motion_text", "minutes_url", "meeting_date", "category"):
+                    if not old.get(k) and r.get(k):
+                        old[k] = r[k]
+
+    # Parse the special meetings page too
+    special = [m for m in meetings if m.get("date") == "special-meetings"]
+    if special:
+        try:
+            soup = fetch_page(special[0]["minutes_url"])
+            content = soup.find("div", class_="entry-content") or soup.find("article")
+            if content:
+                text = content.get_text(separator="\n", strip=True)
+                resolutions = parse_resolutions_from_minutes(text, special[0])
+                for r in resolutions:
+                    if r["number"] not in existing_res:
+                        existing_res[r["number"]] = r
+                        new_res_count += 1
+        except Exception:
+            pass
+
+    all_res = sorted(existing_res.values(), key=lambda r: r.get("number", ""))
+    res_data["resolutions"] = all_res
+    res_data["last_updated"] = datetime.now().strftime("%Y-%m-%d")
+    RES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(RES_FILE, "w") as f:
+        json.dump(res_data, f, indent=2, ensure_ascii=False)
+    print(f"  Total resolutions: {len(all_res)} ({new_res_count} new)")
+
+    # Save by-laws
     save_data(data)
 
     # Report
@@ -632,6 +1089,7 @@ def run():
     print(f"  With PDF:     {sum(1 for b in all_bl if b.get('pdf_url'))}")
     print(f"  With votes:   {sum(1 for b in all_bl if b.get('votes'))}")
     print(f"  With summary: {sum(1 for b in all_bl if b.get('ai_summary'))}")
+    print(f"\n  Resolutions:  {len(all_res)}")
     years = sorted(set(b.get("year") for b in all_bl if b.get("year")))
     for y in years:
         c = sum(1 for b in all_bl if b.get("year") == y)
