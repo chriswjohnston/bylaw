@@ -211,255 +211,156 @@ def scrape_bylaws_page():
 
 # ── Step 2: Scrape council meeting links ───────────────
 
+ARCHIVE_BASE = "https://council.chriswjohnston.ca"
+ARCHIVE_YEARS = list(range(2018, 2027))  # 2018 through 2026
+
 def scrape_council_meetings():
-    print("\n═══ Step 2: Council Meetings Page ═══")
-    soup = fetch_page(COUNCIL_PAGE)
+    """Scrape meeting URLs from council.chriswjohnston.ca (the archive mirror).
+    
+    This is far more reliable than the township site because:
+    - All years 2018-2026 are indexed with direct PDF links
+    - Consistent table format, easy to parse
+    - No URL probing needed
+    
+    Falls back to the township site for any years not in the archive.
+    """
+    print("\n═══ Step 2: Council Meeting Archive ═══")
     meetings = []
-    content = soup.find("div", class_="entry-content") or soup.find("article") or soup
-
-    for line in str(content).split("<br"):
-        ls = BeautifulSoup(line, "html.parser")
-        lt = ls.get_text()
-        dm = re.search(r'([A-Z][a-z]+\s+\d{1,2},?\s+\d{4})', lt, re.IGNORECASE)
-        if not dm:
-            continue
+    
+    for year in ARCHIVE_YEARS:
+        url = f"{ARCHIVE_BASE}/{year}/"
         try:
-            d = datetime.strptime(dm.group(1).replace(",", ""), "%B %d %Y")
-        except ValueError:
+            soup = fetch_page(url)
+        except Exception as e:
+            print(f"  WARN: Could not fetch {year} archive: {e}")
             continue
+        
+        # Find all table rows
+        rows = soup.select("table tr")
+        for row in rows:
+            cells = row.find_all("td")
+            if not cells:
+                continue
+            
+            # First cell has the meeting date
+            date_cell = cells[0].get_text(strip=True)
+            # Clean up "Special" badges
+            date_text = re.sub(r'Special$', '', date_cell).strip()
+            dm = re.search(r'([A-Z][a-z]+\s+\d{1,2},?\s+\d{4})', date_text)
+            if not dm:
+                continue
+            try:
+                d = datetime.strptime(dm.group(1).replace(",", ""), "%B %d %Y")
+            except ValueError:
+                continue
+            
+            is_special = "special" in date_cell.lower()
+            
+            # Find all links in the row
+            all_links = row.find_all("a", href=True)
+            agenda, minutes, package = None, None, None
+            minutes_list = []  # Some rows have multiple minutes (special + regular)
+            
+            for a in all_links:
+                href = a["href"]
+                text = a.get_text(strip=True).lower()
+                full_url = href if href.startswith("http") else f"{ARCHIVE_BASE}{href}"
+                
+                if "agenda package" in text or "agenda-package" in href.lower() or \
+                   "council-package" in href.lower() or "council-agenda-package" in href.lower() or \
+                   ("package" in text and "agenda" in text):
+                    package = full_url
+                elif "minutes" in text and href.endswith(".pdf"):
+                    minutes_list.append(full_url)
+                elif "agenda" in text and href.endswith(".pdf") and "package" not in text:
+                    agenda = full_url
+            
+            # Use first minutes PDF (or None)
+            minutes = minutes_list[0] if minutes_list else None
+            
+            meetings.append({
+                "date": d.strftime("%Y-%m-%d"),
+                "date_display": d.strftime("%B %d, %Y"),
+                "is_special": is_special,
+                "agenda_url": agenda,
+                "minutes_url": minutes,
+                "package_url": package,
+                "year": d.year,
+            })
+            
+            # If there are multiple minutes (e.g., special + regular on same day),
+            # add extra entries for the additional minutes
+            for extra_minutes in minutes_list[1:]:
+                meetings.append({
+                    "date": d.strftime("%Y-%m-%d") + "-special",
+                    "date_display": d.strftime("%B %d, %Y") + " (Special)",
+                    "is_special": True,
+                    "agenda_url": None,
+                    "minutes_url": extra_minutes,
+                    "package_url": None,
+                    "year": d.year,
+                })
+        
+        year_count = sum(1 for m in meetings if m.get("year") == year)
+        if year_count:
+            print(f"  {year}: {year_count} meetings")
 
-        links = ls.find_all("a", href=True)
-        agenda, minutes, package = None, None, None
-        for a in links:
-            h = a["href"]
-            t = a.get_text(strip=True).lower()
-            full = urljoin(BASE_URL, h)
-            if "agenda package" in t or "agenda-package" in h.lower() or "council-package" in h.lower() or "council-agenda-package" in h.lower():
-                package = full
-            elif "minutes" in t:
-                minutes = full
-            elif "agenda" in t:
-                agenda = full
-
-        meetings.append({
-            "date": d.strftime("%Y-%m-%d"),
-            "date_display": d.strftime("%B %d, %Y"),
-            "is_special": "special" in lt.lower(),
-            "agenda_url": agenda,
-            "minutes_url": minutes,
-            "package_url": package,
-            "year": d.year,
-        })
+    # Also try the township main page for any meetings not yet in the archive
+    try:
+        soup = fetch_page(COUNCIL_PAGE)
+        content = soup.find("div", class_="entry-content") or soup.find("article") or soup
+        existing_dates = {m["date"] for m in meetings}
+        extra = 0
+        
+        for line in str(content).split("<br"):
+            ls = BeautifulSoup(line, "html.parser")
+            lt = ls.get_text()
+            dm = re.search(r'([A-Z][a-z]+\s+\d{1,2},?\s+\d{4})', lt, re.IGNORECASE)
+            if not dm:
+                continue
+            try:
+                d = datetime.strptime(dm.group(1).replace(",", ""), "%B %d %Y")
+            except ValueError:
+                continue
+            
+            ds = d.strftime("%Y-%m-%d")
+            if ds in existing_dates:
+                continue
+            
+            links = ls.find_all("a", href=True)
+            agenda, minutes, package = None, None, None
+            for a in links:
+                h = a["href"]
+                t = a.get_text(strip=True).lower()
+                full = urljoin(BASE_URL, h)
+                if "agenda package" in t or "agenda-package" in h.lower() or "council-package" in h.lower():
+                    package = full
+                elif "minutes" in t:
+                    minutes = full
+                elif "agenda" in t:
+                    agenda = full
+            
+            if minutes:  # Only add if there are actual minutes
+                meetings.append({
+                    "date": ds,
+                    "date_display": d.strftime("%B %d, %Y"),
+                    "is_special": "special" in lt.lower(),
+                    "agenda_url": agenda,
+                    "minutes_url": minutes,
+                    "package_url": package,
+                    "year": d.year,
+                })
+                extra += 1
+        
+        if extra:
+            print(f"  Township site: {extra} additional meetings")
+    except Exception as e:
+        print(f"  WARN: Township page fallback failed: {e}")
 
     meetings.sort(key=lambda m: m["date"])
-    print(f"  Found {len(meetings)} meetings from main listing page")
+    print(f"\n  Total meetings: {len(meetings)}")
     print(f"    with minutes: {sum(1 for m in meetings if m['minutes_url'])}")
     print(f"    with packages: {sum(1 for m in meetings if m['package_url'])}")
-
-    # Discover older meetings stored as WordPress sub-pages (2018-2023)
-    # Instead of probing hundreds of URLs, use a known list that we've verified exist.
-    # The scraper will try these and skip any that 404.
-    existing_dates = {m["date"] for m in meetings}
-    print(f"\n  Checking known older meeting URLs (2018–2023)...")
-
-    # Known WordPress sub-page meetings (verified to exist)
-    # Format: (date_str, minutes_slug, agenda_slug_or_None)
-    KNOWN_OLDER = [
-        # 2022
-        ("2022-05-10", "may-10-2022-minutes", None),
-        # 2021
-        ("2021-05-18", "minutes-may-18-2021", "agenda-may-18-2021"),
-        ("2021-09-07", "minutes-september-7-2021", "agenda-september-7-2021"),
-        # 2020
-        ("2020-09-15", "minutes-september-15-2020", None),
-        # 2019
-        ("2019-01-08", "minutes-january-8-2019", None),
-        # 2018
-        ("2018-02-06", "minutes-february-6-2018", None),
-    ]
-
-    # Also try to discover more by checking common patterns with short timeouts
-    import calendar
-    months_list = ['january','february','march','april','may','june','july',
-              'august','september','october','november','december']
-    
-    # Build candidate URLs — only 1st and 3rd Tuesday, only 2 slug variants
-    candidates = []
-    for year in range(2018, 2024):
-        for month_idx in range(1, 13):
-            month_name = months_list[month_idx - 1]
-            cal = calendar.monthcalendar(year, month_idx)
-            tuesdays = [week[1] for week in cal if week[1] != 0]
-            check_days = []
-            if len(tuesdays) >= 1: check_days.append(tuesdays[0])
-            if len(tuesdays) >= 3: check_days.append(tuesdays[2])
-            for day in check_days:
-                date_str = f"{year}-{month_idx:02d}-{day:02d}"
-                if date_str in existing_dates:
-                    continue
-                # Check if already in KNOWN_OLDER
-                if any(k[0] == date_str for k in KNOWN_OLDER):
-                    continue
-                candidates.append((date_str, year, month_idx, day, month_name))
-
-    older_found = 0
-
-    # First add all known URLs
-    for date_str, minutes_slug, agenda_slug in KNOWN_OLDER:
-        if date_str in existing_dates:
-            continue
-        parts = date_str.split('-')
-        year, month_idx, day = int(parts[0]), int(parts[1]), int(parts[2])
-        minutes_url = f"{COUNCIL_PAGE}{minutes_slug}/"
-        agenda_url = f"{COUNCIL_PAGE}{agenda_slug}/" if agenda_slug else None
-        date_obj = datetime(year, month_idx, day)
-        meetings.append({
-            "date": date_str,
-            "date_display": date_obj.strftime("%B %d, %Y"),
-            "is_special": False,
-            "agenda_url": agenda_url,
-            "minutes_url": minutes_url,
-            "package_url": None,
-            "year": year,
-            "minutes_type": "html",
-        })
-        older_found += 1
-        print(f"    Known: {date_obj.strftime('%B %d, %Y')}")
-
-    # Then probe candidates with very short timeout (3s) — skip on any error
-    print(f"  Probing {len(candidates)} candidate dates (3s timeout each)...")
-    for date_str, year, month_idx, day, month_name in candidates:
-        slugs = [f"minutes-{month_name}-{day}-{year}", f"{month_name}-{day}-{year}-minutes"]
-        minutes_url = None
-        for slug in slugs:
-            url = f"{COUNCIL_PAGE}{slug}/"
-            try:
-                resp = requests.head(url, headers=HEADERS, timeout=3, allow_redirects=True)
-                if resp.status_code == 200:
-                    minutes_url = url
-                    break
-            except Exception:
-                continue
-
-        if minutes_url:
-            date_obj = datetime(year, month_idx, day)
-            meetings.append({
-                "date": date_str,
-                "date_display": date_obj.strftime("%B %d, %Y"),
-                "is_special": False,
-                "agenda_url": None,
-                "minutes_url": minutes_url,
-                "package_url": None,
-                "year": year,
-                "minutes_type": "html",
-            })
-            older_found += 1
-            print(f"    Found: {date_obj.strftime('%B %d, %Y')} → {slug}")
-
-    # Also check the special-meeting-minutes page (contains multiple meetings)
-    special_url = f"{COUNCIL_PAGE}special-meeting-minutes/"
-    try:
-        resp = requests.head(special_url, headers=HEADERS, timeout=10, allow_redirects=True)
-        if resp.status_code == 200:
-            # This page has multiple special meetings embedded; we'll parse it in step 3
-            meetings.append({
-                "date": "special-meetings",
-                "date_display": "Special Meetings (Multiple)",
-                "is_special": True,
-                "agenda_url": None,
-                "minutes_url": special_url,
-                "package_url": None,
-                "year": None,
-                "minutes_type": "html_multi",
-            })
-            print(f"    Found: Special Meetings page")
-    except Exception:
-        pass
-
-    meetings.sort(key=lambda m: m["date"] if m["date"] != "special-meetings" else "9999")
-    print(f"  Older meetings discovered: {older_found}")
-
-    # Probe for unlisted PDF-format minutes (2022-2025)
-    # The main page sometimes drops older years. These meetings have PDF minutes at
-    # predictable URLs in wp-content/uploads/
-    print(f"\n  Probing for unlisted PDF minutes (2022–2025)...")
-    pdf_found = 0
-    for year in range(2022, 2026):
-        for month_idx in range(1, 13):
-            month_name = months[month_idx - 1].capitalize()
-            cal = calendar.monthcalendar(year, month_idx)
-            tuesdays = [week[1] for week in cal if week[1] != 0]
-
-            check_days = []
-            if len(tuesdays) >= 1: check_days.append(tuesdays[0])
-            if len(tuesdays) >= 3: check_days.append(tuesdays[2])
-
-            for day in check_days:
-                date_str = f"{year}-{month_idx:02d}-{day:02d}"
-                if date_str in existing_dates:
-                    continue
-                # Also skip if we already found this as a WP sub-page
-                if any(m["date"] == date_str for m in meetings):
-                    continue
-
-                # Try common PDF URL patterns for minutes
-                min_patterns = [
-                    f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Minutes-{month_name}-{day}-{year}.pdf",
-                    f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Minutes-{month_name}-{day}-{year}-1.pdf",
-                ]
-                # Upload folder can be month before for early-month meetings
-                if month_idx > 1:
-                    prev = month_idx - 1
-                    min_patterns.append(
-                        f"{BASE_URL}/wp-content/uploads/{year}/{prev:02d}/Minutes-{month_name}-{day}-{year}.pdf"
-                    )
-
-                minutes_url = None
-                for url in min_patterns:
-                    try:
-                        resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
-                        if resp.status_code == 200:
-                            minutes_url = url
-                            break
-                    except Exception:
-                        continue
-
-                if minutes_url:
-                    # Try to find matching agenda package
-                    pkg_patterns = [
-                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Agenda-Package-{month_name}-{day}-{year}.pdf",
-                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/{month_name}-{day}-{year}-Council-Agenda-Package.pdf",
-                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/Council-Agenda-Package-{month_name[:3]}-{day}-{year}.pdf",
-                        f"{BASE_URL}/wp-content/uploads/{year}/{month_idx:02d}/{month_name}-{day}-{year}-Council-Package.pdf",
-                    ]
-                    package_url = None
-                    for url in pkg_patterns:
-                        try:
-                            resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
-                            if resp.status_code == 200:
-                                package_url = url
-                                break
-                        except Exception:
-                            continue
-
-                    date_obj = datetime(year, month_idx, day)
-                    meetings.append({
-                        "date": date_str,
-                        "date_display": date_obj.strftime("%B %d, %Y"),
-                        "is_special": False,
-                        "agenda_url": None,
-                        "minutes_url": minutes_url,
-                        "package_url": package_url,
-                        "year": year,
-                    })
-                    pdf_found += 1
-                    pkg_note = f" + package" if package_url else ""
-                    print(f"    Found: {date_obj.strftime('%B %d, %Y')}{pkg_note}")
-
-    print(f"  Unlisted PDF meetings discovered: {pdf_found}")
-
-    meetings.sort(key=lambda m: m["date"] if m["date"] != "special-meetings" else "9999")
-    print(f"  Total meetings now: {len(meetings)}")
     return meetings
 
 
