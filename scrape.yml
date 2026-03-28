@@ -42,7 +42,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           git config user.name "By-Law Scraper Bot"
           git config user.email "bot@chriswjohnston.ca"
-          git add site/bylaws-data.json site/bylaws/
+          git add site/bylaws-data.json site/resolutions-data.json site/bylaws/
           
           # Only commit if there are changes
           if git diff --staged --quiet; then
@@ -50,5 +50,6 @@ jobs:
           else
             BYLAW_COUNT=$(python -c "import json; d=json.load(open('site/bylaws-data.json')); print(len(d['bylaws']))")
             git commit -m "Update by-law archive — ${BYLAW_COUNT} by-laws [automated]"
+            git pull --rebase origin main
             git push
           fi
