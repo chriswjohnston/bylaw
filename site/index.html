@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>By-Law & Resolution Archive – Nipissing Township</title>
+<title>By-Law Archive – Nipissing Township</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;700&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -74,8 +74,8 @@ footer{background:var(--charcoal);padding:2.5rem 2rem;text-align:center}footer .
 </style>
 </head>
 <body>
-<nav><a class="nav-logo" href="https://chriswjohnston.ca">Chris <span>Johnston</span></a><ul class="nav-links"><li><a href="https://chriswjohnston.ca#priorities">Priorities</a></li><li><a href="https://chriswjohnston.ca#issues">Issues</a></li><li><a href="https://chriswjohnston.ca#contact">Contact</a></li><li><a href="https://council.chriswjohnston.ca">Council Archive</a></li><li><a href="./" class="active">By-Law Archive</a></li></ul></nav>
-<div class="page-hero"><div class="inner"><p class="eyebrow">Nipissing Township</p><h1>Council <em>Archive</em></h1><p>Every by-law and resolution passed by council — organized by year, searchable, and permanently preserved with AI summaries.</p></div></div>
+<nav><a class="nav-logo" href="https://chriswjohnston.ca">Chris <span>Johnston</span></a><ul class="nav-links"><li><a href="https://council.chriswjohnston.ca">Council Archive</a></li><li><a href="https://bylaw.chriswjohnston.ca" class="active">By-Law Archive</a></li></ul></nav>
+<div class="page-hero"><div class="inner"><p class="eyebrow">Nipissing Township</p><h1>By-Law <em>Archive</em></h1><p>Every by-law and resolution passed by council — organized by year, searchable, and permanently preserved with AI summaries.</p></div></div>
 <main>
 <div class="notice"><strong id="st-tot">0</strong> records preserved across <strong id="st-span">—</strong>. Sourced from <a href="https://nipissingtownship.com/municipal-information/by-laws/" target="_blank">nipissingtownship.com</a> and council <a href="https://nipissingtownship.com/council-meeting-dates-agendas-minutes/" target="_blank">agenda packages &amp; minutes</a>. Updated every two weeks.<div class="dimmed">Last updated <span id="st-dt">—</span></div></div>
 <div class="tab-bar"><button class="tab-btn on" data-tab="bylaws" onclick="setTab('bylaws')">By-Laws <span class="tc" id="tc-bl">0</span></button><button class="tab-btn" data-tab="resolutions" onclick="setTab('resolutions')">Resolutions <span class="tc" id="tc-res">0</span></button></div>
@@ -85,7 +85,7 @@ footer{background:var(--charcoal);padding:2.5rem 2rem;text-align:center}footer .
 <div id="hgrid" class="year-grid"></div>
 <div id="lview" class="list-section" style="display:none"></div>
 </main>
-<footer><div class="fi"><div class="fl">Chris <span>Johnston</span></div><p>Candidate for Nipissing Township Council &middot; Municipal Election October 2026</p><p>Sourced from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> &mdash; Last updated <span id="fdt">—</span></p></div></footer>
+<footer><div class="fi"><div class="fl">Chris <span>Johnston</span></div><p>Sourced from <a href="https://nipissingtownship.com" target="_blank">nipissingtownship.com</a> &mdash; Last updated <span id="fdt">—</span></p></div></footer>
 <script>
 let BL=[],RES=[],YB=[],YR=[],cT='bylaws',cY=null,cF='all',cC='all',db=null;
 const IC=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
