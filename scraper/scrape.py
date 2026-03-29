@@ -901,9 +901,12 @@ def run():
     # Step 3 — the main source
     minutes_bylaws = scrape_all_minutes(meetings)
 
-    # Step 4 — supplementary
-    known_nums = {b["number"] for b in existing + page_bylaws + minutes_bylaws}
-    package_bylaws = scrape_agenda_packages(meetings, known_nums)
+    # Step 4 — SKIPPED: agenda package PDF extraction is too slow for CI (OCR on large PDFs).
+    # By-laws are already found via minutes in Step 3. Agenda package extraction can be
+    # run locally or re-enabled with a per-package time limit later.
+    print("\n═══ Step 4: Agenda Package Scanning — SKIPPED (CI mode) ═══")
+    print("  Run locally for full agenda package extraction: python scraper/scrape.py")
+    package_bylaws = []
 
     # Merge
     print("\n═══ Merging ═══")
