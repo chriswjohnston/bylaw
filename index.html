@@ -100,9 +100,10 @@ function D(){return cT==='bylaws'?BL:RES;}function YS(){return cT==='bylaws'?YB:
 function sc(i,q){const ql=q.toLowerCase(),tk=ql.split(/\s+/).filter(Boolean);const n=(i.number||'').toLowerCase(),ti=(i.title||'').toLowerCase(),su=(i.ai_summary||i.motion_text||'').toLowerCase(),ca=(i._c||[i.category]||[]).join(' ').toLowerCase(),vo=(i.votes||`${i.mover||''} ${i.seconder||''}`).toLowerCase();let s=0;if(n===ql||n.includes(ql))s+=100;if(ti.includes(ql))s+=50;for(const t of tk){if(n.includes(t))s+=30;if(ti.includes(t))s+=20;if(ca.includes(t))s+=15;if(su.includes(t))s+=10;if(vo.includes(t))s+=5;}return s;}
 function hl(t,q){if(!q||!t)return t;const tk=q.toLowerCase().split(/\s+/).filter(x=>x.length>1);let r=t;for(const k of tk){r=r.replace(new RegExp(`(${k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<span class="hl">$1</span>');}return r;}
 async function init(){try{const r=await fetch('./bylaws-data.json');const d=await r.json();BL=d.bylaws||[];BL.forEach(b=>{b._c=bc(b);if(b.year&&b.year<2000)b.year=null;});
-// Load resolutions: first try from same file, then from separate file
-RES=d.resolutions||[];
-if(!RES.length){try{const rr=await fetch('./resolutions-data.json');if(rr.ok){const rd=await rr.json();RES=rd.resolutions||[];}}catch(e){}}
+// Load resolutions: prefer separate file (scraper writes here), fall back to embedded
+RES=[];
+try{const rr=await fetch('./resolutions-data.json');if(rr.ok){const rd=await rr.json();RES=rd.resolutions||[];}}catch(e){}
+if(!RES.length)RES=d.resolutions||[];
 // Normalize resolution fields
 RES.forEach(r=>{r._c=[r.category||'General'];const ym=r.number.match(/R(\d{4})/);r.year=ym?+ym[1]:null;if(!r.status&&r.outcome)r.status=r.outcome;if(!r.meeting_date&&r.date)r.meeting_date=r.date;if(!r.votes&&r.mover)r.votes='Moved by '+r.mover+', Seconded by '+(r.seconder||'');});
 ['st-dt','fdt'].forEach(id=>document.getElementById(id).textContent=d.last_updated||'—');document.getElementById('tc-bl').textContent=BL.length;document.getElementById('tc-res').textContent=RES.length;document.getElementById('st-tot').textContent=BL.length+RES.length;YB=[...new Set(BL.map(b=>b.year).filter(Boolean))].sort((a,b)=>b-a);YR=[...new Set(RES.map(r=>r.year).filter(Boolean))].sort((a,b)=>b-a);const ay=[...YB,...YR].filter(Boolean);document.getElementById('st-span').textContent=ay.length?`${Math.min(...ay)}–${Math.max(...ay)}`:'—';bldF();const h=location.hash.replace('#','');
