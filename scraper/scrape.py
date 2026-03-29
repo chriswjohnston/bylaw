@@ -261,10 +261,12 @@ def scrape_council_meetings():
             agenda, minutes, package = None, None, None
             minutes_list = []  # Some rows have multiple minutes (special + regular)
             
+            year_base = f"{ARCHIVE_BASE}/{year}/"
+            
             for a in all_links:
                 href = a["href"]
                 text = a.get_text(strip=True).lower()
-                full_url = href if href.startswith("http") else urljoin(ARCHIVE_BASE + "/", href)
+                full_url = href if href.startswith("http") else urljoin(year_base, href)
                 
                 if "agenda package" in text or "agenda-package" in href.lower() or \
                    "council-package" in href.lower() or "council-agenda-package" in href.lower() or \
