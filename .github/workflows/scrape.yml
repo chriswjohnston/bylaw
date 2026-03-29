@@ -43,7 +43,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           git config user.name "By-Law Scraper Bot"
           git config user.email "bot@chriswjohnston.ca"
-          git add bylaws-data.json resolutions-data.json bylaws/
+          git add bylaws-data.json resolutions-data.json
           
           # Only commit if there are changes
           if git diff --staged --quiet; then
