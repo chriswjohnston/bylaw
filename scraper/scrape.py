@@ -264,7 +264,7 @@ def scrape_council_meetings():
             for a in all_links:
                 href = a["href"]
                 text = a.get_text(strip=True).lower()
-                full_url = href if href.startswith("http") else f"{ARCHIVE_BASE}{href}"
+                full_url = href if href.startswith("http") else urljoin(ARCHIVE_BASE + "/", href)
                 
                 if "agenda package" in text or "agenda-package" in href.lower() or \
                    "council-package" in href.lower() or "council-agenda-package" in href.lower() or \
@@ -711,9 +711,13 @@ def generate_all_summaries(bylaws):
         print("\n═══ Step 5: AI Summaries — all complete ═══")
         return
 
-    print(f"\n═══ Step 5: Generating AI Summaries ({len(need)} needed) ═══")
+    # Limit to 20 per run to avoid CI timeouts.
+    # Summaries accumulate across runs — after a few cycles all will be done.
+    MAX_PER_RUN = 20
+    batch = need[:MAX_PER_RUN]
+    print(f"\n═══ Step 5: Generating AI Summaries ({len(batch)} of {len(need)} remaining) ═══")
     done = 0
-    for b in need:
+    for b in batch:
         pdf_text = None
         
         # Check for locally extracted PDF first (from agenda packages)
