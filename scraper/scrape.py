@@ -713,53 +713,24 @@ def generate_all_summaries(bylaws):
         print("\n═══ Step 5: AI Summaries — all complete ═══")
         return
 
-    # Limit to 20 per run to avoid CI timeouts.
-    # Summaries accumulate across runs — after a few cycles all will be done.
     MAX_PER_RUN = 20
     batch = need[:MAX_PER_RUN]
-    print(f"\n═══ Step 5: Generating AI Summaries ({len(batch)} of {len(need)} remaining) ═══")
+    print(f"\n═══ Step 5: Generating AI Summaries ({len(batch)} of {len(need)} remaining) ═══", flush=True)
     done = 0
     for b in batch:
-        pdf_text = None
-        
-        # Check for locally extracted PDF first (from agenda packages)
-        local_pdf = PDF_DIR / str(b.get("year") or "unknown") / f"By-Law-{b['number']}.pdf"
-        if local_pdf.exists():
-            pdf_text = extract_pdf_text(local_pdf)
-            if pdf_text and len(pdf_text.strip()) > 50:
-                print(f"  Using extracted PDF for {b['number']}")
-        
-        # Fall back to downloading from URL
-        if not pdf_text and b.get("pdf_url"):
-            p = download_pdf(b["pdf_url"], "temp_pdfs/bylaws")
-            if p:
-                pdf_text = extract_pdf_text(p)
-        if not pdf_text and b.get("page_url"):
-            try:
-                soup = fetch_page(b["page_url"])
-                c = soup.find("div", class_="entry-content") or soup.find("article")
-                if c:
-                    pdf_text = c.get_text("\n", strip=True)
-            except Exception:
-                pass
-
-        summary, points = generate_ai_summary(b, pdf_text)
+        print(f"  → {b['number']}...", end='', flush=True)
+        # Just use title — skip PDF downloads to avoid hangs in CI
+        summary, points = generate_ai_summary(b, None)
         if summary:
             b["ai_summary"] = summary
             b["ai_key_points"] = points or []
             done += 1
-            print(f"  ✓ {b['number']}")
+            print(f" ✓")
         else:
-            # Try title-only
-            summary, points = generate_ai_summary(b)
-            if summary:
-                b["ai_summary"] = summary
-                b["ai_key_points"] = points or []
-                done += 1
-                print(f"  ✓ {b['number']} (title only)")
-        time.sleep(0.5)
+            print(f" ✗")
+        time.sleep(0.3)
 
-    print(f"  Generated {done} summaries")
+    print(f"  Generated {done} summaries", flush=True)
 
 
 # ── Step 6: Resolution Parsing ─────────────────────────
@@ -909,7 +880,7 @@ def run():
     package_bylaws = []
 
     # Merge
-    print("\n═══ Merging ═══")
+    print("\n═══ Merging ═══", flush=True)
     all_bl = merge(existing, page_bylaws)
     all_bl = merge(all_bl, minutes_bylaws)
     all_bl = merge(all_bl, package_bylaws)
@@ -920,7 +891,7 @@ def run():
     generate_all_summaries(all_bl)
 
     # Step 6: Extract resolutions from minutes
-    print("\n═══ Step 6: Extracting Resolutions from Minutes ═══")
+    print("\n═══ Step 6: Extracting Resolutions from Minutes ═══", flush=True)
     res_data = load_resolutions()
     existing_res = {r["number"]: r for r in res_data.get("resolutions", [])}
     new_res_count = 0
