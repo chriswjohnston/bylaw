@@ -887,8 +887,8 @@ def run():
     all_bl.sort(key=lambda b: (b.get("year") or 0, b.get("number", "")))
     data["bylaws"] = all_bl
 
-    # Step 5
-    generate_all_summaries(all_bl)
+    # Step 5 — SKIPPED for now
+    print("\n═══ Step 5: AI Summaries — SKIPPED ═══", flush=True)
 
     # Step 6: Extract resolutions from minutes
     print("\n═══ Step 6: Extracting Resolutions from Minutes ═══", flush=True)
