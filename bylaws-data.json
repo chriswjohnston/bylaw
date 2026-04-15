@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01",
+  "last_updated": "2026-04-15",
   "source": "https://nipissingtownship.com/municipal-information/by-laws/",
   "bylaws": [
     {
@@ -2713,6 +2713,34 @@
       "meeting_date": "2026-03-17",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-Mar-17-2026.pdf",
       "minutes_url": "https://nipissingtownship.com/wp-content/uploads/2026/03/Minutes-March-17-2026.pdf"
+    },
+    {
+      "number": "2026-13",
+      "year": 2026,
+      "title": "stop up, close and sell part of the Road Allowance Between Concession 12 & 13 designated as Part 1 on Plan 42R22858, in the Township of Nipissing, ...",
+      "date_passed": "2026-04-07",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2026-04-07",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-7-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-7-2026.pdf"
+    },
+    {
+      "number": "2026-14",
+      "year": 2026,
+      "title": "confirm the proceedings of Council at its meeting held on April 7, 2026",
+      "date_passed": "2026-04-07",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by J. Scott",
+      "meeting_date": "2026-04-07",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-7-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-7-2026.pdf"
     }
   ],
   "resolutions": [
