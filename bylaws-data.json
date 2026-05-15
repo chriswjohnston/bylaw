@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-01",
+  "last_updated": "2026-05-15",
   "source": "https://nipissingtownship.com/municipal-information/by-laws/",
   "bylaws": [
     {
@@ -2741,6 +2741,62 @@
       "meeting_date": "2026-04-07",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-7-2026.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-7-2026.pdf"
+    },
+    {
+      "number": "2026-15",
+      "year": 2026,
+      "title": "amend Zoning By-Law Number 2020-20",
+      "date_passed": "2026-04-21",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
+      "meeting_date": "2026-04-21",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-21-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-21-2026.pdf"
+    },
+    {
+      "number": "2026-16",
+      "year": 2026,
+      "title": "amend Zoning By-Law Number 2020-20",
+      "date_passed": "2026-04-21",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Kirkey, Seconded by J. Scott",
+      "meeting_date": "2026-04-21",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-21-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-21-2026.pdf"
+    },
+    {
+      "number": "2026-17",
+      "year": 2026,
+      "title": "appoint a Compliance Audit Committee under the Municipal Elections Act for the Corporation of the Township of Nipissing",
+      "date_passed": "2026-04-21",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by S. Foote, Seconded by L. Chalapenko",
+      "meeting_date": "2026-04-21",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-21-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-21-2026.pdf"
+    },
+    {
+      "number": "2026-18",
+      "year": 2026,
+      "title": "confirm the proceedings of Council at its meeting held on April 21, 2026",
+      "date_passed": "2026-04-21",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2026-04-21",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-April-21-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-April-21-2026.pdf"
     }
   ],
   "resolutions": [
