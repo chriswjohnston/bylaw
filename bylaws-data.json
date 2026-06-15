@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-06-15",
   "source": "https://nipissingtownship.com/municipal-information/by-laws/",
   "bylaws": [
     {
@@ -2853,6 +2853,20 @@
       "meeting_date": "2026-05-05",
       "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/May-5-2026-Council-Package-2.pdf",
       "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-5-2026.pdf"
+    },
+    {
+      "number": "2026-23",
+      "year": 2026,
+      "title": "confirm the proceedings of Council at its meeting held on May 19, 2026",
+      "date_passed": "2026-05-19",
+      "pdf_url": null,
+      "page_url": null,
+      "source": "minutes",
+      "status": "approved",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "meeting_date": "2026-05-19",
+      "agenda_package_url": "https://council.chriswjohnston.ca/2026/files/Agenda-Package-May-19-2026.pdf",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf"
     }
   ],
   "resolutions": [

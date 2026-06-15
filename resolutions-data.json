@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-06-15",
   "resolutions": [
     {
       "number": "R2010-232",
@@ -11090,6 +11090,48 @@
       "category": "Adjournment"
     },
     {
+      "number": "R2026-117",
+      "title": "Minutes Adoption",
+      "motion_text": "THAT the minutes of the regular Council Meeting held May 5, 2026, be adopted as published",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by S. Foote, Seconded by S. Kirkey",
+      "mover": "S. Foote",
+      "seconder": "S. Kirkey",
+      "is_bylaw": false,
+      "bylaw_number": null,
+      "category": "Minutes Adoption"
+    },
+    {
+      "number": "R2026-118",
+      "title": "we donate $100 to the Powassan Agricultural Society 2026 Powassan Fall Fair",
+      "motion_text": "THAT we donate $100 to the Powassan Agricultural Society 2026 Powassan Fall Fair",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by J. Scott, Seconded by L. Chalapenko",
+      "mover": "J. Scott",
+      "seconder": "L. Chalapenko",
+      "is_bylaw": false,
+      "bylaw_number": null,
+      "category": "Donations & Waivers"
+    },
+    {
+      "number": "R2026-119",
+      "title": "we donate $100 to the Trout Creek Agricultural Society 2026 Trout Creek Fall Fair",
+      "motion_text": "THAT we donate $100 to the Trout Creek Agricultural Society 2026 Trout Creek Fall Fair",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by L. Chalapenko, Seconded by J. Scott",
+      "mover": "L. Chalapenko",
+      "seconder": "J. Scott",
+      "is_bylaw": false,
+      "bylaw_number": null,
+      "category": "Donations & Waivers"
+    },
+    {
       "number": "R2026-12",
       "title": "Correspondence",
       "motion_text": "That we receive the correspondence report as presented",
@@ -11102,6 +11144,62 @@
       "is_bylaw": false,
       "bylaw_number": null,
       "category": "Correspondence"
+    },
+    {
+      "number": "R2026-120",
+      "title": "Correspondence",
+      "motion_text": "That we receive the correspondence report as presented",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by S. Kirkey, Seconded by S. Foote",
+      "mover": "S. Kirkey",
+      "seconder": "S. Foote",
+      "is_bylaw": false,
+      "bylaw_number": null,
+      "category": "Correspondence"
+    },
+    {
+      "number": "R2026-121",
+      "title": "Accounts Payable – $138,636.74",
+      "motion_text": "That the statement of accounts dated: May 9, and 13, 2026. Totaling $138,636.74 be approved",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by L. Chalapenko, Seconded by S. Foote",
+      "mover": "L. Chalapenko",
+      "seconder": "S. Foote",
+      "is_bylaw": false,
+      "bylaw_number": null,
+      "category": "Accounts Payable"
+    },
+    {
+      "number": "R2026-122",
+      "title": "Confirming By-Law",
+      "motion_text": "THAT we pass By-Law No. 2026-23, being a By-Law to confirm the proceedings of Council at its meeting held on May 19, 2026. Read the first, second and third time passed this 19th day of May, 2026",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by J. Scott, Seconded by S. Kirkey",
+      "mover": "J. Scott",
+      "seconder": "S. Kirkey",
+      "is_bylaw": true,
+      "bylaw_number": "2026-23",
+      "category": "Confirming By-Law"
+    },
+    {
+      "number": "R2026-123",
+      "title": "Adjournment",
+      "motion_text": "THAT the meeting be adjourned. Time: 7:08 p.m. Next regular Council meeting to be held June 2, 2026",
+      "meeting_date": "2026-05-19",
+      "minutes_url": "https://council.chriswjohnston.ca/2026/files/Minutes-May-19-2026.pdf",
+      "status": "carried",
+      "votes": "Moved by S. Foote, Seconded by S. Kirkey",
+      "mover": "S. Foote",
+      "seconder": "S. Kirkey",
+      "is_bylaw": false,
+      "bylaw_number": null,
+      "category": "Adjournment"
     },
     {
       "number": "R2026-13",
